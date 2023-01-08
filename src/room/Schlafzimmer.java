@@ -1,6 +1,8 @@
 package room;
 
-import java.util.List;
+import java.util.Map;
+
+import view.View;
 
 public class Schlafzimmer extends Room {
 
@@ -18,7 +20,13 @@ public class Schlafzimmer extends Room {
     }
 
     @Override
-    public List<Room> getAdjacentRooms() {
+    public Map<String, Room> getAdjacentRooms() {
+        return null;
+    }
+
+    @Override
+    public Map<String, View> getViews() {
+        // TODO Auto-generated method stub
         return null;
     }
 

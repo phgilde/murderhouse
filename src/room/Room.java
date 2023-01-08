@@ -1,6 +1,8 @@
 package room;
 
-import java.util.List;
+import java.util.Map;
+
+import view.View;
 
 public abstract class Room {
     /**
@@ -11,7 +13,7 @@ public abstract class Room {
     public abstract String getName();
 
     /**
-     * Gibt eine Beschreibung des Raums zurück. 
+     * Gibt eine Beschreibung des Raums zurück.
      * 
      * @return Beschreibung.
      */
@@ -23,5 +25,12 @@ public abstract class Room {
      * 
      * @return Angrenzende Räume.
      */
-    public abstract List<Room> getAdjacentRooms();
+    public abstract Map<String, Room> getAdjacentRooms();
+
+    /**
+     * Gibt die Views zurück, die der Spieler von diesem Raum aus sehen kann.
+     * 
+     * @return Views.
+     */
+    public abstract Map<String, View> getViews();
 }
