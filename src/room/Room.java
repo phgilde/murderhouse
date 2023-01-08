@@ -4,7 +4,14 @@ import java.util.List;
 
 public abstract class Room {
     /**
-     * Gibt eine Beschreibung des Raums zurück.
+     * Gibt den Namen des Raums zurück.
+     * 
+     * @return Name.
+     */
+    public abstract String getName();
+
+    /**
+     * Gibt eine Beschreibung des Raums zurück. 
      * 
      * @return Beschreibung.
      */
