@@ -1,5 +1,7 @@
 package interaction;
 
+import java.util.Optional;
+
 import item.Item;
 
 public abstract class Action {
@@ -15,5 +17,5 @@ public abstract class Action {
      * 
      * @return Gehaltenes Item
      */
-    public abstract Item getHeldItem();
+    public abstract Optional<Item> getHeldItem();
 }
