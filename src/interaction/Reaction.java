@@ -18,4 +18,11 @@ public abstract class Reaction {
      * @return Items
      */
     public abstract List<Item> getItems();
+
+    /**
+     * Gibt zurück, ob die Interaktion erfolgreich war.
+     * @return Erfolg
+     *
+     */
+    public abstract boolean wasSuccessful();
 }
