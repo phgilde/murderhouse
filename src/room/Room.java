@@ -2,7 +2,7 @@ package room;
 
 import java.util.Map;
 
-import view.View;
+import room.view.View;
 
 public abstract class Room {
     /**
@@ -32,4 +32,5 @@ public abstract class Room {
      * @return Views.
      */
     public abstract Map<String, View> getViews();
+
 }
