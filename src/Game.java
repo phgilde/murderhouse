@@ -17,8 +17,8 @@ class Game {
     public Game() {
         currentRoom = new Schlafzimmer();
         inventory = new LinkedList<Item>();
-        parser.addSimple("umsehen", () -> System.out.println(currentRoom.getDescription()));
-        parser.addSimple("inventar", () -> {
+        parser.setSimpleCommand("umsehen", () -> System.out.println(currentRoom.getDescription()));
+        parser.setSimpleCommand("inventar", () -> {
             if (inventory.size()!=0) {
                 System.out.println("Du hast folgende Gegenstände im Inventar:");
                 for (Item item : inventory) {
@@ -28,15 +28,15 @@ class Game {
                 System.out.println("Du hast keine Gegenstände im Inventar.");
             }
         });
-        parser.addSimple("quit", () -> System.exit(0));
-        parser.addSimple("hilfe", () -> {
+        parser.setSimpleCommand("quit", () -> System.exit(0));
+        parser.setSimpleCommand("hilfe", () -> {
             System.out.println("Du kannst folgende Befehle eingeben:");
             System.out.println("umsehen: Beschreibt den Raum");
             System.out.println("inventar: Zeigt das Inventar an");
             System.out.println("quit: Beendet das Spiel");
             System.out.println("hilfe: Zeigt diese Hilfe an");
         });
-        parser.addParamCommand("gehe", (String direction) -> {
+        parser.setParamCommand("gehe", (String direction) -> {
             if (currentRoom.getAdjacentRooms().containsKey(direction)) {
                 currentRoom = currentRoom.getAdjacentRooms().get(direction);
                 System.out.println(currentRoom.getDescription());

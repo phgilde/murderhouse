@@ -6,18 +6,23 @@ import java.util.function.Consumer;
 public class Parser {
     private HashMap<String, Runnable> simpleCommands;
     private HashMap<String, Consumer<String>> paramCommands;
+    private Consumer<String> catcher;
 
     public Parser() {
         simpleCommands = new HashMap<>();
         paramCommands = new HashMap<>();
     }
 
-    public void addSimple(String command, Runnable action) {
+    public void setSimpleCommand(String command, Runnable action) {
         simpleCommands.put(command, action);
     }
 
-    public void addParamCommand(String command, Consumer<String> action) {
+    public void setParamCommand(String command, Consumer<String> action) {
         paramCommands.put(command, action);
+    }
+
+    public void setCatch(Consumer<String> action) {
+        catcher = action;
     }
 
     public void parse(String input) {
@@ -26,6 +31,9 @@ public class Parser {
         String argument = parts.length > 1 ? parts[1] : null;
 
         if (argument == null) {
+            if (!simpleCommands.containsKey(command)) {
+                catcher.accept(command);
+            }
             simpleCommands.get(command).run();
         } else {
             paramCommands.get(command).accept(argument);
