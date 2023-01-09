@@ -20,8 +20,7 @@ public abstract class Room {
     public abstract String getDescription();
 
     /**
-     * Gibt die angrenzenden Räume zurück, in die der Spieler von diesem Raum aus
-     * gehen kann.
+     * Gibt die angrenzenden Räume zurück, in die der Spieler von diesem Raum aus gehen kann.
      * 
      * @return Angrenzende Räume.
      */

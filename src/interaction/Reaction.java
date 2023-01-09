@@ -21,6 +21,7 @@ public abstract class Reaction {
 
     /**
      * Gibt zurück, ob die Interaktion erfolgreich war.
+     * 
      * @return Erfolg
      *
      */

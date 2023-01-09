@@ -13,12 +13,13 @@ class Game {
     LinkedList<Item> inventory;
     Scanner scanner = new Scanner(System.in);
     Parser parser = new Parser();
+
     public Game() {
         currentRoom = new Schlafzimmer();
         inventory = new LinkedList<Item>();
         parser.setSimpleCommand("umsehen", () -> System.out.println(currentRoom.getDescription()));
         parser.setSimpleCommand("inventar", () -> {
-            if (inventory.size()!=0) {
+            if (inventory.size() != 0) {
                 System.out.println("Du hast folgende Gegenstände im Inventar:");
                 for (Item item : inventory) {
                     System.out.println(item.getName());
@@ -45,6 +46,7 @@ class Game {
             }
         });
     }
+
     public void mainLoop() {
         System.out.print(">>> ");
         String input = scanner.nextLine();
