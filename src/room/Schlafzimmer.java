@@ -3,10 +3,9 @@ package room;
 import java.util.HashMap;
 import java.util.Map;
 
-import view.View;
+import room.view.View;
 
 public class Schlafzimmer extends Room {
-
     public Schlafzimmer() {
         super();
     }
@@ -29,5 +28,6 @@ public class Schlafzimmer extends Room {
     public Map<String, View> getViews() {
         return new HashMap<>();
     }
+
 
 }
