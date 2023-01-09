@@ -30,13 +30,14 @@ public class Parser {
         String command = parts[0];
         String argument = parts.length > 1 ? parts[1] : null;
 
-        if (argument == null) {
-            if (!simpleCommands.containsKey(command)) {
-                catcher.accept(command);
-            }
+        if (simpleCommands.containsKey(command)) {
             simpleCommands.get(command).run();
-        } else {
+        } else if (paramCommands.containsKey(command)) {
             paramCommands.get(command).accept(argument);
+        } else if (catcher != null) {
+            catcher.accept(input);
+        } else {
+            System.out.println("Unbekannter Befehl.");
         }
     }
 }
