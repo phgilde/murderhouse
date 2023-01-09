@@ -1,5 +1,8 @@
-package view;
+package room.view;
 
+import java.util.Optional;
+import interaction.Action;
+import interaction.Reaction;
 
 public abstract class View {
 
@@ -14,8 +17,8 @@ public abstract class View {
      * Führt eine Interaktion mit der Ansicht durch.
      * 
      * @param action Die Interaktion.
-     * @return Beschreibung der Reaktion auf die Interaktion.
+     * @return Reaktion auf die Interaktion.
      */
-    public abstract String interact(String action);
+    public abstract Optional<Reaction> interact(Action action);
 
 }
