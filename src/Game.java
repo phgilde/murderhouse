@@ -1,6 +1,5 @@
 import java.util.LinkedList;
 import java.util.Scanner;
-import java.util.regex.Pattern;
 
 import control.Parser;
 import item.Item;
@@ -33,6 +32,7 @@ class Game {
             System.out.println("Du kannst folgende Befehle eingeben:");
             System.out.println("umsehen: Beschreibt den Raum");
             System.out.println("inventar: Zeigt das Inventar an");
+            System.out.println("gehe <Richtung>: Geht in die angegebene Richtung");
             System.out.println("quit: Beendet das Spiel");
             System.out.println("hilfe: Zeigt diese Hilfe an");
         });
