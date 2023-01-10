@@ -1,8 +1,8 @@
 package room.view;
 
 import java.util.Optional;
-import interaction.Action;
-import interaction.Reaction;
+import item.Item;
+import room.Room;
 
 public abstract class View {
 
@@ -19,6 +19,6 @@ public abstract class View {
      * @param action Die Interaktion.
      * @return Reaktion auf die Interaktion.
      */
-    public abstract Optional<Reaction> interact(Action action);
+    public abstract String interact(Optional<Item> heldItem);
 
 }

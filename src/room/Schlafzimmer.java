@@ -2,10 +2,12 @@ package room;
 
 import java.util.HashMap;
 import java.util.Map;
-
+import java.util.Optional;
+import item.Item;
 import room.view.View;
 
 public class Schlafzimmer extends Room {
+
     public Schlafzimmer() {
         super();
     }
@@ -29,5 +31,7 @@ public class Schlafzimmer extends Room {
         return new HashMap<>();
     }
 
-
+    public void interact(View view, Optional<Item> heldItem) {
+        
+    }
 }

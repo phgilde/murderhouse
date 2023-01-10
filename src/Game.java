@@ -75,7 +75,6 @@ class Game {
                 System.out.println("Du hältst nichts.");
             }
         });
-        
     }
 
     public void mainLoop() {

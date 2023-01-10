@@ -1,7 +1,8 @@
 package room;
 
 import java.util.Map;
-
+import java.util.Optional;
+import item.Item;
 import room.view.View;
 
 public abstract class Room {
@@ -32,5 +33,12 @@ public abstract class Room {
      * @return Views.
      */
     public abstract Map<String, View> getViews();
+
+    /**
+     * Führt eine Interaktion mit einer Ansicht im Raum durch.
+     * @param view Ansicht.
+     * @param heldItem Das Item, das der Spieler in der Hand hält.
+     */
+    public abstract void interact(View view, Optional<Item> heldItem);
 
 }
