@@ -1,4 +1,4 @@
-import java.util.LinkedList;
+import java.util.HashMap;
 import java.util.Optional;
 import java.util.Scanner;
 
@@ -11,20 +11,20 @@ import room.view.View;
 class Game {
     Optional<View> currentView = Optional.empty();
     Room currentRoom;
-    LinkedList<Item> inventory;
+    HashMap<String, Item> inventory;
     Scanner scanner = new Scanner(System.in);
     Parser parser = new Parser();
     Optional<Item> heldItem = Optional.empty();
 
     public Game() {
         currentRoom = new Schlafzimmer();
-        inventory = new LinkedList<Item>();
+        inventory = new HashMap<String, Item>();
         parser.setSimpleCommand("umsehen", () -> System.out.println(currentRoom.getDescription()));
         parser.setSimpleCommand("inventar", () -> {
             if (inventory.size() != 0) {
                 System.out.println("Du hast folgende Gegenstände im Inventar:");
-                for (Item item : inventory) {
-                    System.out.println(item.getName());
+                for (String item : inventory.keySet()) {
+                    System.out.println(item);
                 }
             } else {
                 System.out.println("Du hast keine Gegenstände im Inventar.");
@@ -60,9 +60,8 @@ class Game {
             }
         });
         parser.setParamCommand("halte", (String item) -> {
-            Optional<Item> invItem = inventory.stream().filter(i -> i.getName().equals(item)).findFirst();
-            if (invItem.isPresent()) {
-                heldItem = invItem;
+            if (inventory.containsKey(item)) {
+                heldItem = Optional.of(inventory.get(item));
                 System.out.println("Du hältst " + heldItem.get().getName() + ".");
             } else {
                 System.out.println("Du hast das nicht im Inventar.");
