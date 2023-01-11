@@ -1,6 +1,8 @@
 package room;
 
 import java.util.HashMap;
+import java.util.LinkedList;
+import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 import item.Item;
@@ -22,8 +24,8 @@ public class Schlafzimmer extends Room {
     }
 
     @Override
-    public Map<String, Room> getAdjacentRooms() {
-        return new HashMap<>();
+    public List<String> getAdjacentRooms() {
+        return new LinkedList<String>();
     }
 
     @Override

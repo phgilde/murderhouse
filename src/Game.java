@@ -11,14 +11,15 @@ import room.view.View;
 class Game {
     Optional<View> currentView = Optional.empty();
     Room currentRoom;
-    HashMap<String, Item> inventory;
+    HashMap<String, Item> inventory = new HashMap<String, Item>();
     Scanner scanner = new Scanner(System.in);
     Parser parser = new Parser();
     Optional<Item> heldItem = Optional.empty();
+    HashMap<String, Room> rooms = new HashMap<String, Room>();
 
     public Game() {
         currentRoom = new Schlafzimmer();
-        inventory = new HashMap<String, Item>();
+        rooms.put("Schlafzimmer", currentRoom);
         parser.setSimpleCommand("umsehen", () -> System.out.println(currentRoom.getDescription()));
         parser.setSimpleCommand("inventar", () -> {
             if (inventory.size() != 0) {
@@ -43,8 +44,8 @@ class Game {
             System.out.println("ansehen: Beschreibt den gehaltenen Gegenstand");
         });
         parser.setParamCommand("gehe", (String direction) -> {
-            if (currentRoom.getAdjacentRooms().containsKey(direction)) {
-                currentRoom = currentRoom.getAdjacentRooms().get(direction);
+            if (currentRoom.getAdjacentRooms().contains(direction)) {
+                currentRoom = rooms.get(direction);
                 currentView = null;
                 System.out.println(currentRoom.getDescription());
             } else {
