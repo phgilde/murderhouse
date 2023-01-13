@@ -18,8 +18,9 @@ class Game {
     HashMap<String, Room> rooms = new HashMap<String, Room>();
 
     public Game() {
-        currentRoom = new Schlafzimmer();
-        rooms.put("Schlafzimmer", currentRoom);
+        currentRoom = new Wohnzimmer();
+        rooms.put("Schlafzimmer", new Schlafzimmer());
+        rooms.put("Wohnzimmer", currentRoom);
         parser.setSimpleCommand("umsehen", () -> System.out.println(currentRoom.getDescription()));
         parser.setSimpleCommand("inventar", () -> {
             if (inventory.size() != 0) {
