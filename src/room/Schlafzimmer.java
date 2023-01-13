@@ -11,7 +11,6 @@ import room.view.View;
 public class Schlafzimmer extends Room {
 
     public Schlafzimmer() {
-        super();
     }
 
     public String getName() {
