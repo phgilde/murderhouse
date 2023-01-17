@@ -44,6 +44,7 @@ class Game {
             System.out.println("halte <Gegenstand>: Gegenstand aus dem Inventar halten");
             System.out.println("ansehen: Beschreibt den gehaltenen Gegenstand");
             System.out.println("interagiere: Interagiert mit der Ansicht");
+            System.out.println("nimm <Gegenstand>: Nimm den angegebenen Gegenstand");
         });
         parser.setParamCommand("gehe", (String direction) -> {
             if (currentRoom.getAdjacentRooms().contains(direction)) {
@@ -82,7 +83,20 @@ class Game {
                 currentRoom.interact(currentView.get(), heldItem);
                 System.out.println(currentView.get().interact(heldItem));
             } else {
-                System.out.println("Du kannst nichts interagieren.");
+                System.out.println("Du kannst nicht interagieren.");
+            }
+        });
+        parser.setParamCommand("nimm", (String item) -> {
+            if (currentView.isPresent()) {
+                if (currentView.get().getAvailableItems().containsKey(item)) {
+                    inventory.put(item, currentView.get().getAvailableItems().get(item));
+                    currentView.get().getAvailableItems().remove(item);
+                    System.out.println("Du hast " + item + " genommen.");
+                } else {
+                    System.out.println("Du kannst das nicht nehmen.");
+                }
+            } else {
+                System.out.println("Du kannst nichts nehmen.");
             }
         });
     }
