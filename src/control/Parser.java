@@ -28,8 +28,10 @@ public class Parser {
     public void parse(String input) {
         String[] parts = input.split(" ");
         String command = parts[0];
-        String argument = parts.length > 1 ? parts[1] : null;
-
+        String argument = "";
+        for (int i = 1; i < parts.length; i++) {
+            argument += parts[i] + " ";
+        }
         if (simpleCommands.containsKey(command)) {
             simpleCommands.get(command).run();
         } else if (paramCommands.containsKey(command)) {
