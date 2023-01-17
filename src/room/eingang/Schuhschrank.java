@@ -9,12 +9,17 @@ public class Schuhschrank extends View{
     private HashMap<String, Item> items = new HashMap<>();
 
     public Schuhschrank(){
-     items.put("Schluesselbraun", new Schuhe("rosa"));
+     items.put("Schuhrosa", new Schuhe("rosa"));
+     items.put("Schuhbraun", new Schuhe("braun"));
+     items.put("Schuhblau", new Schuhe("blau"));
+     items.put("Schuhschwarz", new Schuhe("schwarz"));
+     items.put("Schuhweiß", new Schuhe("weiß"));
+     items.put("Schuhgrau", new Schuhe("grau"));
      
     }
 
     public String getDescription(){
-      return "du seihts zwei Schlüssel"; 
+      return "du siehst sechs Schuhe"; 
     }
     @Override
     public Object interact(Optional<Item> heldItem){
