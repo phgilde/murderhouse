@@ -18,7 +18,7 @@ public class Saal extends Room{
         adjacentRooms.add("Schlafzimmer");
         adjacentRooms.add("Wohnzimmer");
 
-
+        views.put("Aufzug", new Aufzug());
     }
 
     @Override
