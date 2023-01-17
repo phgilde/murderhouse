@@ -1,4 +1,4 @@
-public class Schluesselkiste extends view {
+public class Schluesselkiste extends View {
 
     public Schluesselkiste(){
 

@@ -1,3 +1,8 @@
+import java.util.HashMap;
+import java.util.LinkedList;
+import room.Room;
+import room.view.View;
+
 public class Eingang extends Room{
     private LinkedList<String> adjacentRooms = new LinkedList<String>();
     private HashMap<String, View> views = new HashMap<>();
@@ -5,8 +10,8 @@ public class Eingang extends Room{
     public Eingang(){
       adjacentRooms.add("Treppenhaus");
       adjacentRooms.add("Draussen");
-      views.add("Schluesselkiste", new Schluesselkiste());
-      views.add("Schuhschrank", new Schuhschrank()); 
+      views.put("Schluesselkiste", new Schluesselkiste());
+      views.put("Schuhschrank", new Schuhschrank()); 
     }
 
 
