@@ -21,4 +21,3 @@ public class Schuhschrank extends View{
         return null; 
     }
 }
-}
