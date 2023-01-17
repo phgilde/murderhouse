@@ -19,6 +19,6 @@ public abstract class View {
      * @param action Die Interaktion.
      * @return Reaktion auf die Interaktion.
      */
-    public abstract String interact(Optional<Item> heldItem);
+    public abstract Object interact(Optional<Item> heldItem);
 
 }
