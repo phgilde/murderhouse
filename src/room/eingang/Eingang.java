@@ -8,32 +8,30 @@ import item.Item;
 import room.Room;
 import room.view.View;
 
-public class Eingang extends Room{
+public class Eingang extends Room {
     private LinkedList<String> adjacentRooms = new LinkedList<String>();
     private HashMap<String, View> views = new HashMap<>();
 
-    public Eingang(){
-      adjacentRooms.add("Treppenhaus");
-      adjacentRooms.add("Draussen");
-      views.put("Schluesselkiste", new Schluesselkiste());
-      views.put("Schuhschrank", new Schuhschrank()); 
+    public Eingang() {
+        adjacentRooms.add("Treppenhaus");
+        adjacentRooms.add("Draussen");
+        views.put("Schluesselkiste", new Schluesselkiste());
+        views.put("Schuhschrank", new Schuhschrank());
     }
 
-
-    public String getName(){
+    public String getName() {
         return "Eingang";
     }
 
     @Override
-    public String getDescription(){
-          return "In dem Eingang befindet sich ein Schuhschrank, eine Zimmerplanze, eine Schlüsselbox und die Eingangstür";
-
+    public String getDescription() {
+        return "In dem Eingang befindet sich ein Schuhschrank, eine Zimmerplanze, eine Schlüsselbox und die Eingangstür";
 
     }
 
     @Override
     public List<String> getAdjacentRooms() {
-        return adjacentRooms ;
+        return adjacentRooms;
     }
 
     @Override
@@ -41,12 +39,10 @@ public class Eingang extends Room{
         return views;
 
     }
- 
-
 
     @Override
     public void interact(View view, Optional<Item> heldItem) {
         // TODO Auto-generated method stub
-        
+
     }
 }
