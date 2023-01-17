@@ -1,4 +1,5 @@
 import java.util.HashMap;
+import java.util.Map;
 import java.util.Optional;
 
 import item.Item;
@@ -17,7 +18,13 @@ public class Schluesselkiste extends View {
       return "du seihts zwei Schlüssel"; 
     }
     @Override
-    public Object interact(Optional<Item> heldItem){
+    public String interact(Optional<Item> heldItem){
         return null; 
+    }
+
+    @Override
+    public Map<String, Item> getAvailableItems() {
+        
+        return items;
     }
 }

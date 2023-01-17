@@ -1,5 +1,6 @@
 import room.view.View;
 import java.util.HashMap;
+import java.util.Map;
 import java.util.Optional;
 
 import item.Item;
@@ -22,7 +23,14 @@ public class Schuhschrank extends View{
       return "du siehst sechs Schuhe"; 
     }
     @Override
-    public Object interact(Optional<Item> heldItem){
+    public String interact(Optional<Item> heldItem){
         return null; 
+
+    }
+
+    @Override
+    public Map<String, Item> getAvailableItems() {
+        
+        return items;
     }
 }

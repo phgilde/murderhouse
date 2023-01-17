@@ -1,3 +1,4 @@
+import java.util.Map;
 import java.util.Optional;
 import item.Item;
 import room.view.View;
@@ -23,6 +24,12 @@ public class Fernseher extends View {
             isOn = true;
             return "Du schaltest den Fernseher an.";
         }
+    }
+
+    @Override
+    public Map<String, Item> getAvailableItems() {
+        // TODO Auto-generated method stub
+        return null;
     }
     
 }
