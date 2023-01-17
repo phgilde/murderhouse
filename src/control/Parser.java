@@ -32,6 +32,8 @@ public class Parser {
         for (int i = 1; i < parts.length; i++) {
             argument += parts[i] + " ";
         }
+        argument = argument.trim();
+
         if (simpleCommands.containsKey(command)) {
             simpleCommands.get(command).run();
         } else if (paramCommands.containsKey(command)) {
