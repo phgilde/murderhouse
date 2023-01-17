@@ -76,6 +76,14 @@ class Game {
                 System.out.println("Du hältst nichts.");
             }
         });
+        parser.setSimpleCommand("interagiere", () -> {
+            if (currentView.isPresent()) {
+                currentRoom.interact(currentView.get(), heldItem);
+                System.out.println(currentView.get().interact(heldItem));
+            } else {
+                System.out.println("Du kannst nichts interagieren.");
+            }
+        });
     }
 
     public void mainLoop() {
