@@ -9,22 +9,23 @@ import room.view.View;
 public class Schluesselkiste extends View {
     private HashMap<String, Item> items = new HashMap<>();
 
-    public Schluesselkiste(){
-     items.put("Schluesselbraun", new Schluessel("braun"));
-     
+    public Schluesselkiste() {
+        items.put("Schluesselbraun", new Schluessel("braun"));
+
     }
 
-    public String getDescription(){
-      return "du seihts zwei Schlüssel"; 
+    public String getDescription() {
+        return "du seihts zwei Schlüssel";
     }
+
     @Override
-    public String interact(Optional<Item> heldItem){
-        return null; 
+    public String interact(Optional<Item> heldItem) {
+        return null;
     }
 
     @Override
     public Map<String, Item> getAvailableItems() {
-        
+
         return items;
     }
 }
