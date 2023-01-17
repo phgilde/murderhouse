@@ -1,3 +1,4 @@
+import java.util.Map;
 import java.util.Optional;
 
 import item.Item;
@@ -12,9 +13,16 @@ public class Pflanze extends View {
     }
 
     @Override
-    public Object interact(Optional<Item> heldItem) {
+    public String interact(Optional<Item> heldItem) {
         // TODO Auto-generated method stub
         return null;
     }
+
+    @Override
+    public Map<String, Item> getAvailableItems() {
+        // TODO Auto-generated method stub
+        return null;
+    }
+
     
 }
