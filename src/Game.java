@@ -43,6 +43,7 @@ class Game {
             System.out.println("inspiziere <Ansicht>: Inspiziert die angegebene Ansicht");
             System.out.println("halte <Gegenstand>: Gegenstand aus dem Inventar halten");
             System.out.println("ansehen: Beschreibt den gehaltenen Gegenstand");
+            System.out.println("interagiere: Interagiert mit der Ansicht");
         });
         parser.setParamCommand("gehe", (String direction) -> {
             if (currentRoom.getAdjacentRooms().contains(direction)) {
