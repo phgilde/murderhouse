@@ -21,6 +21,7 @@ class Game {
         currentRoom = new Wohnzimmer();
         rooms.put("Schlafzimmer", new Schlafzimmer());
         rooms.put("Wohnzimmer", currentRoom);
+        rooms.put("Saal", new Saal());
         parser.setSimpleCommand("umsehen", () -> System.out.println(currentRoom.getDescription()));
         parser.setSimpleCommand("inventar", () -> {
             if (inventory.size() != 0) {

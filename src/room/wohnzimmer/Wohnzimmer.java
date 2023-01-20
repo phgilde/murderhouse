@@ -10,7 +10,7 @@ import room.view.View;
 public class Wohnzimmer extends Room {
     private HashMap<String, View> views = new HashMap<String, View>();
     public Wohnzimmer() {
-        adjacentRooms.add("Treppenhaus");
+        adjacentRooms.add("Saal");
         views.put("Fernseher", new Fernseher());
     }
     private LinkedList<String> adjacentRooms = new LinkedList<String>();
@@ -22,8 +22,8 @@ public class Wohnzimmer extends Room {
 
     @Override
     public String getDescription() {
-        return "Du befindest dich im Wohnzimmer. Hier ist eine Sofalandschaft und ein Fernseher. "
-                + "Von hier aus kannst du ins Treppenhaus gehen.";
+        return "Du befindest dich im Wohnzimmer. Hier ist eine Sofalandschaft und ein *Fernseher*. "
+                + "Von hier aus kannst du in den *Saal* gehen.";
     }
 
     @Override
