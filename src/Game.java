@@ -5,7 +5,6 @@ import java.util.Scanner;
 import control.Parser;
 import item.Item;
 import room.Room;
-import room.Schlafzimmer;
 import room.view.View;
 import util.SlowPrint;
 
@@ -20,7 +19,6 @@ class Game {
 
     public Game() {
         currentRoom = new Wohnzimmer();
-        rooms.put("Schlafzimmer", new Schlafzimmer());
         rooms.put("Wohnzimmer", currentRoom);
         rooms.put("Saal", new Saal());
         parser.setSimpleCommand("umsehen", () -> SlowPrint.slowPrint(currentRoom.getDescription()));

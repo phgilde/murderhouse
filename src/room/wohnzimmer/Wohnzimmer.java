@@ -10,14 +10,14 @@ import room.view.View;
 public class Wohnzimmer extends Room {
     private HashMap<String, View> views = new HashMap<String, View>();
     public Wohnzimmer() {
-        adjacentRooms.add("Saal");
-        views.put("Fernseher", new Fernseher());
+        adjacentRooms.add("saal");
+        views.put("fernseher", new Fernseher());
     }
     private LinkedList<String> adjacentRooms = new LinkedList<String>();
 
     @Override
     public String getName() {
-        return "Wohnzimmer";
+        return "wohnzimmer";
     }
 
     @Override
