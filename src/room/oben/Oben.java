@@ -13,7 +13,7 @@ public class Oben extends Room{
     private LinkedList<String> adjacentRooms = new LinkedList<String>(); 
     
     public Oben(){
-        adjacentRooms.add("RaumOle");
+        adjacentRooms.add("oles zimmer");
     }
 
     @Override
@@ -24,7 +24,8 @@ public class Oben extends Room{
     @Override
     public String getDescription() {
         return "Völlig außer Atem überlegst du in welchen der verschiedenen Räume du gehen willst"
-        + "Du siehst das Zimmer von Ole";
+        + "Du siehst *Oles Zimmer*, welches nach sehr günstigem Parfüm und eckelhaften Socken müffelt. \n"
+        + "*Hinweis: Wenn du ein Zimmer betreten willst, dann kannst du den Namen und das Zimmer nach dem gehe-Command schreiben. Beispiel: gehe Oles Zimmer*";
     }
 
     @Override
