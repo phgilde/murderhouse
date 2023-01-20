@@ -10,7 +10,6 @@ import room.view.View;
 
 public class Saal extends Room{
     private HashMap<String, View> views = new HashMap<String, View>();
-    private LinkedList<String> adjacentRooms = new LinkedList<String>();
 
     public Saal(){
         adjacentRooms.add("eingang");
@@ -36,11 +35,6 @@ public class Saal extends Room{
         + "Dein Blick wandert auf die Treppe mit einem prachtvollen roten Teppich auf den Stufen, die nach *Oben* führt. \n"
         + "Am Handlauf ist der Aufzug für einen Rollstuhl angebracht.";
 
-    }
-
-    @Override
-    public List<String> getAdjacentRooms(){
-        return adjacentRooms;
     }
 
     @Override

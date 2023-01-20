@@ -8,6 +8,10 @@ import room.view.View;
 
 public abstract class Room {
     /**
+     * List der angrenzenden Räume.
+     */
+    protected List<String> adjacentRooms = List.of();
+    /**
      * Gibt den Namen des Raums zurück.
      * 
      * @return Name.
@@ -26,7 +30,9 @@ public abstract class Room {
      * 
      * @return Angrenzende Räume.
      */
-    public abstract List<String> getAdjacentRooms();
+    public List<String> getAdjacentRooms() {
+        return adjacentRooms;
+    };
 
     /**
      * Gibt die Views zurück, die der Spieler von diesem Raum aus sehen kann.

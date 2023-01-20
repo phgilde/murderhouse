@@ -13,7 +13,6 @@ public class Wohnzimmer extends Room {
         adjacentRooms.add("saal");
         views.put("fernseher", new Fernseher());
     }
-    private LinkedList<String> adjacentRooms = new LinkedList<String>();
 
     @Override
     public String getName() {
@@ -24,11 +23,6 @@ public class Wohnzimmer extends Room {
     public String getDescription() {
         return "Du befindest dich im Wohnzimmer. Hier ist eine Sofalandschaft und ein *Fernseher*. "
                 + "Von hier aus kannst du in den *Saal* gehen.";
-    }
-
-    @Override
-    public List<String> getAdjacentRooms() {
-        return adjacentRooms;
     }
 
     @Override
