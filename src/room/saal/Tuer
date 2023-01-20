@@ -1,0 +1,16 @@
+import view.View;
+
+public class Tuer extends View{
+    
+    @Override 
+    public String getDescription(){
+        return "";
+    }
+
+    @Override
+
+    public String interact(Item i){
+        pass;
+    }
+
+}
