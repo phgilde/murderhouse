@@ -1,4 +1,4 @@
-package room.oben;
+package room.flur;
 
 import java.util.LinkedList;
 import java.util.List;
@@ -9,22 +9,23 @@ import item.Item;
 import room.Room;
 import room.view.View;
 
-public class Oben extends Room{
+public class Flur extends Room{
     private LinkedList<String> adjacentRooms = new LinkedList<String>(); 
     
-    public Oben(){
-        adjacentRooms.add("RaumOle");
+    public Flur(){
+        adjacentRooms.add("oles zimmer");
     }
 
     @Override
     public String getName() {
-        return "Oben";
+        return "flur";
     }
 
     @Override
     public String getDescription() {
-        return "Völlig außer Atem überlegst du in welchen der verschiedenen Räume du gehen willst"
-        + "Du siehst das Zimmer von Ole";
+        return "Du bist im *Flur* angekommen. Völlig außer Atem überlegst du in welchen der verschiedenen Räume du gehen willst"
+        + "Du siehst *Oles Zimmer*, welches von weitem nach sehr günstigem Parfüm und eckelhaften Socken müffelt. \n"
+        + "*Hinweis: Wenn du ein Zimmer betreten willst, dann kannst du den Namen und das Zimmer nach dem gehe-Command schreiben. Beispiel: gehe Oles Zimmer*";
     }
 
     @Override
