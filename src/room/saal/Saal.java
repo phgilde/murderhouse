@@ -18,7 +18,7 @@ public class Saal extends Room{
         adjacentRooms.add("küche");
         //TODO: Abzimmer gesperrt
         adjacentRooms.add("arbeitszimmer");
-        adjacentRooms.add("oben");
+        adjacentRooms.add("flur");
     }
 
     @Override
@@ -33,7 +33,7 @@ public class Saal extends Room{
         + "Aus der *Küche* duftet es prächtig nach deinem Lieblingsessen: Schokokuchen. \n"
         + "Überdeckt wird dieser göttliche Duft mit einer übelriechende Fahne aus dem *Arbeitszimmer*. \n"
         + "In deinem Nacken spürst du den kalten Windzug aus dem *Eingang* des Hauses."
-        + "Dein Blick wandert auf die Treppe mit einem prachtvollen roten Teppich auf den Stufen, die nach *Oben* führt. \n"
+        + "Dein Blick wandert auf die Treppe mit einem prachtvollen roten Teppich auf den Stufen, die zum oberen *Flur* führt. \n"
         + "Am Handlauf ist der Aufzug für einen Rollstuhl angebracht.";
 
     }
