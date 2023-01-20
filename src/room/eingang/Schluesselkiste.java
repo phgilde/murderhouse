@@ -7,10 +7,10 @@ import item.Schluessel;
 import room.view.View;
 
 public class Schluesselkiste extends View {
-    private HashMap<String, Item> items = new HashMap<>();
 
     public Schluesselkiste() {
-        items.put("Schluesselbraun", new Schluessel("braun"));
+        items.put("brauner Schlüssel", new SimpleItem("brauner Schlüssel",
+                "Ein brauner Schlüssel mit einem ledernen Schlüsselband."));
 
     }
 
