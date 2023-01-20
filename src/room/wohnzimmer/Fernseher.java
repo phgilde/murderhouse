@@ -28,9 +28,5 @@ public class Fernseher extends View {
         }
     }
 
-    @Override
-    public Map<String, Item> getAvailableItems() {
-        return new HashMap<String, Item>();
-    }
     
 }

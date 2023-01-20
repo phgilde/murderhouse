@@ -1,13 +1,10 @@
 import room.view.View;
-import java.util.HashMap;
-import java.util.Map;
 import java.util.Optional;
 
 import item.Item;
 import item.Schuhe;
 
 public class Schuhschrank extends View {
-    private HashMap<String, Item> items = new HashMap<>();
 
     public Schuhschrank() {
         items.put("Schuhrosa", new Schuhe("rosa"));
@@ -29,9 +26,5 @@ public class Schuhschrank extends View {
 
     }
 
-    @Override
-    public Map<String, Item> getAvailableItems() {
 
-        return items;
-    }
 }

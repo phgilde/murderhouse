@@ -1,4 +1,3 @@
-import java.util.Map;
 import java.util.Optional;
 
 import item.Item;
@@ -17,12 +16,5 @@ public class Pflanze extends View {
         // TODO Auto-generated method stub
         return null;
     }
-
-    @Override
-    public Map<String, Item> getAvailableItems() {
-        // TODO Auto-generated method stub
-        return null;
-    }
-
     
 }

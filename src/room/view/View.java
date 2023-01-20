@@ -5,6 +5,7 @@ import java.util.Optional;
 import item.Item;
 
 public abstract class View {
+    protected Map<String, Item> items;
 
     /**
      * Gibt eine Beschreibung der Ansicht zurück.
@@ -21,5 +22,16 @@ public abstract class View {
      */
     public abstract String interact(Optional<Item> heldItem);
 
-    public abstract Map<String, Item> getAvailableItems();
+    /**
+     * Spieler versucht, einen Gegenstand aus der Ansicht zu nehmen.
+     * @param itemName Name des Gegenstands.
+     * @return Der Gegenstand, falls er genommen werden konnte.
+     */
+    public Optional<Item> takeItem(String itemName) {
+        if (items.containsKey(itemName)) {
+            return Optional.of(items.get(itemName));
+        } else {
+            return Optional.empty();
+        }
+    }
 }

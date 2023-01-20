@@ -1,9 +1,7 @@
-import java.util.HashMap;
-import java.util.Map;
 import java.util.Optional;
 
 import item.Item;
-import item.Schluessel;
+import item.SimpleItem;
 import room.view.View;
 
 public class Schluesselkiste extends View {
@@ -21,11 +19,5 @@ public class Schluesselkiste extends View {
     @Override
     public String interact(Optional<Item> heldItem) {
         return null;
-    }
-
-    @Override
-    public Map<String, Item> getAvailableItems() {
-
-        return items;
     }
 }
