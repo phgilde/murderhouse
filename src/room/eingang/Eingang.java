@@ -13,19 +13,19 @@ public class Eingang extends Room {
     private HashMap<String, View> views = new HashMap<>();
 
     public Eingang() {
-        adjacentRooms.add("Treppenhaus");
-        adjacentRooms.add("Draussen");
-        views.put("Schluesselkiste", new Schluesselkiste());
-        views.put("Schuhschrank", new Schuhschrank());
+        adjacentRooms.add("saal");
+        adjacentRooms.add("draussen");
+        views.put("schluesselkiste", new Schluesselkiste());
+        views.put("schuhschrank", new Schuhschrank());
     }
 
     public String getName() {
-        return "Eingang";
+        return "eingang";
     }
 
     @Override
     public String getDescription() {
-        return "In dem Eingang befindet sich ein Schuhschrank, eine Zimmerplanze, eine Schlüsselbox und die Eingangstür";
+        return "In dem *Eingang* befindet sich ein Schuhschrank, eine Zimmerplanze, eine Schlüsselbox und die Eingangstür";
 
     }
 

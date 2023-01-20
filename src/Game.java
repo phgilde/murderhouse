@@ -5,7 +5,6 @@ import java.util.Scanner;
 import control.Parser;
 import item.Item;
 import room.Room;
-import room.Schlafzimmer;
 import room.view.View;
 
 class Game {
@@ -19,7 +18,6 @@ class Game {
 
     public Game() {
         currentRoom = new Wohnzimmer();
-        rooms.put("Schlafzimmer", new Schlafzimmer());
         rooms.put("Wohnzimmer", currentRoom);
         parser.setSimpleCommand("umsehen", () -> System.out.println(currentRoom.getDescription()));
         parser.setSimpleCommand("inventar", () -> {

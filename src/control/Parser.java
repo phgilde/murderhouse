@@ -32,7 +32,7 @@ public class Parser {
         for (int i = 1; i < parts.length; i++) {
             argument += parts[i] + " ";
         }
-        argument = argument.trim();
+        argument = argument.trim().toLowerCase();
 
         if (simpleCommands.containsKey(command)) {
             simpleCommands.get(command).run();
