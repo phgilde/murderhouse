@@ -15,10 +15,9 @@ public class Saal extends Room{
     public Saal(){
         adjacentRooms.add("Eingang");
         adjacentRooms.add("Wohnzimmer");
-        adjacentRooms.add("Schlafzimmer");
-        adjacentRooms.add("Wohnzimmer");
-
-        views.put("Aufzug", new Aufzug());
+        adjacentRooms.add("Küche");
+        adjacentRooms.add("Arbeitszimmer");
+        adjacentRooms.add("Oben");
     }
 
     @Override
@@ -28,7 +27,10 @@ public class Saal extends Room{
 
     @Override
     public String getDescription(){
-        return "Du stehst in der Mitte des Saals. ";
+        return "Du stehst in der Mitte des Saals. Von hier kommst du in fast alle Räume des Hauses."
+        + "Aus der *Küche* duftet es prächtig nach deinem Lieblingsessen: Schokokuchen"
+        + "Überdeckt wird dieser göttliche Duft mit einer übelriechende Fahne aus dem *Arbeitszimmers* ";
+
     }
 
     @Override
@@ -43,8 +45,5 @@ public class Saal extends Room{
 
     @Override
     public void interact(View view, Optional<Item> heldItem) {
-        // TODO Auto-generated method stub
-        
     }
-
 }
