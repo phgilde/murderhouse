@@ -10,7 +10,6 @@ import room.Room;
 import room.view.View;
 
 public class Flur extends Room{
-    private LinkedList<String> adjacentRooms = new LinkedList<String>(); 
     
     public Flur(){
         adjacentRooms.add("oles zimmer");
@@ -28,10 +27,6 @@ public class Flur extends Room{
         + "*Hinweis: Wenn du ein Zimmer betreten willst, dann kannst du den Namen und das Zimmer nach dem gehe-Command schreiben. Beispiel: gehe Oles Zimmer*";
     }
 
-    @Override
-    public List<String> getAdjacentRooms() {
-        return null;
-    }
 
     @Override
     public Map<String, View> getViews() {
