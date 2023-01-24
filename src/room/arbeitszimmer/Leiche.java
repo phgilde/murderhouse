@@ -9,6 +9,7 @@ import room.view.View;
 
 public class Leiche extends Human{
     boolean hatSchlüssel = true;
+    boolean istTot = true;
 
     public Leiche(){
         items.put("grüner schlüssel", new SimpleItem("grüner schlüssel", ""));
@@ -19,7 +20,7 @@ public class Leiche extends Human{
         if(hatSchlüssel){
             return "Um Oles Hals hängt ein grüner Schlüssel";
         }
-        
+        return "";
     }
 
     @Override
@@ -30,7 +31,10 @@ public class Leiche extends Human{
     @Override
     public String talk(Optional<Item> heldItem) {
         // TODO lustige Optionen
-        return "Ole schweigt.";
+        if(istTot){
+            return "Ole schweigt.";
+        }
+        
     }
     
 }
