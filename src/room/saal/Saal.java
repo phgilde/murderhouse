@@ -15,7 +15,6 @@ public class Saal extends Room{
         adjacentRooms.add("eingang");
         adjacentRooms.add("wohnzimmer");
         adjacentRooms.add("küche");
-        //TODO: Abzimmer gesperrt
         adjacentRooms.add("arbeitszimmer");
         adjacentRooms.add("flur");
     }
