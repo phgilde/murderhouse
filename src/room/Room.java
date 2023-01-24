@@ -46,6 +46,6 @@ public abstract class Room {
      * @param view Ansicht.
      * @param heldItem Das Item, das der Spieler in der Hand hält.
      */
-    public abstract void interact(View view, Optional<Item> heldItem);
+    public void interact(View view, Optional<Item> heldItem) {};
 
 }
