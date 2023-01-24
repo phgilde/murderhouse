@@ -1,11 +1,12 @@
 package room.view;
 
+import java.util.HashMap;
 import java.util.Map;
 import java.util.Optional;
 import item.Item;
 
 public abstract class View {
-    protected Map<String, Item> items;
+    protected Map<String, Item> items = new HashMap<>();
 
     /**
      * Gibt eine Beschreibung der Ansicht zurück.
