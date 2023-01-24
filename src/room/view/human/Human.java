@@ -1,7 +1,8 @@
-package room.view;
+package room.view.human;
 
 import java.util.Optional;
 import item.Item;
+import room.view.View;
 
 public abstract class Human extends View {
     
