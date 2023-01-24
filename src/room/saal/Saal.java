@@ -9,13 +9,11 @@ import room.Room;
 import room.view.View;
 
 public class Saal extends Room{
-    private HashMap<String, View> views = new HashMap<String, View>();
 
     public Saal(){
         adjacentRooms.add("eingang");
         adjacentRooms.add("wohnzimmer");
         adjacentRooms.add("küche");
-        //TODO: Abzimmer gesperrt
         adjacentRooms.add("arbeitszimmer");
         adjacentRooms.add("flur");
     }

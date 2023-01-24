@@ -1,5 +1,6 @@
 package room;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
@@ -11,6 +12,8 @@ public abstract class Room {
      * List der angrenzenden Räume.
      */
     protected List<String> adjacentRooms = List.of();
+
+    protected HashMap<String, View> views = new HashMap<String, View>();
     /**
      * Gibt den Namen des Raums zurück.
      * 
@@ -46,6 +49,6 @@ public abstract class Room {
      * @param view Ansicht.
      * @param heldItem Das Item, das der Spieler in der Hand hält.
      */
-    public abstract void interact(View view, Optional<Item> heldItem);
+    public void interact(View view, Optional<Item> heldItem) {};
 
 }
