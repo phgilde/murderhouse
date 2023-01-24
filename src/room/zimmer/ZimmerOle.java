@@ -11,6 +11,7 @@ public class ZimmerOle extends Room {
     public ZimmerOle() {
         adjacentRooms.add("flur");
     }
+
     @Override
     public String getName() {
         return "oles schlafzimmer";
@@ -32,8 +33,6 @@ public class ZimmerOle extends Room {
 
     @Override
     public void interact(View view, Optional<Item> heldItem) {
-        // TODO Auto-generated method stub
-
     }
 
 }
