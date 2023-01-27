@@ -11,13 +11,13 @@ public class Leiche extends Human{
     boolean istTot = true;
 
     public Leiche(){
-        items.put("grüner schlüssel", new SimpleItem("grüner schlüssel", ""));
+        items.put("gruener schlüssel", new SimpleItem("gruener schlüssel", ""));
     }
 
     @Override
     public String getDescription() {
         if(hatSchlüssel){
-            return "Um Oles Hals hängt ein grüner Schlüssel";
+            return "Um Oles Hals hängt ein gruener Schlüssel";
         }
         return "";
     }
