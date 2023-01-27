@@ -24,7 +24,7 @@ public class Leiche extends Human{
 
     @Override
     public String interact(Optional<Item> heldItem) {
-
+        return null;
     }
 
     @Override
@@ -33,7 +33,7 @@ public class Leiche extends Human{
         if(istTot){
             return "Ole schweigt.";
         }
-        
+        return null;
     }
     
 }
