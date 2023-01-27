@@ -11,7 +11,7 @@ public class Leiche extends Human{
     boolean istTot = true;
 
     public Leiche(){
-        items.put("gruener schlüssel", new SimpleItem("gruener schlüssel", ""));
+        items.put("gruener schluessel", new SimpleItem("gruener schluessel", ""));
     }
 
     @Override
