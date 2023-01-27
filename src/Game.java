@@ -56,7 +56,9 @@ class Game {
             if (currentRoom.getAdjacentRooms().contains(direction)) {
                 currentRoom = rooms.get(direction);
                 currentView = Optional.empty();
-                SlowPrint.slowPrint(currentRoom.getDescription());
+                // Erster Buchstabe groß
+                String str = currentRoom.getName();
+                SlowPrint.slowPrint("Du bist in " + str.substring(0, 1).toUpperCase() + str.substring(1));
             } else {
                 SlowPrint.slowPrint("Du kannst nicht in diese Richtung gehen.");
             }
