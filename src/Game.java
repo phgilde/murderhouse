@@ -7,7 +7,7 @@ import item.Item;
 import room.Room;
 import room.flur.Flur;
 import room.view.View;
-import room.zimmer.ZimmerOle;
+import room.zimmer.zimmerole.ZimmerOle;
 import util.SlowPrint;
 
 class Game {
