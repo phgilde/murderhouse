@@ -4,8 +4,7 @@ import java.util.Optional;
 
 import item.Item;
 import item.SimpleItem;
-import room.view.Human;
-import room.view.View;
+import room.view.human.Human;
 
 public class Leiche extends Human{
     boolean hatSchlüssel = true;
@@ -25,7 +24,7 @@ public class Leiche extends Human{
 
     @Override
     public String interact(Optional<Item> heldItem) {
-        
+
     }
 
     @Override
