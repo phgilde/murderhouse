@@ -1,6 +1,7 @@
 package room;
 
 import java.util.HashMap;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
@@ -11,7 +12,7 @@ public abstract class Room {
     /**
      * List der angrenzenden Räume.
      */
-    protected List<String> adjacentRooms = List.of();
+    protected List<String> adjacentRooms = new LinkedList<String>();
 
     protected HashMap<String, View> views = new HashMap<String, View>();
     /**

@@ -4,33 +4,36 @@ import java.util.Optional;
 
 import item.Item;
 import item.SimpleItem;
-import room.view.Human;
-import room.view.View;
+import room.view.human.Human;
 
 public class Leiche extends Human{
     boolean hatSchlüssel = true;
+    boolean istTot = true;
 
     public Leiche(){
-        items.put("grüner schlüssel", new SimpleItem("grüner schlüssel", ""));
+        items.put("gruener schluessel", new SimpleItem("gruener schluessel", ""));
     }
 
     @Override
     public String getDescription() {
         if(hatSchlüssel){
-            return "Um Oles Hals hängt ein grüner Schlüssel";
+            return "Um Oles Hals hängt ein gruener Schlüssel";
         }
-        
+        return "";
     }
 
     @Override
     public String interact(Optional<Item> heldItem) {
-        
+
     }
 
     @Override
     public String talk(Optional<Item> heldItem) {
         // TODO lustige Optionen
-        return "Ole schweigt.";
+        if(istTot){
+            return "Ole schweigt.";
+        }
+        
     }
     
 }
