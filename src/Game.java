@@ -5,7 +5,9 @@ import java.util.Scanner;
 import control.Parser;
 import item.Item;
 import room.Room;
+import room.flur.Flur;
 import room.view.View;
+import room.zimmer.ZimmerOle;
 import util.SlowPrint;
 
 class Game {
@@ -21,6 +23,8 @@ class Game {
         currentRoom = new Wohnzimmer();
         rooms.put("wohnzimmer", currentRoom);
         rooms.put("saal", new Saal());
+        rooms.put("flur", new Flur());
+        rooms.put("oles zimmer", new ZimmerOle());
         parser.setSimpleCommand("umsehen", () -> SlowPrint.slowPrint(currentRoom.getDescription()));
         parser.setSimpleCommand("inventar", () -> {
             if (inventory.size() != 0) {
