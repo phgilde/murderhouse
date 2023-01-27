@@ -7,12 +7,12 @@ import item.Schuhe;
 public class Schuhschrank extends View {
 
     public Schuhschrank() {
-        items.put("Schuhrosa", new Schuhe("rosa"));
-        items.put("Schuhbraun", new Schuhe("braun"));
-        items.put("Schuhblau", new Schuhe("blau"));
-        items.put("Schuhschwarz", new Schuhe("schwarz"));
-        items.put("Schuhweiß", new Schuhe("weiß"));
-        items.put("Schuhgrau", new Schuhe("grau"));
+        items.put("schuhrosa", new Schuhe("rosa"));
+        items.put("schuhbraun", new Schuhe("braun"));
+        items.put("schuhblau", new Schuhe("blau"));
+        items.put("schuhschwarz", new Schuhe("schwarz"));
+        items.put("schuhweiß", new Schuhe("weiß"));
+        items.put("schuhgrau", new Schuhe("grau"));
 
     }
 

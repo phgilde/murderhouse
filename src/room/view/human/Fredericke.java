@@ -13,6 +13,8 @@ public class Fredericke extends Human {
         }else if(heldItem.get().getName().equals("handschuhe")){
             return "Niemals! Mein Sohn würde so etwas niemals machen!" +
              "Was sind Sie den für ein Detektiv das Sie solche Hirngespenster in betracht ziehen! Also wirklich Dirk! Von Ihnen hätte ich sowas nicht erwartet"; 
+        }else{
+            return "'Lassen Sie mich bitte in Ruhe. Mein Mann ist gerade gestorben! Ist das nicht genug?' *Schluchz*";
         }
 
     }
