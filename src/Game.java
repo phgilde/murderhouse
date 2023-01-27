@@ -5,6 +5,7 @@ import java.util.Scanner;
 import control.Parser;
 import item.Item;
 import room.Room;
+import room.arbeitszimmer.Arbeitszimmer;
 import room.flur.Flur;
 import room.view.View;
 import room.zimmer.zimmerole.ZimmerOle;
@@ -24,6 +25,7 @@ class Game {
         rooms.put("wohnzimmer", currentRoom);
         rooms.put("saal", new Saal());
         rooms.put("flur", new Flur());
+        rooms.put("arbeitszimmer", new Arbeitszimmer());
         rooms.put("oles zimmer", new ZimmerOle());
         parser.setSimpleCommand("umsehen", () -> SlowPrint.slowPrint(currentRoom.getDescription()));
         parser.setSimpleCommand("inventar", () -> {
@@ -54,7 +56,9 @@ class Game {
             if (currentRoom.getAdjacentRooms().contains(direction)) {
                 currentRoom = rooms.get(direction);
                 currentView = Optional.empty();
-                SlowPrint.slowPrint(currentRoom.getDescription());
+                // Erster Buchstabe groß
+                String str = currentRoom.getName();
+                SlowPrint.slowPrint("Du bist in " + str.substring(0, 1).toUpperCase() + str.substring(1));
             } else {
                 SlowPrint.slowPrint("Du kannst nicht in diese Richtung gehen.");
             }
