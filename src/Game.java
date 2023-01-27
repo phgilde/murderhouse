@@ -53,7 +53,7 @@ class Game {
         parser.setParamCommand("gehe", (String direction) -> {
             if (currentRoom.getAdjacentRooms().contains(direction)) {
                 currentRoom = rooms.get(direction);
-                currentView = null;
+                currentView = Optional.empty();
                 SlowPrint.slowPrint(currentRoom.getDescription());
             } else {
                 SlowPrint.slowPrint("Du kannst nicht in diese Richtung gehen.");
