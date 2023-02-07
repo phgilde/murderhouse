@@ -21,7 +21,8 @@ public class ZimmerOle extends Room {
     public String getDescription() {
         return "Ein helles Zimmer mit einem Doppelbett, einer Kommode und zwei Nachttischen. An der Wand hängt ein Bild von Oles Familie.\n"
                 + "Es erinnert dich an das Schlafzimer deiner Eltern."
-                + "Von hier aus kannst du in den *Flur* gehen.";
+                + "Von hier aus kannst du in den *Flur* gehen.\n"
+                + "Eine etwas ältere Frau sitz aufrecht im Bett";
     }
 
 
