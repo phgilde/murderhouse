@@ -13,4 +13,13 @@ public abstract class Human extends View {
      * @return Reaktion auf das Item.
      */
     public abstract String talk(Optional<Item> heldItem);
+/**
+     * Gibt eine Reaktion auf ein Wort zurück.
+     * 
+     * 
+     */
+    public abstract String ask(String q);
+
+
+    
 }

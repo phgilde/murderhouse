@@ -10,13 +10,13 @@ public class Geheimzimmer extends Room {
     @Override
     public String getName() {
         // TODO Auto-generated method stub
-        return null;
+        return "geheimzimmer";
     }
 
     @Override
     public String getDescription() {
         // TODO Auto-generated method stub
-        return null;
+        return "Geheimzimmer ist toll";
     }
 
     @Override
