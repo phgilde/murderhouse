@@ -35,5 +35,10 @@ public class Leiche extends Human{
         }
         return null;
     }
+
+    @Override
+    public String getName() {
+        return "leiche";
+    }
     
 }
