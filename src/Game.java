@@ -28,7 +28,7 @@ class Game {
         rooms.put("flur", new Flur());
         rooms.put("arbeitszimmer", new Arbeitszimmer());
         rooms.put("oles zimmer", new ZimmerOle());
-        rooms.put("kueche", new Kueche());
+        rooms.put("küche", new Kueche());
         parser.setSimpleCommand("umsehen", () -> SlowPrint.slowPrint(currentRoom.getDescription()));
         parser.setSimpleCommand("inventar", () -> {
             if (inventory.size() != 0) {
