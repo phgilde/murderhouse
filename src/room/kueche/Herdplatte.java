@@ -23,6 +23,9 @@ public class Herdplatte extends View {
 
     @Override
     public String getDescription() {
+        if (isOn) {
+            return "Ein alter Gasherd mit einem großen Kochtopf darauf. Der Herd ist eingeschaltet.";
+        }
         return "Ein alter Gasherd mit einem großen Kochtopf darauf. Der Herd ist ausgeschaltet.";
     }
 
