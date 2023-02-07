@@ -35,5 +35,11 @@ public class Leiche extends Human{
         }
         return null;
     }
+
+    @Override
+    public String ask(String q) {
+        // TODO Auto-generated method stub
+        return null;
+    }
     
 }
