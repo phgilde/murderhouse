@@ -7,6 +7,7 @@ import item.Item;
 import room.Room;
 import room.arbeitszimmer.Arbeitszimmer;
 import room.flur.Flur;
+import room.geheimzimmer.Geheimzimmer;
 import room.view.View;
 import room.zimmer.zimmerole.ZimmerOle;
 import util.SlowPrint;
@@ -27,6 +28,7 @@ class Game {
         rooms.put("flur", new Flur());
         rooms.put("arbeitszimmer", new Arbeitszimmer());
         rooms.put("oles zimmer", new ZimmerOle());
+        rooms.put("geheimzimmer", new Geheimzimmer());
         parser.setSimpleCommand("umsehen", () -> SlowPrint.slowPrint(currentRoom.getDescription()));
         parser.setSimpleCommand("inventar", () -> {
             if (inventory.size() != 0) {
