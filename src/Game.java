@@ -8,7 +8,7 @@ import room.Room;
 import room.arbeitszimmer.Arbeitszimmer;
 import room.flur.Flur;
 import room.view.View;
-import room.zimmer.ZimmerOle;
+import room.zimmer.zimmerole.ZimmerOle;
 import util.SlowPrint;
 
 class Game {

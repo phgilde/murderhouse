@@ -1,4 +1,4 @@
-package room.zimmer;
+package room.zimmer.zimmerole;
 
 import java.util.Map;
 import java.util.Optional;
@@ -10,6 +10,9 @@ public class ZimmerOle extends Room {
 
     public ZimmerOle() {
         adjacentRooms.add("flur");
+        views.put("kommode", new Kommode());
+        views.put("nachttisch links", new NachttischLinks());
+        views.put("nachttisch rechts", new NachttischRechts());
     }
 
     @Override
@@ -19,7 +22,7 @@ public class ZimmerOle extends Room {
 
     @Override
     public String getDescription() {
-        return "Ein helles Zimmer mit einem Doppelbett, einer Kommode und zwei Nachttischen. An der Wand hängt ein Bild von Oles Familie.\n"
+        return "Ein helles Zimmer mit einem Doppelbett, einer Kommode und zwei Nachttischen (*Nachttisch Links* und *Nachttisch Rechts*). An der Wand hängt ein Bild von Oles Familie.\n"
                 + "Es erinnert dich an das Schlafzimer deiner Eltern."
                 + "Von hier aus kannst du in den *Flur* gehen.\n"
                 + "Eine etwas ältere Frau sitz aufrecht im Bett";
@@ -33,7 +36,6 @@ public class ZimmerOle extends Room {
     }
 
     @Override
-    public void interact(View view, Optional<Item> heldItem) {
-    }
+    public void interact(View view, Optional<Item> heldItem) {}
 
 }

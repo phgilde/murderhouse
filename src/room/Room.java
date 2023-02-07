@@ -43,7 +43,9 @@ public abstract class Room {
      * 
      * @return Views.
      */
-    public abstract Map<String, View> getViews();
+    public Map<String, View> getViews() {
+        return views;
+    }
 
     /**
      * Führt eine Interaktion mit einer Ansicht im Raum durch.
