@@ -1,8 +1,9 @@
-package room.view.human;
+package room.zimmer;
 
 import java.util.Optional;
 
 import item.Item;
+import room.view.human.Human;
 
 public class Fredericke extends Human {
     
@@ -27,6 +28,12 @@ public class Fredericke extends Human {
 
     @Override
     public String interact(Optional<Item> heldItem) {
+        // TODO Auto-generated method stub
+        return null;
+    }
+
+    @Override
+    public String ask(String q) {
         // TODO Auto-generated method stub
         return null;
     }
