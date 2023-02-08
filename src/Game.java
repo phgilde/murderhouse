@@ -7,11 +7,8 @@ import item.Item;
 import room.Room;
 import room.arbeitszimmer.Arbeitszimmer;
 import room.flur.Flur;
-<<<<<<< HEAD
 import room.geheimzimmer.Geheimzimmer;
-=======
 import room.kueche.Kueche;
->>>>>>> 7a5eb3e91b3277dec4d8b1f80bcd7481fc128356
 import room.view.View;
 import room.zimmer.zimmerole.ZimmerOle;
 import util.SlowPrint;
