@@ -30,12 +30,6 @@ public class ZimmerOle extends Room {
 
 
     @Override
-    public Map<String, View> getViews() {
-        // TODO Auto-generated method stub
-        return null;
-    }
-
-    @Override
     public void interact(View view, Optional<Item> heldItem) {}
 
 }
