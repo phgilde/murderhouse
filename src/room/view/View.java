@@ -3,6 +3,7 @@ package room.view;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Optional;
+import interaction.Reaction;
 import item.Item;
 
 public abstract class View {
@@ -24,7 +25,19 @@ public abstract class View {
      * @param action Die Interaktion.
      * @return Reaktion auf die Interaktion.
      */
-    public abstract String interact(Optional<Item> heldItem);
+    public String interact(Optional<Item> heldItem) {
+        return "Es passiert nichts.";
+    };
+
+    /**
+     * Führt eine Interaktion mit der Ansicht durch.
+     * 
+     * @param action Die Interaktion.
+     * @return Reaktion auf die Interaktion.
+     */
+    public Reaction interactReaction(Optional<Item> heldItem) {
+        return new Reaction(interact(heldItem));
+    }
 
     /**
      * Spieler versucht, einen Gegenstand aus der Ansicht zu nehmen.

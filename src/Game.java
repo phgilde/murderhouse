@@ -3,6 +3,7 @@ import java.util.Optional;
 import java.util.Scanner;
 
 import control.Parser;
+import interaction.Reaction;
 import item.Item;
 import room.Room;
 import room.arbeitszimmer.Arbeitszimmer;
@@ -94,7 +95,14 @@ class Game {
         parser.setSimpleCommand("interagiere", () -> {
             if (currentView.isPresent()) {
                 currentRoom.interact(currentView.get(), heldItem);
-                SlowPrint.slowPrint(currentView.get().interact(heldItem));
+                Reaction reaction = currentView.get().interactReaction(heldItem);
+                if (reaction.consumesItem()) {
+                    if (heldItem.isPresent()) {
+                        inventory.remove(heldItem.get().getName());
+                        heldItem = Optional.empty();
+                    }
+                }
+                SlowPrint.slowPrint(reaction.getText());
             } else {
                 SlowPrint.slowPrint("Du kannst nicht interagieren.");
             }
