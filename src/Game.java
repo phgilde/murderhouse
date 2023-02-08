@@ -62,7 +62,8 @@ class Game {
                 currentView = Optional.empty();
                 // Erster Buchstabe groß
                 String str = currentRoom.getName();
-                SlowPrint.slowPrint("Du bist in " + str.substring(0, 1).toUpperCase() + str.substring(1));
+                SlowPrint.slowPrint(
+                        "Du bist in " + str.substring(0, 1).toUpperCase() + str.substring(1));
             } else {
                 SlowPrint.slowPrint("Du kannst nicht in diese Richtung gehen.");
             }
@@ -83,7 +84,7 @@ class Game {
                 SlowPrint.slowPrint("Du hast das nicht im Inventar.");
             }
         });
-        parser.setSimpleCommand("ansehen" , () -> {
+        parser.setSimpleCommand("ansehen", () -> {
             if (heldItem.isPresent()) {
                 SlowPrint.slowPrint(heldItem.get().getDescription());
             } else {
