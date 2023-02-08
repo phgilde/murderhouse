@@ -16,5 +16,10 @@ public class Pflanze extends View {
         // TODO Auto-generated method stub
         return null;
     }
+
+    @Override
+    public String getName() {
+        return "pflanze";
+    }
     
 }

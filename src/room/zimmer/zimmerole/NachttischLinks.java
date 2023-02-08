@@ -27,4 +27,9 @@ public class NachttischLinks extends View {
         }
         return "Es passiert nichts.";
     }
+
+    @Override
+    public String getName() {
+        return "linker nachttisch";
+    }
 }

@@ -26,4 +26,9 @@ public class Kommode extends View {
         return "Es passiert nichts.";
     }
 
+    @Override
+    public String getName() {
+        return "kommode";
+    }
+
 }

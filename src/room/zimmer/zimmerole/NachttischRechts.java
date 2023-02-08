@@ -22,4 +22,9 @@ public class NachttischRechts extends View {
         }
         return "Du kannst die Schublade nicht öffnen.";
     }
+
+    @Override
+    public String getName() {
+        return "rechter nachttisch";
+    }
 }

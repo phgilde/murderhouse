@@ -26,5 +26,10 @@ public class Schuhschrank extends View {
 
     }
 
+    @Override
+    public String getName() {
+        return "schuhschrank";
+    }
+
 
 }

@@ -54,4 +54,9 @@ public class Herdplatte extends View {
         }
         return "Du kannst das nicht mit dem Herd machen.";
     }
+
+    @Override
+    public String getName() {
+        return "herdplatte";
+    }
 }

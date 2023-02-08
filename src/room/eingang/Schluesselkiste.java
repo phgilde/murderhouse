@@ -20,4 +20,9 @@ public class Schluesselkiste extends View {
     public String interact(Optional<Item> heldItem) {
         return null;
     }
+
+    @Override
+    public String getName() {
+        return "schluesselkiste";
+    }
 }
