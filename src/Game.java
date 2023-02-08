@@ -120,6 +120,8 @@ class Game {
                 SlowPrint.slowPrint("Du kannst nichts nehmen.");
             }
         });
+        parser.setCatch((command) -> SlowPrint.slowPrint(command
+                + " ist kein gültiger Befehl. Gib 'hilfe' ein, um eine Liste der Befehle zu erhalten."));
     }
 
     public void mainLoop() {
