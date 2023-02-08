@@ -123,6 +123,14 @@ class Game {
                 SlowPrint.slowPrint("Du kannst nichts nehmen.");
             }
         });
+        parser.setSimpleCommand("einstecken", () -> {
+            if (heldItem.isPresent()) {
+                SlowPrint.slowPrint("Du steckst " + heldItem.get().getName() + " wieder ein.");
+                heldItem = Optional.empty();
+            } else {
+                SlowPrint.slowPrint("Du haeltst nichts.");
+            }
+        });
         parser.setCatch((command) -> SlowPrint.slowPrint(command
                 + " ist kein gueltiger Befehl. Gib 'hilfe' ein, um eine Liste der Befehle zu erhalten."));
     }
