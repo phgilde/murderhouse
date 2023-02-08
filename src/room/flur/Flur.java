@@ -11,6 +11,8 @@ public class Flur extends Room {
 
     public Flur() {
         adjacentRooms.add("oles zimmer");
+        adjacentRooms.add("saal");
+        adjacentRooms.add("badezimmer");
     }
 
     @Override
@@ -21,7 +23,8 @@ public class Flur extends Room {
     @Override
     public String getDescription() {
         return "Du bist im *Flur* angekommen. Völlig außer Atem überlegst du in welchen der verschiedenen Räume du gehen willst"
-                + "Du siehst *Oles Zimmer*, welches von weitem nach sehr günstigem Parfüm und eckelhaften Socken müffelt. \n"
+                + "Du siehst *Oles Zimmer*, welches von weitem nach sehr günstigem Parfüm und eckelhaften Socken müffelt."
+                + "Die Tür des *Badezimmer*s ist geschlossen. Über die Treppe kommst du zurück in den *Saal* \n"
                 + "*Hinweis: Wenn du ein Zimmer betreten willst, dann kannst du den Namen und das Zimmer nach dem gehe-Command schreiben. Beispiel: gehe Oles Zimmer*";
     }
 
