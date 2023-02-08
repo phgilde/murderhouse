@@ -11,7 +11,7 @@ public class Schuhschrank extends View {
         items.put("schuhbraun", new Schuhe("braun"));
         items.put("schuhblau", new Schuhe("blau"));
         items.put("schuhschwarz", new Schuhe("schwarz"));
-        items.put("schuhweiß", new Schuhe("weiß"));
+        items.put("schuhweiss", new Schuhe("weiss"));
         items.put("schuhgrau", new Schuhe("grau"));
 
     }

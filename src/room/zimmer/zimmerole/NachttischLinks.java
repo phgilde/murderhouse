@@ -18,11 +18,11 @@ public class NachttischLinks extends View {
             if (heldItem.get().getName().equals("rosa schluessel")) {
                 items.put("brief", new SimpleItem("brief",
                         "Ein Brief an Frederike: 'Liebe Frederike, auch wenn es dir Sorgen bereitet: Ein neuer Lebensabschnitt beginnt. Mit dem Weggeben deiner"
-                                + " Tanzschuhe schließt du entgültig mit dem alten ab. Ich denke, dass sich das Waisenkind sehr über sie freuen wird."
+                                + " Tanzschuhe schliesst du entgueltig mit dem alten ab. Ich denke, dass sich das Waisenkind sehr ueber sie freuen wird."
                                 + " Mach dir garkeine Sorgen. Deine Hildegaard von Rôusenbusch III., Rosenheim, den 12. Mai 1998'"));
                 items.put("blister", new SimpleItem("morphin",
                         "Ein Blister mit der Aufschrift: 'Morixon. Wirkstoff: 10 mg Morphinhydrochlorid'"));
-                return "Du öffnest die Schublade und findest darin einen *Brief*. Sowie eine Blister.";
+                return "Du oeffnest die Schublade und findest darin einen *Brief*. Sowie ein Tablettenblister.";
             }
         }
         return "Es passiert nichts.";

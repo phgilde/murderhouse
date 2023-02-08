@@ -14,7 +14,7 @@ public class Reaction {
     /**
      * Erstellt eine neue Reaktion.
      * @param text Beschreibung der Reaktion.
-     * @param consumesItem Ob das Item, das der Spieler in der Hand hält, verbraucht wird.
+     * @param consumesItem Ob das Item, das der Spieler in der Hand haelt, verbraucht wird.
      */
     public Reaction(String text, boolean consumesItem) {
         this.text = text;

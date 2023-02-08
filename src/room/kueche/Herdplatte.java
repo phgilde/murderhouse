@@ -24,9 +24,9 @@ public class Herdplatte extends View {
     @Override
     public String getDescription() {
         if (isOn) {
-            return "Ein alter Gasherd mit einem großen Kochtopf darauf. Der Herd ist eingeschaltet.";
+            return "Ein alter Gasherd mit einem grossen Kochtopf darauf. Der Herd ist eingeschaltet.";
         }
-        return "Ein alter Gasherd mit einem großen Kochtopf darauf. Der Herd ist ausgeschaltet.";
+        return "Ein alter Gasherd mit einem grossen Kochtopf darauf. Der Herd ist ausgeschaltet.";
     }
 
     @Override
@@ -35,10 +35,10 @@ public class Herdplatte extends View {
             if (isOn) {
                 if (medicineRequired.equals(medicineFound) && !cookingDone) {
                     items.put("Zaubertrank", new SimpleItem("Zaubertrank",
-                            "Eine dunkle, zähe Flüssigkeit mit einem unangenehmen Geruch. Sie scheint zu glitzern."));
+                            "Eine dunkle, zaehe Fluessigkeit mit einem unangenehmen Geruch. Sie scheint zu glitzern."));
                     cookingDone = true;
-                    return "Du schaltest den Herd aus. Der Kochtopf ist heiß."
-                            + " Du nimmst den Kochtopf vom Herd und öffnest ihn. Darin befindet sich ein Zaubertrank.";
+                    return "Du schaltest den Herd aus. Der Kochtopf ist heiss."
+                            + " Du nimmst den Kochtopf vom Herd und oeffnest ihn. Darin befindet sich ein Zaubertrank.";
                 }
                 isOn = false;
                 return "Du schaltest den Herd aus.";

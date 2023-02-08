@@ -12,7 +12,7 @@ public abstract class View {
     public abstract String getName();
 
     /**
-     * Gibt eine Beschreibung der Ansicht zurück.
+     * Gibt eine Beschreibung der Ansicht zurueck.
      * 
      * @return Beschreibung
      */
@@ -20,7 +20,7 @@ public abstract class View {
     public abstract String getDescription();
 
     /**
-     * Führt eine Interaktion mit der Ansicht durch.
+     * Fuehrt eine Interaktion mit der Ansicht durch.
      * 
      * @param action Die Interaktion.
      * @return Reaktion auf die Interaktion.
@@ -30,7 +30,7 @@ public abstract class View {
     };
 
     /**
-     * Führt eine Interaktion mit der Ansicht durch.
+     * Fuehrt eine Interaktion mit der Ansicht durch.
      * 
      * @param action Die Interaktion.
      * @return Reaktion auf die Interaktion.

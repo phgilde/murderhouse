@@ -7,7 +7,7 @@ import item.SimpleItem;
 import room.view.human.Human;
 
 public class Leiche extends Human {
-    boolean hatSchlüssel = true;
+    boolean hatSchluessel = true;
     boolean istTot = true;
 
     public Leiche() {
@@ -16,8 +16,8 @@ public class Leiche extends Human {
 
     @Override
     public String getDescription() {
-        if (hatSchlüssel) {
-            return "Um Oles Hals hängt ein gruener Schlüssel";
+        if (hatSchluessel) {
+            return "Um Oles Hals haengt ein gruener Schluessel";
         }
         return "";
     }
