@@ -33,5 +33,5 @@ public class Fernseher extends View {
         return "fernseher";
     }
 
-    
+
 }

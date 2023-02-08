@@ -5,7 +5,7 @@ import item.Item;
 import room.view.View;
 
 public abstract class Human extends View {
-    
+
     /**
      * Gibt eine Reaktion auf ein Item zurück.
      * 
@@ -13,7 +13,8 @@ public abstract class Human extends View {
      * @return Reaktion auf das Item.
      */
     public abstract String talk(Optional<Item> heldItem);
-/**
+
+    /**
      * Gibt eine Reaktion auf ein Wort zurück.
      * 
      * 
@@ -21,5 +22,5 @@ public abstract class Human extends View {
     public abstract String ask(String q);
 
 
-    
+
 }

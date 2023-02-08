@@ -19,6 +19,6 @@ public class Kueche extends Room {
     @Override
     public String getDescription() {
         return "Du befindest dich in der Küche. Auf dem Tisch steht ein phantastisch duftender Schokokuchen. "
-            + "Hier befindet sich eine Herdplatte mit einem Kochtopf darauf.";
+                + "Hier befindet sich eine Herdplatte mit einem Kochtopf darauf.";
     }
 }

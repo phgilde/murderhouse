@@ -15,6 +15,7 @@ public abstract class Room {
     protected List<String> adjacentRooms = new LinkedList<String>();
 
     protected HashMap<String, View> views = new HashMap<String, View>();
+
     /**
      * Gibt den Namen des Raums zurück.
      * 
@@ -49,6 +50,7 @@ public abstract class Room {
 
     /**
      * Führt eine Interaktion mit einer Ansicht im Raum durch.
+     * 
      * @param view Ansicht.
      * @param heldItem Das Item, das der Spieler in der Hand hält.
      */

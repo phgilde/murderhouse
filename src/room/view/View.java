@@ -9,12 +9,13 @@ public abstract class View {
     protected Map<String, Item> items = new HashMap<>();
 
     public abstract String getName();
+
     /**
      * Gibt eine Beschreibung der Ansicht zurück.
      * 
      * @return Beschreibung
      */
-    
+
     public abstract String getDescription();
 
     /**
@@ -27,6 +28,7 @@ public abstract class View {
 
     /**
      * Spieler versucht, einen Gegenstand aus der Ansicht zu nehmen.
+     * 
      * @param itemName Name des Gegenstands.
      * @return Der Gegenstand, falls er genommen werden konnte.
      */

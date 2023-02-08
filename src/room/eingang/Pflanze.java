@@ -7,7 +7,7 @@ public class Pflanze extends View {
 
     @Override
     public String getDescription() {
-        
+
         return "Das ist eine GrOßE gRüNe ZiMmErPlAnZe";
     }
 
@@ -21,5 +21,5 @@ public class Pflanze extends View {
     public String getName() {
         return "pflanze";
     }
-    
+
 }

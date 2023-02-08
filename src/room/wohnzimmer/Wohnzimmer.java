@@ -21,7 +21,6 @@ public class Wohnzimmer extends Room {
     }
 
     @Override
-    public void interact(View view, Optional<Item> heldItem) {
-    }
+    public void interact(View view, Optional<Item> heldItem) {}
 
 }
