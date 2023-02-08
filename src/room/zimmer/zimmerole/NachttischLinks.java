@@ -22,7 +22,7 @@ public class NachttischLinks extends View {
                                 + " Mach dir garkeine Sorgen. Deine Hildegaard von Rôusenbusch III., Rosenheim, den 12. Mai 1998'"));
                 items.put("blister", new SimpleItem("morphin",
                         "Ein Blister mit der Aufschrift: 'Morixon. Wirkstoff: 10 mg Morphinhydrochlorid'"));
-                return "Du oeffnest die Schublade und findest darin einen *Brief*. Sowie ein Tablettenblister.";
+                return "Du oeffnest die Schublade und findest darin einen *Brief*. Sowie ein *Blister* mit kleinen Tabletten.";
             }
         }
         return "Es passiert nichts.";
