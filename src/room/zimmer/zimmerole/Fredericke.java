@@ -1,4 +1,4 @@
-package room.zimmer;
+package room.zimmer.zimmerole;
 
 import java.util.Optional;
 
@@ -34,6 +34,12 @@ public class Fredericke extends Human {
 
     @Override
     public String ask(String q) {
+        // TODO Auto-generated method stub
+        return null;
+    }
+
+    @Override
+    public String getName() {
         // TODO Auto-generated method stub
         return null;
     }

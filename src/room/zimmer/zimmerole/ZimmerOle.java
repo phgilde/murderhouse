@@ -6,6 +6,7 @@ import item.Item;
 import room.Room;
 import room.view.View;
 
+
 public class ZimmerOle extends Room {
 
     public ZimmerOle() {
@@ -13,6 +14,7 @@ public class ZimmerOle extends Room {
         views.put("kommode", new Kommode());
         views.put("nachttisch links", new NachttischLinks());
         views.put("nachttisch rechts", new NachttischRechts());
+        views.put("fredericke", new Fredericke()); 
     }
 
     @Override
