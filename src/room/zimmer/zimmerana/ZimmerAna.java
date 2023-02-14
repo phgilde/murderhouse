@@ -4,6 +4,11 @@ import room.Room;
 
 public class ZimmerAna extends Room {
 
+    public ZimmerAna() {
+        adjacentRooms.add("flur");
+        views.put("topfpflanze", new Topfpflanze());
+    }
+
     @Override
     public String getName() {
         return "anas zimmer";
