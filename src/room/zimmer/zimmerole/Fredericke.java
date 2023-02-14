@@ -11,7 +11,7 @@ public class Fredericke extends Human {
     public String talk(Optional<Item> heldItem) {
         if (heldItem.isEmpty()) {
             return "'Da muss irgendein Hooligan eingebrochen sein und wollte wohl eine von Ole's teuren Uhren stehlen! Ole muss sich wohl gewaehrt haben! Der Gute!' *Schluchz* *Fredericke sinkt in vollkomender verzweiflung auf das Bett zurueck*";
-        } else if (heldItem.get().getName().equals("handschuhe")) {
+        } else if (heldItem.get().getName().equals("boxhandschuhe")) {
             return "Niemals! Mein Sohn wuerde so etwas niemals machen!"
                     + "Was sind Sie den fuer ein Detektiv das Sie solche Hirngespenster in betracht ziehen! Also wirklich Dirk! Von Ihnen haette ich sowas nicht erwartet";
         } else {
