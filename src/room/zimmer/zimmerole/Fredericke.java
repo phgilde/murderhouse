@@ -38,4 +38,10 @@ public class Fredericke extends Human {
         return null;
     }
 
+    @Override
+    public String getName() {
+        // TODO Auto-generated method stub
+        return null;
+    }
+
 }
