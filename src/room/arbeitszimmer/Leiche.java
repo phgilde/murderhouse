@@ -16,10 +16,11 @@ public class Leiche extends Human {
 
     @Override
     public String getDescription() {
-        if (hatSchluessel) {
-            return "Um Oles Hals haengt ein gruener Schluessel";
+        String str = "Ole traegt eine gruene Jacke und eine graue Hose. Seine Hauschuhe sind ueberall verteilt. \n";
+        if (items.containsKey("greuener schluessel")) {
+            str += "Um Oles Hals haengt ein gruener Schluessel";
         }
-        return "";
+        return str;
     }
 
     @Override
