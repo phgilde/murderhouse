@@ -13,8 +13,9 @@ public class Trude extends Human {
         return "'Er ist tot! Wie konnte das nur passieren???'";
         }else if(heldItem.get().getName().equals("baseballschlaeger")){
             return "'Ja das ist Ben's. Oh was ist den da soviel Farbe dran? Da habe ich wohl beim Malen nicht gut aufgepasst.'" ;
+       
         }else{
-            return "'Lassen Sie mich bitte in Ruhe. Mein Mann ist gerade gestorben! Ist das nicht genug?' *Schluchz*";
+            return "'Darueber weiß ich leider nichts.'";
         }
 
     }
@@ -22,17 +23,19 @@ public class Trude extends Human {
     @Override
     public String getDescription() {
         
-        return "Fredericke ist eine mitte 50-Jahre alte Frau. Ihr Haar beginnt zu grauen, und sie ist querschnitzgelähmt";
+        return "Trude ist eine etwa mitte 20-Jahre alte Frau.";
     }
 
 
 
     @Override
     public String ask(String q) {
-        // TODO Auto-generated method stub
-        return null;
+    if(q =="Malsachen"){
+        return "'Ich male gerne um zu entspannen'" ;
+    }else{
+        return null; 
     }
-
+    }
 
     @Override
     public String getName() {

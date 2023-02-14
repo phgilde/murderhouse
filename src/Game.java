@@ -97,13 +97,15 @@ class Game {
         });
         parser.setParamCommand("frage", (String frage) ->{
             if(currentView.isPresent()){
-                if(currentView instanceof Human){
-                  ((Human) currentView).ask(frage); 
+                if(currentView.get() instanceof Human){
+                  ((Human) currentView.get()).ask(frage); 
 
                 }
             }
 
-        }
+
+        });
+
         parser.setSimpleCommand("interagiere", () -> {
             if (currentView.isPresent()) {
                 currentRoom.interact(currentView.get(), heldItem);
