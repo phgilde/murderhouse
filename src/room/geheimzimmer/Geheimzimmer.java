@@ -24,5 +24,5 @@ public class Geheimzimmer extends Room {
         // TODO Auto-generated method stub
         return null;
     }
-    
+
 }

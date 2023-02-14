@@ -10,7 +10,7 @@ public class Kommode extends View {
 
     public Kommode() {
         items.put("goldkette", new SimpleItem("goldkette",
-                "Eine kleine Goldkette mit einem Anhänger: Ein Löwe, der einen roten Stein im Maul hat."));
+                "Eine kleine Goldkette mit einem Anhaenger: Ein Loewe, der einen roten Stein im Maul hat."));
         items.put("zigarre", new SimpleItem("zigarre",
                 "Eine sehr teuer anmutende Zigarre. Auf dem goldenen Siegel steht 'Montecristo Classic Series'"));
     }
@@ -24,6 +24,11 @@ public class Kommode extends View {
     @Override
     public String interact(Optional<Item> heldItem) {
         return "Es passiert nichts.";
+    }
+
+    @Override
+    public String getName() {
+        return "kommode";
     }
 
 }

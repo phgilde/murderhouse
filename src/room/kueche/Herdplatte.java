@@ -3,6 +3,7 @@ package room.kueche;
 import java.util.HashSet;
 import java.util.Optional;
 import java.util.Set;
+import interaction.Reaction;
 import item.Item;
 import item.SimpleItem;
 import room.view.View;
@@ -10,9 +11,9 @@ import room.view.View;
 public class Herdplatte extends View {
 
     public Herdplatte() {
-        medicine.add("aspirin");
+        medicine.add("ibuprofen");
         medicine.add("morphin");
-        medicineRequired.add("aspirin");
+        medicineRequired.add("ibuprofen");
     }
 
     private boolean isOn = false;
@@ -24,34 +25,39 @@ public class Herdplatte extends View {
     @Override
     public String getDescription() {
         if (isOn) {
-            return "Ein alter Gasherd mit einem großen Kochtopf darauf. Der Herd ist eingeschaltet.";
+            return "Ein alter Gasherd mit einem grossen Kochtopf darauf. Der Herd ist eingeschaltet.";
         }
-        return "Ein alter Gasherd mit einem großen Kochtopf darauf. Der Herd ist ausgeschaltet.";
+        return "Ein alter Gasherd mit einem grossen Kochtopf darauf. Der Herd ist ausgeschaltet.";
     }
 
     @Override
-    public String interact(Optional<Item> heldItem) {
+    public Reaction interactReaction(Optional<Item> heldItem) {
         if (heldItem.isEmpty()) {
             if (isOn) {
                 if (medicineRequired.equals(medicineFound) && !cookingDone) {
                     items.put("Zaubertrank", new SimpleItem("Zaubertrank",
-                            "Eine dunkle, zähe Flüssigkeit mit einem unangenehmen Geruch. Sie scheint zu glitzern."));
+                            "Eine dunkle, zaehe Fluessigkeit mit einem unangenehmen Geruch. Sie scheint zu glitzern."));
                     cookingDone = true;
-                    return "Du schaltest den Herd aus. Der Kochtopf ist heiß."
-                            + " Du nimmst den Kochtopf vom Herd und öffnest ihn. Darin befindet sich ein Zaubertrank.";
+                    return new Reaction("Du schaltest den Herd aus. Der Kochtopf ist heiss."
+                            + " Du nimmst den Kochtopf vom Herd und oeffnest ihn. Darin befindet sich ein Zaubertrank.");
                 }
                 isOn = false;
-                return "Du schaltest den Herd aus.";
+                return new Reaction("Du schaltest den Herd aus.");
             } else {
                 isOn = true;
-                return "Du schaltest den Herd an.";
+                return new Reaction("Du schaltest den Herd an.");
             }
         } else {
             if (medicine.contains(heldItem.get().getName())) {
                 medicineFound.add(heldItem.get().getName());
-                return "Du wirfst das " + heldItem.get().getName() + " in den Kochtopf.";
+                return new Reaction("Du wirfst das " + heldItem.get().getName() + " in den Kochtopf.", true);
             }
         }
-        return "Du kannst das nicht mit dem Herd machen.";
+        return new Reaction("Du kannst das nicht mit dem Herd machen.");
+    }
+
+    @Override
+    public String getName() {
+        return "herdplatte";
     }
 }

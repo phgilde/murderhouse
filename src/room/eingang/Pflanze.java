@@ -7,8 +7,8 @@ public class Pflanze extends View {
 
     @Override
     public String getDescription() {
-        
-        return "Das ist eine GrOßE gRüNe ZiMmErPlAnZe";
+
+        return "Das ist eine GrOssE gRueNe ZiMmErPlAnZe";
     }
 
     @Override
@@ -16,5 +16,10 @@ public class Pflanze extends View {
         // TODO Auto-generated method stub
         return null;
     }
-    
+
+    @Override
+    public String getName() {
+        return "pflanze";
+    }
+
 }

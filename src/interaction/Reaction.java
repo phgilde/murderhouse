@@ -4,26 +4,33 @@ import java.util.List;
 
 import item.Item;
 
-public abstract class Reaction {
-    /**
-     * Gibt die Beschreibung der Reaktion zurück.
-     * 
-     * @return Beschreibung
-     */
-    public abstract String getDescription();
+/**
+ * Eine Reaktion auf eine Interaktion mit einem View.
+ */
+public class Reaction {
+    private String text;
+    private boolean consumesItem;
 
     /**
-     * Gibt die Items zurück, die der Spieler durch die Interaktion findet.
-     * 
-     * @return Items
+     * Erstellt eine neue Reaktion.
+     * @param text Beschreibung der Reaktion.
+     * @param consumesItem Ob das Item, das der Spieler in der Hand haelt, verbraucht wird.
      */
-    public abstract List<Item> getItems();
+    public Reaction(String text, boolean consumesItem) {
+        this.text = text;
+        this.consumesItem = consumesItem;
+    }
 
-    /**
-     * Gibt zurück, ob die Interaktion erfolgreich war.
-     * 
-     * @return Erfolg
-     *
-     */
-    public abstract boolean wasSuccessful();
+    public Reaction(String text) {
+        this(text, false);
+    }
+
+    public String getText() {
+        return text;
+    }
+
+    public boolean consumesItem() {
+        return consumesItem;
+    }
+
 }

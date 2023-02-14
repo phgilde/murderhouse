@@ -20,6 +20,11 @@ public class NachttischRechts extends View {
                 return "Du findest eine Schublade voller Nachtische.";
             }
         }
-        return "Du kannst die Schublade nicht öffnen.";
+        return "Du kannst die Schublade nicht oeffnen.";
+    }
+
+    @Override
+    public String getName() {
+        return "rechter nachttisch";
     }
 }

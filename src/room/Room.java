@@ -10,36 +10,37 @@ import room.view.View;
 
 public abstract class Room {
     /**
-     * List der angrenzenden Räume.
+     * List der angrenzenden Raeume.
      */
     protected List<String> adjacentRooms = new LinkedList<String>();
 
     protected HashMap<String, View> views = new HashMap<String, View>();
+
     /**
-     * Gibt den Namen des Raums zurück.
+     * Gibt den Namen des Raums zurueck.
      * 
      * @return Name.
      */
     public abstract String getName();
 
     /**
-     * Gibt eine Beschreibung des Raums zurück.
+     * Gibt eine Beschreibung des Raums zurueck.
      * 
      * @return Beschreibung.
      */
     public abstract String getDescription();
 
     /**
-     * Gibt die angrenzenden Räume zurück, in die der Spieler von diesem Raum aus gehen kann.
+     * Gibt die angrenzenden Raeume zurueck, in die der Spieler von diesem Raum aus gehen kann.
      * 
-     * @return Angrenzende Räume.
+     * @return Angrenzende Raeume.
      */
     public List<String> getAdjacentRooms() {
         return adjacentRooms;
     };
 
     /**
-     * Gibt die Views zurück, die der Spieler von diesem Raum aus sehen kann.
+     * Gibt die Views zurueck, die der Spieler von diesem Raum aus sehen kann.
      * 
      * @return Views.
      */
@@ -48,9 +49,10 @@ public abstract class Room {
     }
 
     /**
-     * Führt eine Interaktion mit einer Ansicht im Raum durch.
+     * Fuehrt eine Interaktion mit einer Ansicht im Raum durch.
+     * 
      * @param view Ansicht.
-     * @param heldItem Das Item, das der Spieler in der Hand hält.
+     * @param heldItem Das Item, das der Spieler in der Hand haelt.
      */
     public void interact(View view, Optional<Item> heldItem) {};
 

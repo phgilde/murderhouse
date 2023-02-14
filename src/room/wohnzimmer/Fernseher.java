@@ -11,9 +11,9 @@ public class Fernseher extends View {
     @Override
     public String getDescription() {
         if (isOn) {
-            return "Ein alter Röhrenfernseher. Der Fernseher ist an. Du siehst eine Nachrichtensendung.";
+            return "Ein alter Roehrenfernseher. Der Fernseher ist an. Du siehst eine Nachrichtensendung.";
         } else {
-            return "Ein alter Röhrenfernseher. Der Fernseher ist aus.";
+            return "Ein alter Roehrenfernseher. Der Fernseher ist aus.";
         }
     }
 
@@ -28,5 +28,10 @@ public class Fernseher extends View {
         }
     }
 
-    
+    @Override
+    public String getName() {
+        return "fernseher";
+    }
+
+
 }
