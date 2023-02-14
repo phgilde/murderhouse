@@ -8,11 +8,13 @@ import item.Item;
 public abstract class View {
     protected Map<String, Item> items = new HashMap<>();
 
+    public abstract String getName();
     /**
      * Gibt eine Beschreibung der Ansicht zurück.
      * 
      * @return Beschreibung
      */
+    
     public abstract String getDescription();
 
     /**

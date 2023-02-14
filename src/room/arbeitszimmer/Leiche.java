@@ -37,9 +37,8 @@ public class Leiche extends Human{
     }
 
     @Override
-    public String ask(String q) {
-        // TODO Auto-generated method stub
-        return null;
+    public String getName() {
+        return "leiche";
     }
     
 }
