@@ -11,6 +11,6 @@ public class Schreibtisch extends View {
 
     @Override
     public String getDescription() {
-        return "Es ist ein Schreibtisch der Markenfirma 'IKEA'. Der Schreibtisch ist vollgestellt mit |Malsachen|.";
+        return "Es ist ein Schreibtisch aus Edelstahl. Der Schreibtisch ist vollgestellt mit |Malsachen|.";
     }
 }

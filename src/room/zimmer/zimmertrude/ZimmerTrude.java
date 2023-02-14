@@ -17,8 +17,8 @@ public class ZimmerTrude extends Room {
 
     @Override
     public String getDescription() {
-        return "Du stehst in Trudes Zimmer. Es ist ziemlich eng hier. Du siehst ein *Bett*,"
-                + "einen *Schreibtisch* und einen *Schrank*. Du wunderst dich, wie das alles hier hinein passt."
+        return "Du stehst in einem wirklich großen Zimmer, das irgendwie leer erscheint. Du siehst ein *Bett*,"
+                + "einen *Schreibtisch* und einen *Schrank*."
                 + "Von hier aus kannst du in den *Flur* gehen.";
     }
 

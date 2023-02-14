@@ -10,6 +10,6 @@ public class Schrank extends View {
 
     @Override
     public String getDescription() {
-        return "Es ist ein Schrank der Markenfirma 'IKEA'.";
+        return "Ein grosser Schrank aus grün bemaltem Holz.";
     }
 }

@@ -17,8 +17,8 @@ public class Bett extends View {
 
     @Override
     public String getDescription() {
-        return "Es ist ein Bett der Markenfirma 'IKEA'. Das Bett ist ziemlich schmal. "
-                + "Die Bettwäsche ist mit vielen kleinen Spinnen bedruckt.Unter dem Bett liegt ein *Baseballschlaeger*.";
+        return "Ein riesiges Himmelbett. "
+                + "Die Bettwäsche ist mit vielen kleinen Spinnen bedruckt. Unter dem Bett liegt ein *Baseballschlaeger*.";
     }
 
 }
