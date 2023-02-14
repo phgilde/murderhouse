@@ -7,10 +7,12 @@ import item.Item;
 import room.Room;
 import room.view.View;
 
-public class Flur extends Room{
-    
-    public Flur(){
+public class Flur extends Room {
+
+    public Flur() {
         adjacentRooms.add("oles zimmer");
+        adjacentRooms.add("saal");
+        adjacentRooms.add("badezimmer");
     }
 
     @Override
@@ -20,9 +22,10 @@ public class Flur extends Room{
 
     @Override
     public String getDescription() {
-        return "Du bist im *Flur* angekommen. Völlig außer Atem überlegst du in welchen der verschiedenen Räume du gehen willst"
-        + "Du siehst *Oles Zimmer*, welches von weitem nach sehr günstigem Parfüm und eckelhaften Socken müffelt. \n"
-        + "*Hinweis: Wenn du ein Zimmer betreten willst, dann kannst du den Namen und das Zimmer nach dem gehe-Command schreiben. Beispiel: gehe Oles Zimmer*";
+        return "Du bist im *Flur* angekommen. Voellig ausser Atem ueberlegst du in welchen der verschiedenen Raeume du gehen willst"
+                + "Du siehst *Oles Zimmer*, welches von weitem nach sehr guenstigem Parfuem und eckelhaften Socken mueffelt."
+                + "Die Tuer des *Badezimmer*s ist geschlossen. ueber die Treppe kommst du zurueck in den *Saal* \n"
+                + "*Hinweis: Wenn du ein Zimmer betreten willst, dann kannst du den Namen und das Zimmer nach dem gehe-Command schreiben. Beispiel: gehe Oles Zimmer*";
     }
 
 
@@ -35,9 +38,9 @@ public class Flur extends Room{
     @Override
     public void interact(View view, Optional<Item> heldItem) {
         // TODO Auto-generated method stub
-        
+
     }
-    
+
 }
 
 

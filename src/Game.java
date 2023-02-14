@@ -3,9 +3,11 @@ import java.util.Optional;
 import java.util.Scanner;
 
 import control.Parser;
+import interaction.Reaction;
 import item.Item;
 import room.Room;
 import room.arbeitszimmer.Arbeitszimmer;
+import room.badezimmer.Badezimmer;
 import room.flur.Flur;
 import room.geheimzimmer.Geheimzimmer;
 import room.kueche.Kueche;
@@ -30,16 +32,17 @@ class Game {
         rooms.put("arbeitszimmer", new Arbeitszimmer());
         rooms.put("oles zimmer", new ZimmerOle());
         rooms.put("geheimzimmer", new Geheimzimmer());
-        rooms.put("küche", new Kueche());
+        rooms.put("kueche", new Kueche());
+        rooms.put("badezimmer", new Badezimmer());
         parser.setSimpleCommand("umsehen", () -> SlowPrint.slowPrint(currentRoom.getDescription()));
         parser.setSimpleCommand("inventar", () -> {
             if (inventory.size() != 0) {
-                SlowPrint.slowPrint("Du hast folgende Gegenstände im Inventar:");
+                SlowPrint.slowPrint("Du hast folgende Gegenstaende im Inventar:");
                 for (String item : inventory.keySet()) {
                     SlowPrint.slowPrint(item);
                 }
             } else {
-                SlowPrint.slowPrint("Du hast keine Gegenstände im Inventar.");
+                SlowPrint.slowPrint("Du hast keine Gegenstaende im Inventar.");
             }
         });
         parser.setSimpleCommand("quit", () -> System.exit(0));
@@ -60,9 +63,10 @@ class Game {
             if (currentRoom.getAdjacentRooms().contains(direction)) {
                 currentRoom = rooms.get(direction);
                 currentView = Optional.empty();
-                // Erster Buchstabe groß
+                // Erster Buchstabe gross
                 String str = currentRoom.getName();
-                SlowPrint.slowPrint("Du bist in " + str.substring(0, 1).toUpperCase() + str.substring(1));
+                SlowPrint.slowPrint(
+                        "Du bist in " + str.substring(0, 1).toUpperCase() + str.substring(1));
             } else {
                 SlowPrint.slowPrint("Du kannst nicht in diese Richtung gehen.");
             }
@@ -78,28 +82,36 @@ class Game {
         parser.setParamCommand("halte", (String item) -> {
             if (inventory.containsKey(item)) {
                 heldItem = Optional.of(inventory.get(item));
-                SlowPrint.slowPrint("Du hältst " + heldItem.get().getName() + ".");
+                SlowPrint.slowPrint("Du haeltst " + heldItem.get().getName() + ".");
             } else {
                 SlowPrint.slowPrint("Du hast das nicht im Inventar.");
             }
         });
-        parser.setSimpleCommand("ansehen" , () -> {
+        parser.setSimpleCommand("ansehen", () -> {
             if (heldItem.isPresent()) {
                 SlowPrint.slowPrint(heldItem.get().getDescription());
             } else {
-                SlowPrint.slowPrint("Du hältst nichts.");
+                SlowPrint.slowPrint("Du haeltst nichts.");
             }
         });
         parser.setSimpleCommand("interagiere", () -> {
             if (currentView.isPresent()) {
                 currentRoom.interact(currentView.get(), heldItem);
-                SlowPrint.slowPrint(currentView.get().interact(heldItem));
+                Reaction reaction = currentView.get().interactReaction(heldItem);
+                if (reaction.consumesItem()) {
+                    if (heldItem.isPresent()) {
+                        inventory.remove(heldItem.get().getName());
+                        heldItem = Optional.empty();
+                    }
+                }
+                SlowPrint.slowPrint(reaction.getText());
             } else {
                 SlowPrint.slowPrint("Du kannst nicht interagieren.");
             }
         });
         parser.setParamCommand("nimm", (String item) -> {
             if (currentView.isPresent()) {
+                System.out.println(item);
                 Optional<Item> takenItem = currentView.get().takeItem(item);
                 if (takenItem.isPresent()) {
                     inventory.put(takenItem.get().getName(), takenItem.get());
@@ -111,6 +123,16 @@ class Game {
                 SlowPrint.slowPrint("Du kannst nichts nehmen.");
             }
         });
+        parser.setSimpleCommand("einstecken", () -> {
+            if (heldItem.isPresent()) {
+                SlowPrint.slowPrint("Du steckst " + heldItem.get().getName() + " wieder ein.");
+                heldItem = Optional.empty();
+            } else {
+                SlowPrint.slowPrint("Du haeltst nichts.");
+            }
+        });
+        parser.setCatch((command) -> SlowPrint.slowPrint(command
+                + " ist kein gueltiger Befehl. Gib 'hilfe' ein, um eine Liste der Befehle zu erhalten."));
     }
 
     public void mainLoop() {
