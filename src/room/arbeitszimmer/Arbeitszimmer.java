@@ -32,11 +32,6 @@ public class Arbeitszimmer extends Room {
     }
 
     @Override
-    public Map<String, View> getViews() {
-        return views;
-    }
-
-    @Override
     public void interact(View view, Optional<Item> heldItem) {
         if (heldItem.isPresent()) {
             if (view.getName().equals("schrank")
