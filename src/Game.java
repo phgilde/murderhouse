@@ -12,6 +12,7 @@ import room.flur.Flur;
 import room.geheimzimmer.Geheimzimmer;
 import room.kueche.Kueche;
 import room.view.View;
+import room.view.human.Human;
 import room.zimmer.zimmerole.ZimmerOle;
 import util.SlowPrint;
 
@@ -94,6 +95,15 @@ class Game {
                 SlowPrint.slowPrint("Du haeltst nichts.");
             }
         });
+        parser.setParamCommand("frage", (String frage) ->{
+            if(currentView.isPresent()){
+                if(currentView instanceof Human){
+                  ((Human) currentView).ask(frage); 
+
+                }
+            }
+
+        }
         parser.setSimpleCommand("interagiere", () -> {
             if (currentView.isPresent()) {
                 currentRoom.interact(currentView.get(), heldItem);
