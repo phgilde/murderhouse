@@ -16,7 +16,7 @@ public class Eingang extends Room {
         adjacentRooms.add("draussen");
         views.put("schluesselkiste", new Schluesselkiste());
         views.put("schuhschrank", new Schuhschrank());
-        views.put("planze", new Planze()); 
+        views.put("planze", new Pflanze()); 
     }
 
     public String getName() {
