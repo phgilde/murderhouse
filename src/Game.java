@@ -8,12 +8,15 @@ import item.Item;
 import room.Room;
 import room.arbeitszimmer.Arbeitszimmer;
 import room.badezimmer.Badezimmer;
+import room.saal.Saal;
 import room.flur.Flur;
 import room.geheimzimmer.Geheimzimmer;
 import room.kueche.Kueche;
 import room.view.View;
 import room.view.human.Human;
+import room.zimmer.zimmerana.ZimmerAna;
 import room.zimmer.zimmerole.ZimmerOle;
+import room.zimmer.zimmertrude.ZimmerTrude;
 import util.SlowPrint;
 
 class Game {
@@ -35,6 +38,8 @@ class Game {
         rooms.put("geheimzimmer", new Geheimzimmer());
         rooms.put("kueche", new Kueche());
         rooms.put("badezimmer", new Badezimmer());
+        rooms.put("trudes zimmer", new ZimmerTrude());
+        rooms.put("anas zimmer", new ZimmerAna());
         parser.setSimpleCommand("umsehen", () -> SlowPrint.slowPrint(currentRoom.getDescription()));
         parser.setSimpleCommand("inventar", () -> {
             if (inventory.size() != 0) {
