@@ -33,7 +33,7 @@ public class Sam extends Human {
     if(q =="Knall"){
         return "'Knall, welcher Knall? Papa hat nur die Kuehlschranktuer zugeworfen, sonst war da nichts'" ;
      } else if (q =="Streit"){
-        return "'Er nervt -- Hat immer rumgenervt wegen meinen Verhaftungen'"; 
+        return "'Er nervt -- Hat immer rumgenervt wegen meinen Verhaftungen, er glaubt das ich mein Leben nicht auf die Reihe kriege.'"; 
     }else{
         return null; 
     }
