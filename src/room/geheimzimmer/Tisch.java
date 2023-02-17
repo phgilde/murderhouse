@@ -7,7 +7,22 @@ public class Tisch extends View {
 
     public Tisch(){
         items.put("notizbuch", new SimpleItem("notizbuch", 
-        "Notizbuchinhalt"
+        "----- Notizbuch von Detektiv Dieter -----\n"
+        +"3. Juli 2019:\n"
+        +"Der Auftrag für mich besteht darin, belastende Inhalte gegen meinen Arbeitgeber von Objekt Ole zurückzuholen.\n"
+        +"Für die Ausführung dieses Auftrages sind die entstehenden Schäden nicht von Bedeutung.\n"
+        +"Private Notiz: Scheint so als hätte da jemand vergessen seinen Browserverlauf zu löschen.\n"
+        +"\n"
+        +"19. Juli 2019:\n"
+        +"Ich erhielt eine Einladung von Ole zu seinem 60. Geburtstag am 26.Juli. Es scheint so als würde er nichts wittern und \n"
+        +"und mir sein vollstes Vertrauen zu schenken."
+        +"\n"
+        +"26. Juli 2019:\n"
+        +"Ich habe den belastenden USB-Stick gefunden. Jetzt muss ich nur noch spurlos verschwinden. Sollte das nicht klappen \n"
+        +"muss Ole von der Bildflaeche entfernt werden. Der Mord ließe sich eventuell mithilfe der Shakespeer Bueste auf die Fredericke schieben.\n"
+        +"------ Ende -------"
+
+
         ));
 
         items.put("bueste", new SimpleItem("bueste", 
@@ -38,5 +53,6 @@ public class Tisch extends View {
         
         return str;
     }
+}
     
 
