@@ -16,6 +16,7 @@ import room.view.View;
 import room.view.human.Human;
 import room.zimmer.zimmerana.ZimmerAna;
 import room.zimmer.zimmerole.ZimmerOle;
+import room.zimmer.zimmersam.ZimmerSam;
 import room.zimmer.zimmertrude.ZimmerTrude;
 import util.SlowPrint;
 
@@ -40,12 +41,13 @@ class Game {
         rooms.put("badezimmer", new Badezimmer());
         rooms.put("trudes zimmer", new ZimmerTrude());
         rooms.put("anas zimmer", new ZimmerAna());
+        rooms.put("sams zimmer", new ZimmerSam());
         parser.setSimpleCommand("umsehen", () -> SlowPrint.slowPrint(currentRoom.getDescription()));
         parser.setSimpleCommand("inventar", () -> {
             if (inventory.size() != 0) {
                 SlowPrint.slowPrint("Du hast folgende Gegenstaende im Inventar:");
-                for (String item : inventory.keySet()) {
-                    SlowPrint.slowPrint(item);
+                for (Item item : inventory.values()) {
+                    SlowPrint.slowPrint(item.getName());
                 }
             } else {
                 SlowPrint.slowPrint("Du hast keine Gegenstaende im Inventar.");
@@ -131,7 +133,7 @@ class Game {
                 System.out.println(item);
                 Optional<Item> takenItem = currentView.get().takeItem(item);
                 if (takenItem.isPresent()) {
-                    inventory.put(takenItem.get().getName(), takenItem.get());
+                    inventory.put(takenItem.get().getName().toLowerCase(), takenItem.get());
                     SlowPrint.slowPrint("Du hast " + takenItem.get().getName() + " genommen.");
                 } else {
                     SlowPrint.slowPrint("Du kannst das nicht nehmen.");
