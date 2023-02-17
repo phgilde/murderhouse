@@ -170,7 +170,6 @@ class Game {
         notOver = false;
         SlowPrint.slowPrint(
                 "Die Polizei ist angekommen. Sie befragen alle und durchsuchen das Haus und die Personen akribisch.");
-        // TODO prüfen ob notizbuch in raum liegt
         if (inventory.containsKey("schuhrosa") && inventory.containsKey("bueste")
                 && !itemExists("notizbuch") && !itemExists("gewehr")
                 && inventory.containsKey("brief")) {
