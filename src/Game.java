@@ -172,7 +172,8 @@ class Game {
                 "Die Polizei ist angekommen. Sie befragen alle und durchsuchen das Haus und die Personen akribisch.");
         // TODO prüfen ob notizbuch in raum liegt
         if (inventory.containsKey("schuhrosa") && inventory.containsKey("bueste")
-                && !itemExists("notizbuch") && !itemExists("gewehr") && inventory.containsKey("brief")) {
+                && !itemExists("notizbuch") && !itemExists("gewehr")
+                && inventory.containsKey("brief")) {
             SlowPrint.slowPrint(
                     "Die Polizei informiert dich, dass sie Friederieke als schuldig befunden haben und sie inhaftiert wurde. Alle Beweise sprechen gegen sie.");
             SlowPrint.slowPrint(
@@ -182,10 +183,11 @@ class Game {
             SlowPrint.slowPrint(
                     "Die Polizei verhaftet dich. Es wurden belastende Beweise gegen dich gefunden.");
             SlowPrint.slowPrint(
-                    "Auf dem Weg zum Gericht wird der Gefangenentransporter gerammt und explodiert.");
+                    "Du planst, in der Hoffnung auf Strafminderung gegen den Auftraggeber auszusagen. Auf dem Weg zum Gericht ruft er dich an. Bevor du ans Telefon gehen kannst, wird der Gefangenentransporter gerammt und explodiert.");
             SlowPrint.slowPrint("Du hast das Spiel verloren. 😢");
         }
     }
+
     private boolean itemExists(String item) {
         for (String key : inventory.keySet()) {
             if (key.equals(item)) {
