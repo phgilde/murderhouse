@@ -16,6 +16,7 @@ public class Eingang extends Room {
         adjacentRooms.add("draussen");
         views.put("schluesselkiste", new Schluesselkiste());
         views.put("schuhschrank", new Schuhschrank());
+        views.put("planze", new Planze()); 
     }
 
     public String getName() {
@@ -24,7 +25,7 @@ public class Eingang extends Room {
 
     @Override
     public String getDescription() {
-        return "In dem *Eingang* befindet sich ein Schuhschrank, eine Zimmerplanze, eine Schluesselbox und die Eingangstuer";
+        return "In dem *Eingang* befindet sich ein *Schuhschrank*, eine *Pflanze*, eine *Schluesselbox* und die Eingangstuer";
 
     }
 

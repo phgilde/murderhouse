@@ -1,8 +1,9 @@
-package room.view.human;
+package room.zimmer.zimmerana;
 
 import java.util.Optional;
 
 import item.Item;
+import room.view.human.Human;
 
 public class Ana extends Human {
     int n = 0;

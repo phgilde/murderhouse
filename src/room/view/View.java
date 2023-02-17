@@ -47,7 +47,9 @@ public abstract class View {
      */
     public Optional<Item> takeItem(String itemName) {
         if (items.containsKey(itemName)) {
-            return Optional.of(items.get(itemName));
+            Optional takenItem = Optional.of(items.get(itemName));
+            items.remove(itemName);
+            return takenItem;
         } else {
             return Optional.empty();
         }

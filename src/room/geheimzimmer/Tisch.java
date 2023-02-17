@@ -32,11 +32,11 @@ public class Tisch extends View {
         str += "Dein Blick wandert in die Ecke, wo die *Bueste* von Shakespeer steht. Dich wundert warum diese hier ist und vor allem, warum Blutspuren an der scharfen Kante erkennbar sind. \n";
         }
         
-        if(items.containsKey("gewehr"))
+        if(items.containsKey("gewehr")){
         str += "Über dem Tisch hängt ein *Gewehr*. Es hängt schief, als hätte es jemand bewegt. ";
         }
         
         return str;
     }
     
-}
+
