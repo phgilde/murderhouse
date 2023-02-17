@@ -39,7 +39,6 @@ public class Arbeitszimmer extends Room {
                     && heldItem.get().getName().equals("gruener schluessel")
                     && !adjacentRooms.contains("geheimzimmer")) {
                 adjacentRooms.add("geheimzimmer");
-                System.out.println("raumoffen");
             }
         }
     }

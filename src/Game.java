@@ -29,11 +29,15 @@ class Game {
     Optional<Item> heldItem = Optional.empty();
     HashMap<String, Room> rooms = new HashMap<String, Room>();
 
+    private boolean notOver = true;
+    private double startTime = System.currentTimeMillis() / 1000.0;
+
     public Game() {
         currentRoom = new Wohnzimmer();
         rooms.put("wohnzimmer", currentRoom);
         rooms.put("saal", new Saal());
         rooms.put("flur", new Flur());
+        rooms.put("eingang", new Eingang());
         rooms.put("arbeitszimmer", new Arbeitszimmer());
         rooms.put("oles zimmer", new ZimmerOle());
         rooms.put("geheimzimmer", new Geheimzimmer());
@@ -102,10 +106,10 @@ class Game {
                 SlowPrint.slowPrint("Du haeltst nichts.");
             }
         });
-        parser.setParamCommand("frage", (String frage) ->{
-            if(currentView.isPresent()){
-                if(currentView.get() instanceof Human){
-                  ((Human) currentView.get()).ask(frage); 
+        parser.setParamCommand("frage", (String frage) -> {
+            if (currentView.isPresent()) {
+                if (currentView.get() instanceof Human) {
+                    ((Human) currentView.get()).ask(frage);
 
                 }
             }
@@ -142,7 +146,6 @@ class Game {
         });
         parser.setParamCommand("nimm", (String item) -> {
             if (currentView.isPresent()) {
-                System.out.println(item);
                 Optional<Item> takenItem = currentView.get().takeItem(item);
                 if (takenItem.isPresent()) {
                     inventory.put(takenItem.get().getName().toLowerCase(), takenItem.get());
@@ -162,14 +165,84 @@ class Game {
                 SlowPrint.slowPrint("Du haeltst nichts.");
             }
         });
+        parser.setSimpleCommand("trinken", () -> {
+            if (heldItem.isPresent() && heldItem.get().getName().equals("Zaubertrank")) {
+                notOver = false;
+                SlowPrint.slowPrint("Du trinkst den Zaubertrank.");
+                SlowPrint.slowPrint("Du wachst auf und bist in einem Wald.");
+                SlowPrint.slowPrint(
+                        "Um dich stehen die sieben Götter des Olymp. 'WO IST MEIN GELD???' ruft Zeus. Du versuchst zu antworten, aber du kannst nicht. Du bist gelähmt.");
+                SlowPrint.slowPrint(
+                        "Tutanchamun erscheint und sagt: 'Du hast es nicht verdient.' Daraufhin wird er von einem Blitz getroffen und du spürst einen stechenden Schmerz.");
+                SlowPrint.slowPrint(
+                        "Während die Götter besprechen, was sie mit dir machen sollen, wirst du von einem schwarzen Vogel gefressen.              ");
+                SlowPrint.slowPrint(
+                        "'Endlich bist du wach. Jemand hat Ole umgebracht. Wir haben schon die Polizei verständigt.' Ana, die Aushilfe steht vor dir."
+                                + " Dein Schädel brummt und du kannst dich an nichts erinnern. 'Sie sind in ungefähr 30 Minuten da. Aber vielleicht kannst du vorher rausfinden,"
+                                + " wer Ole das angetan hat.'");
+                SlowPrint.slowPrint(
+                        "Als du versuchst, aufzustehen. Erscheint eine 3 Meter große, dunkle Gestalt vor dir. 'DIETER DER DETEKTIV! DU SCHULDEST ZEUS GELD! DU WIRST ZAHLEN!'"
+                                + " Du versuchst zu fliehen, aber es ist zu spät. Die Gestalt holt einen merkwürdigen Gegenstand aus ihrer Tasche und hält ihn dir vor die Nase. Du spürst einen stechenden Schmerz und fällst zu Boden."
+                                + " Ein Stimmenchor flüstert aus den Ecken des Zimmers: 'Deine Seele. Deine Seele, sie wird, wird vom Seelenklempner geholt.' Die Stimmen verschwinden, "
+                                +"doch du fühlst dich innerlich leer. Es ist, als hätte die Gestalt alle Emotionen und alle Liebe aus deinem Körper gezogen. Die Gestalt steht noch immer vor dir und beobachtet dich aufmerksam.");
+            }
+        });
         parser.setCatch((command) -> SlowPrint.slowPrint(command
                 + " ist kein gueltiger Befehl. Gib 'hilfe' ein, um eine Liste der Befehle zu erhalten."));
+        SlowPrint.slowPrint(
+                "'Endlich bist du wach. Jemand hat Ole umgebracht. Wir haben schon die Polizei verständigt.' Ana, die Aushilfe steht vor dir."
+                        + " Dein Schädel brummt und du kannst dich an nichts erinnern. 'Sie sind in ungefähr 30 Minuten da. Aber vielleicht kannst du vorher rausfinden,"
+                        + " wer Ole das angetan hat.'");
     }
 
     public void mainLoop() {
         System.out.print(">>> ");
         String input = scanner.nextLine();
         parser.parse(input);
+        if (System.currentTimeMillis() / 1000 - startTime > 30 * 60) {
+            endGame();
+        }
+    }
+
+    private void endGame() {
+        notOver = false;
+        SlowPrint.slowPrint(
+                "Die Polizei ist angekommen. Sie befragen alle und durchsuchen das Haus und die Personen akribisch.");
+        if (inventory.containsKey("schuhrosa") && inventory.containsKey("bueste")
+                && !itemExists("notizbuch") && !itemExists("gewehr")
+                && inventory.containsKey("brief")) {
+            SlowPrint.slowPrint(
+                    "Die Polizei informiert dich, dass sie Friederieke als schuldig befunden haben und sie inhaftiert wurde. Alle Beweise sprechen gegen sie.");
+            SlowPrint.slowPrint(
+                    "Auf dem Weg nach Hause ruft dich dein Arbeitgeber an und bedankt sich für deine Hilfe.");
+            SlowPrint.slowPrint("Du hast das Spiel gewonnen! 🥳🎉");
+        } else {
+            SlowPrint.slowPrint(
+                    "Die Polizei verhaftet dich. Es wurden belastende Beweise gegen dich gefunden.");
+            SlowPrint.slowPrint(
+                    "Du planst, in der Hoffnung auf Strafminderung gegen den Auftraggeber auszusagen. Auf dem Weg zum Gericht ruft er dich an. Bevor du ans Telefon gehen kannst, wird der Gefangenentransporter gerammt und explodiert.");
+            SlowPrint.slowPrint("Du hast das Spiel verloren. 😢");
+        }
+    }
+
+    private boolean itemExists(String item) {
+        for (String key : inventory.keySet()) {
+            if (key.equals(item)) {
+                return true;
+            }
+        }
+        for (Room room : rooms.values()) {
+            for (View view : room.getViews().values()) {
+                if (view.takeItem(item).isPresent()) {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
+    public boolean notOver() {
+        return notOver;
     }
 
 }
