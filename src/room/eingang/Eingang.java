@@ -24,7 +24,7 @@ public class Eingang extends Room {
 
     @Override
     public String getDescription() {
-        return "In dem *Eingang* befindet sich ein Schuhschrank, eine Zimmerplanze, eine Schluesselbox und die Eingangstuer";
+        return "In dem *Eingang* befindet sich ein Schuhschrank, eine Zimmerpflanze, eine Schluesselbox und die Eingangstuer";
 
     }
 
