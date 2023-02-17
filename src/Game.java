@@ -33,6 +33,7 @@ class Game {
         rooms.put("wohnzimmer", currentRoom);
         rooms.put("saal", new Saal());
         rooms.put("flur", new Flur());
+        rooms.put("eingang", new Eingang());
         rooms.put("arbeitszimmer", new Arbeitszimmer());
         rooms.put("oles zimmer", new ZimmerOle());
         rooms.put("geheimzimmer", new Geheimzimmer());
@@ -128,7 +129,6 @@ class Game {
         });
         parser.setParamCommand("nimm", (String item) -> {
             if (currentView.isPresent()) {
-                System.out.println(item);
                 Optional<Item> takenItem = currentView.get().takeItem(item);
                 if (takenItem.isPresent()) {
                     inventory.put(takenItem.get().getName(), takenItem.get());
