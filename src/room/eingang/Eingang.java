@@ -9,14 +9,14 @@ import room.Room;
 import room.view.View;
 
 public class Eingang extends Room {
-    private HashMap<String, View> views = new HashMap<>();
+   
 
     public Eingang() {
         adjacentRooms.add("saal");
         adjacentRooms.add("draussen");
         views.put("schluesselkiste", new Schluesselkiste());
         views.put("schuhschrank", new Schuhschrank());
-        views.put("planze", new Planze()); 
+        views.put("planze", new Pflanze()); 
     }
 
     public String getName() {
@@ -29,11 +29,7 @@ public class Eingang extends Room {
 
     }
 
-    @Override
-    public Map<String, View> getViews() {
-        return views;
 
-    }
 
     @Override
     public void interact(View view, Optional<Item> heldItem) {
