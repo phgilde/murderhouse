@@ -112,7 +112,19 @@ class Game {
 
 
         });
+        parser.setParamCommand("treffe", () ->{
+            if (heldItem.get().getName() == "gewehr"){
+            if(currentView.isPresent()){
+                if(currentView.get() instanceof Human){
+                  ((Human) currentView.get()).ask(frage); 
 
+                }
+            }
+        }else{
+            
+        }
+
+        });
         parser.setSimpleCommand("interagiere", () -> {
             if (currentView.isPresent()) {
                 currentRoom.interact(currentView.get(), heldItem);

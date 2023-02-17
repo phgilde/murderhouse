@@ -14,6 +14,7 @@ public class Arbeitszimmer extends Room {
 
     public Arbeitszimmer() {
         adjacentRooms.add("saal");
+        adjacentRooms.add("garten");
 
         views.put("leiche", new Leiche());
         views.put("schrank", new Schrank());
