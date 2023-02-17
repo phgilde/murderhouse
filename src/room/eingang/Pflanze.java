@@ -4,6 +4,7 @@ import item.Item;
 import room.view.View;
 
 public class Pflanze extends View {
+    public Pflanze(){}
 
     @Override
     public String getDescription() {

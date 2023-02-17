@@ -1,4 +1,4 @@
-package room.view.human;
+package room.zimmer.zimmertrude;
 
 import java.util.Optional;
 
@@ -32,6 +32,8 @@ public class Trude extends Human {
     public String ask(String q) {
     if(q =="Malsachen"){
         return "'Ich male gerne um zu entspannen'" ;
+     } else if (q =="Streit"){
+        return "'Ja wir streiten uns manchmal wegen der Firma. Aber ich würde ihm nie etwas tun! Er ist mein Vater!'"; 
     }else{
         return null; 
     }
