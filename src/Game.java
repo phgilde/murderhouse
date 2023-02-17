@@ -153,8 +153,34 @@ class Game {
                 SlowPrint.slowPrint("Du haeltst nichts.");
             }
         });
+        parser.setSimpleCommand("trinken", () -> {
+            if (heldItem.isPresent() && heldItem.get().getName().equals("Zaubertrank")) {
+                notOver = false;
+                SlowPrint.slowPrint("Du trinkst den Zaubertrank.");
+                SlowPrint.slowPrint("Du wachst auf und bist in einem Wald.");
+                SlowPrint.slowPrint(
+                        "Um dich stehen die sieben Götter des Olymp. 'WO IST MEIN GELD???' ruft Zeus. Du versuchst zu antworten, aber du kannst nicht. Du bist gelähmt.");
+                SlowPrint.slowPrint(
+                        "Tutanchamun erscheint und sagt: 'Du hast es nicht verdient.' Daraufhin wird er von einem Blitz getroffen und du spürst einen stechenden Schmerz.");
+                SlowPrint.slowPrint(
+                        "Während die Götter besprechen, was sie mit dir machen sollen, wirst du von einem schwarzen Vogel gefressen.              ");
+                SlowPrint.slowPrint(
+                        "'Endlich bist du wach. Jemand hat Ole umgebracht. Wir haben schon die Polizei verständigt.' Ana, die Aushilfe steht vor dir."
+                                + " Dein Schädel brummt und du kannst dich an nichts erinnern. 'Sie sind in ungefähr 30 Minuten da. Aber vielleicht kannst du vorher rausfinden,"
+                                + " wer Ole das angetan hat.'");
+                SlowPrint.slowPrint(
+                        "Als du versuchst, aufzustehen. Erscheint eine 3 Meter große, dunkle Gestalt vor dir. 'DIETER DER DETEKTIV! DU SCHULDEST ZEUS GELD! DU WIRST ZAHLEN!'"
+                                + " Du versuchst zu fliehen, aber es ist zu spät. Die Gestalt holt einen merkwürdigen Gegenstand aus ihrer Tasche und hält ihn dir vor die Nase. Du spürst einen stechenden Schmerz und fällst zu Boden."
+                                + " Ein Stimmenchor flüstert aus den Ecken des Zimmers: 'Deine Seele. Deine Seele, sie wird, wird vom Seelenklempner geholt.' Die Stimmen verschwinden, "
+                                +"doch du fühlst dich innerlich leer. Es ist, als hätte die Gestalt alle Emotionen und alle Liebe aus deinem Körper gezogen. Die Gestalt steht noch immer vor dir und beobachtet dich aufmerksam.");
+            }
+        });
         parser.setCatch((command) -> SlowPrint.slowPrint(command
                 + " ist kein gueltiger Befehl. Gib 'hilfe' ein, um eine Liste der Befehle zu erhalten."));
+        SlowPrint.slowPrint(
+                "'Endlich bist du wach. Jemand hat Ole umgebracht. Wir haben schon die Polizei verständigt.' Ana, die Aushilfe steht vor dir."
+                        + " Dein Schädel brummt und du kannst dich an nichts erinnern. 'Sie sind in ungefähr 30 Minuten da. Aber vielleicht kannst du vorher rausfinden,"
+                        + " wer Ole das angetan hat.'");
     }
 
     public void mainLoop() {
