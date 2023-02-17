@@ -29,6 +29,9 @@ class Game {
     Optional<Item> heldItem = Optional.empty();
     HashMap<String, Room> rooms = new HashMap<String, Room>();
 
+    private boolean notOver = true;
+    private double startTime = System.currentTimeMillis() / 1000.0;
+
     public Game() {
         currentRoom = new Wohnzimmer();
         rooms.put("wohnzimmer", currentRoom);
@@ -102,10 +105,10 @@ class Game {
                 SlowPrint.slowPrint("Du haeltst nichts.");
             }
         });
-        parser.setParamCommand("frage", (String frage) ->{
-            if(currentView.isPresent()){
-                if(currentView.get() instanceof Human){
-                  ((Human) currentView.get()).ask(frage); 
+        parser.setParamCommand("frage", (String frage) -> {
+            if (currentView.isPresent()) {
+                if (currentView.get() instanceof Human) {
+                    ((Human) currentView.get()).ask(frage);
 
                 }
             }
@@ -158,6 +161,49 @@ class Game {
         System.out.print(">>> ");
         String input = scanner.nextLine();
         parser.parse(input);
+        if (System.currentTimeMillis() / 1000 - startTime > 30 * 60) {
+            endGame();
+        }
+    }
+
+    private void endGame() {
+        notOver = false;
+        SlowPrint.slowPrint(
+                "Die Polizei ist angekommen. Sie befragen alle und durchsuchen das Haus und die Personen akribisch.");
+        // TODO prüfen ob notizbuch in raum liegt
+        if (inventory.containsKey("schuhrosa") && inventory.containsKey("bueste")
+                && !itemExists("notizbuch") && !itemExists("gewehr") && inventory.containsKey("brief")) {
+            SlowPrint.slowPrint(
+                    "Die Polizei informiert dich, dass sie Friederieke als schuldig befunden haben und sie inhaftiert wurde. Alle Beweise sprechen gegen sie.");
+            SlowPrint.slowPrint(
+                    "Auf dem Weg nach Hause ruft dich dein Arbeitgeber an und bedankt sich für deine Hilfe.");
+            SlowPrint.slowPrint("Du hast das Spiel gewonnen! 🥳🎉");
+        } else {
+            SlowPrint.slowPrint(
+                    "Die Polizei verhaftet dich. Es wurden belastende Beweise gegen dich gefunden.");
+            SlowPrint.slowPrint(
+                    "Auf dem Weg zum Gericht wird der Gefangenentransporter gerammt und explodiert.");
+            SlowPrint.slowPrint("Du hast das Spiel verloren. 😢");
+        }
+    }
+    private boolean itemExists(String item) {
+        for (String key : inventory.keySet()) {
+            if (key.equals(item)) {
+                return true;
+            }
+        }
+        for (Room room : rooms.values()) {
+            for (View view : room.getViews().values()) {
+                if (view.takeItem(item).isPresent()) {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
+    public boolean notOver() {
+        return notOver;
     }
 
 }
