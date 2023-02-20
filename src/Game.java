@@ -8,7 +8,6 @@ import item.Item;
 import room.Room;
 import room.arbeitszimmer.Arbeitszimmer;
 import room.badezimmer.Badezimmer;
-import room.saal.Saal;
 import room.flur.Flur;
 import room.geheimzimmer.Geheimzimmer;
 import room.kueche.Kueche;
@@ -116,17 +115,17 @@ class Game {
 
 
         });
-        parser.setParamCommand("treffe", () ->{
-            if (heldItem.get().getName() == "gewehr"){
-            if(currentView.isPresent()){
-                if(currentView.get() instanceof Human){
-                  ((Human) currentView.get()).ask(frage); 
+        parser.setParamCommand("treffe", () -> {
+            if (heldItem.get().getName() == "gewehr") {
+                if (currentView.isPresent()) {
+                    if (currentView.get() instanceof Human) {
+                        ((Human) currentView.get()).ask(frage);
 
+                    }
                 }
+            } else {
+
             }
-        }else{
-            
-        }
 
         });
         parser.setSimpleCommand("interagiere", () -> {
@@ -184,7 +183,7 @@ class Game {
                         "Als du versuchst, aufzustehen. Erscheint eine 3 Meter große, dunkle Gestalt vor dir. 'DIETER DER DETEKTIV! DU SCHULDEST ZEUS GELD! DU WIRST ZAHLEN!'"
                                 + " Du versuchst zu fliehen, aber es ist zu spät. Die Gestalt holt einen merkwürdigen Gegenstand aus ihrer Tasche und hält ihn dir vor die Nase. Du spürst einen stechenden Schmerz und fällst zu Boden."
                                 + " Ein Stimmenchor flüstert aus den Ecken des Zimmers: 'Deine Seele. Deine Seele, sie wird, wird vom Seelenklempner geholt.' Die Stimmen verschwinden, "
-                                +"doch du fühlst dich innerlich leer. Es ist, als hätte die Gestalt alle Emotionen und alle Liebe aus deinem Körper gezogen. Die Gestalt steht noch immer vor dir und beobachtet dich aufmerksam.");
+                                + "doch du fühlst dich innerlich leer. Es ist, als hätte die Gestalt alle Emotionen und alle Liebe aus deinem Körper gezogen. Die Gestalt steht noch immer vor dir und beobachtet dich aufmerksam.");
             }
         });
         parser.setCatch((command) -> SlowPrint.slowPrint(command
