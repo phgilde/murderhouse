@@ -248,11 +248,10 @@ class Game {
     }
 
     private void initPreisliste(){
-        preisliste.put("USB-Stick", 300);
+        preisliste.put("usb-stick", 300);
         preisliste.put("goldkette", 200);
         preisliste.put("bueste", 100);
         preisliste.put("zigarre", 20);
-        preisliste.put();
     }
 
     private void claculateScore(){
