@@ -1,4 +1,5 @@
 import java.util.HashMap;
+import java.util.Map;
 import java.util.Optional;
 import java.util.Scanner;
 
@@ -27,6 +28,7 @@ class Game {
     Parser parser = new Parser();
     Optional<Item> heldItem = Optional.empty();
     HashMap<String, Room> rooms = new HashMap<String, Room>();
+    HashMap<String, Integer> preisliste = new HashMap<String, Integer>();
 
     private boolean notOver = true;
     private double startTime = System.currentTimeMillis() / 1000.0;
@@ -256,6 +258,28 @@ class Game {
             }
         }
         return false;
+    }
+
+    private void initPreisliste(){
+        preisliste.put("USB-Stick", 300);
+        preisliste.put("goldkette", 200);
+        preisliste.put("bueste", 100);
+        preisliste.put("zigarre", 20);
+        preisliste.put();
+    }
+
+    private void claculateScore(){
+        int score;
+        for(Map.Entry<String, Item> set : inventory.entrySet()){
+            if(preisliste.containsKey(set.getKey())){
+                SlowPrint.slowPrint(set.getValue().getName() + ": (+ " + preisliste.get(set.getKey()) + ")");
+                score += preisliste.get(set.getKey());
+            } else {
+                SlowPrint.slowPrint(set.getValue().getName() + ": (+ 10)");
+                score += 10;
+            }
+        }
+        SlowPrint.slowPrint("Du hast " + score + "Punkte erspielt.");
     }
 
     public boolean notOver() {
