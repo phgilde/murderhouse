@@ -21,6 +21,7 @@ import room.zimmer.zimmersam.ZimmerSam;
 import room.zimmer.zimmertrude.ZimmerTrude;
 import util.SlowPrint;
 import room.wohnzimmer.Wohnzimmer; 
+import room.saal.Saal;
 
 class Game {
     Optional<View> currentView = Optional.empty();
@@ -30,6 +31,7 @@ class Game {
     Parser parser = new Parser();
     Optional<Item> heldItem = Optional.empty();
     HashMap<String, Room> rooms = new HashMap<String, Room>();
+    HashMap<String, Integer> preisliste = new HashMap<String, Integer>();
     LinkedList<String> amLeben = new LinkedList<String>();
 
     private boolean notOver = true;
@@ -291,7 +293,7 @@ class Game {
     }
 
     private void claculateScore(){
-        int score;
+        int score = 0;
         for(Map.Entry<String, Item> set : inventory.entrySet()){
             if(preisliste.containsKey(set.getKey())){
                 SlowPrint.slowPrint(set.getValue().getName() + ": (+ " + preisliste.get(set.getKey()) + ")");
