@@ -6,6 +6,7 @@ import room.view.View;
 public class Wohnzimmer extends Room {
     public Wohnzimmer() {
         adjacentRooms.add("saal");
+        adjacentRooms.add("garten");
         views.put("fernseher", new Fernseher());
     }
 
@@ -17,7 +18,7 @@ public class Wohnzimmer extends Room {
     @Override
     public String getDescription() {
         return "Du befindest dich im Wohnzimmer. Hier ist eine Sofalandschaft und ein *Fernseher*. "
-                + "Von hier aus kannst du in den *Saal* gehen.";
+                + "Von hier aus kannst du in den *Saal* und in den *Garten* gehen.";
     }
 
     @Override
