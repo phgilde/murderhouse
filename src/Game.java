@@ -2,6 +2,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Optional;
 import java.util.Scanner;
+import java.util.LinkedList;
 
 import control.Parser;
 import interaction.Reaction;
@@ -19,6 +20,7 @@ import room.zimmer.zimmerole.ZimmerOle;
 import room.zimmer.zimmersam.ZimmerSam;
 import room.zimmer.zimmertrude.ZimmerTrude;
 import util.SlowPrint;
+import room.wohnzimmer.Wohnzimmer; 
 
 class Game {
     Optional<View> currentView = Optional.empty();
@@ -28,7 +30,7 @@ class Game {
     Parser parser = new Parser();
     Optional<Item> heldItem = Optional.empty();
     HashMap<String, Room> rooms = new HashMap<String, Room>();
-    HashMap<String, Integer> preisliste = new HashMap<String, Integer>();
+    LinkedList<String> amLeben = new LinkedList<String>();
 
     private boolean notOver = true;
     private double startTime = System.currentTimeMillis() / 1000.0;
@@ -47,6 +49,10 @@ class Game {
         rooms.put("trudes zimmer", new ZimmerTrude());
         rooms.put("anas zimmer", new ZimmerAna());
         rooms.put("sams zimmer", new ZimmerSam());
+        amLeben.push("Fredericke");
+        amLeben.push("Sam");
+        amLeben.push("Trude");
+        amLeben.push("Ana");
         parser.setSimpleCommand("umsehen", () -> SlowPrint.slowPrint(currentRoom.getDescription()));
         parser.setSimpleCommand("inventar", () -> {
             if (inventory.size() != 0) {
@@ -115,19 +121,30 @@ class Game {
                 }
             }
 
-
         });
-        parser.setParamCommand("treffe", () -> {
+        parser.setSimpleCommand("treffe", () -> {
             if (heldItem.get().getName() == "gewehr") {
                 if (currentView.isPresent()) {
                     if (currentView.get() instanceof Human) {
-                        ((Human) currentView.get()).ask(frage);
 
+                        if (((Human) currentView.get()).getName().equals("svaeltande")) {
+
+                            System.out.println("Was ist falsch mit dir????????");
+                            endGame();
+                        } else {
+                            amLeben.remove(currentView.get().getName());
+                            ((Human) currentView.get()).totallyNotDead(1);
+                            if (amLeben.isEmpty()) {
+                                killGame();
+                            }
+                        }
                     }
                 }
             } else {
 
             }
+
+        
 
         });
         parser.setSimpleCommand("interagiere", () -> {
@@ -172,33 +189,45 @@ class Game {
                 SlowPrint.slowPrint("Du trinkst den Zaubertrank.");
                 SlowPrint.slowPrint("Du wachst auf und bist in einem Wald.");
                 SlowPrint.slowPrint(
-                        "Um dich stehen die sieben Götter des Olymp. 'WO IST MEIN GELD???' ruft Zeus. Du versuchst zu antworten, aber du kannst nicht. Du bist gelähmt.");
+                        "Um dich stehen die sieben Götter des Olymp. 'WO IST MEIN GELD???' ruft Zeus."
+                                + " Du versuchst zu antworten, aber du kannst nicht. Du bist gelähmt.");
                 SlowPrint.slowPrint(
-                        "Tutanchamun erscheint und sagt: 'Du hast es nicht verdient.' Daraufhin wird er von einem Blitz getroffen und du spürst einen stechenden Schmerz.");
+                        "Tutanchamun erscheint und sagt: 'Du hast es nicht verdient.' Daraufhin wird "
+                                + "er von einem Blitz getroffen und du spürst einen stechenden Schmerz.");
                 SlowPrint.slowPrint(
-                        "Während die Götter besprechen, was sie mit dir machen sollen, wirst du von einem schwarzen Vogel gefressen.              ");
+                        "Während die Götter besprechen, was sie mit dir machen sollen, wirst du"
+                                + " von einem schwarzen Vogel gefressen.              ");
                 SlowPrint.slowPrint(
-                        "'Endlich bist du wach. Jemand hat Ole umgebracht. Wir haben schon die Polizei verständigt.' Ana, die Aushilfe steht vor dir."
-                                + " Dein Schädel brummt und du kannst dich an nichts erinnern. 'Sie sind in ungefähr 30 Minuten da. Aber vielleicht kannst du vorher rausfinden,"
-                                + " wer Ole das angetan hat. Ich gehe mal lieber auf mein Zimmer, nicht dass mir noch was passiert.'");
+                        "'Endlich bist du wach. Jemand hat Ole umgebracht. Wir haben schon die Polizei"
+                                + " verständigt.' Ana, die Aushilfe steht vor dir."
+                                + " Dein Schädel brummt und du kannst dich an nichts erinnern. 'Sie sind"
+                                + " in ungefähr 30 Minuten da. Aber vielleicht kannst du vorher rausfinden,"
+                                + " wer Ole das angetan hat. Ich gehe mal lieber auf mein Zimmer, nicht dass"
+                                + " mir noch was passiert.'");
                 SlowPrint.slowPrint(
-                        "Als du versuchst, aufzustehen. Erscheint eine 3 Meter große, dunkle Gestalt vor dir. 'DIETER DER DETEKTIV! DU SCHULDEST ZEUS GELD! DU WIRST ZAHLEN!'"
-                                + " Du versuchst zu fliehen, aber es ist zu spät. Die Gestalt holt einen merkwürdigen Gegenstand aus ihrer Tasche und hält ihn dir vor die Nase. Du spürst einen stechenden Schmerz und fällst zu Boden."
-                                + " Ein Stimmenchor flüstert aus den Ecken des Zimmers: 'Deine Seele. Deine Seele, sie wird, wird vom Seelenklempner geholt.' Die Stimmen verschwinden, "
-                                +"doch du fühlst dich innerlich leer. Es ist, als hätte die Gestalt alle Emotionen und alle Liebe aus deinem Körper gezogen. Die Gestalt steht noch immer vor dir und beobachtet dich aufmerksam.");
+                        "Als du versuchst, aufzustehen. Erscheint eine 3 Meter große, dunkle Gestalt vor dir. "
+                                + "'DIETER DER DETEKTIV! DU SCHULDEST ZEUS GELD! DU WIRST ZAHLEN!'"
+                                + " Du versuchst zu fliehen, aber es ist zu spät. Die Gestalt holt einen merkwürdigen "
+                                + "Gegenstand aus ihrer Tasche und hält ihn dir vor die Nase. Du spürst einen stechenden Schmerz und fällst zu Boden."
+                                + " Ein Stimmenchor flüstert aus den Ecken des Zimmers: 'Deine Seele. Deine Seele,"
+                                + " sie wird, wird vom Seelenklempner geholt.' Die Stimmen verschwinden, "
+                                + "doch du fühlst dich innerlich leer. Es ist, als hätte die Gestalt alle Emotionen "
+                                + "und alle Liebe aus deinem Körper gezogen. Die Gestalt steht noch immer vor dir und beobachtet dich aufmerksam.");
                 SlowPrint.slowPrint(
-                        "Plötzlich verschwindet der Boden unter dir. Du fällst in eine tiefe, schwarze Schlucht. Du versuchst, dich zu retten, aber du kannst nicht schwimmen. Du versinkst im Wasser.");
-                SlowPrint.slowPrint(
-                    "Um dich herum ist nichts als Kälte und unendliche Schwärze.");
+                        "Plötzlich verschwindet der Boden unter dir. Du fällst in eine tiefe, schwarze Schlucht."
+                                + " Du versuchst, dich zu retten, aber du kannst nicht schwimmen. Du versinkst im Wasser.");
+                SlowPrint.slowPrint("Um dich herum ist nichts als Kälte und unendliche Schwärze.");
                 SlowPrint.slowPrint("Du hast verloren.");
             }
         });
         parser.setCatch((command) -> SlowPrint.slowPrint(command
                 + " ist kein gueltiger Befehl. Gib 'hilfe' ein, um eine Liste der Befehle zu erhalten."));
-        SlowPrint.slowPrint(
-                "'Endlich bist du wach. Jemand hat Ole umgebracht. Wir haben schon die Polizei verständigt.' Ana, die Aushilfe steht vor dir."
-                        + " Dein Schädel brummt und du kannst dich an nichts erinnern. 'Sie sind in ungefähr 30 Minuten da. Aber vielleicht kannst du vorher rausfinden,"
-                        + " wer Ole das angetan hat. Ich gehe mal lieber auf mein Zimmer, nicht dass mir noch was passiert.'");
+        SlowPrint.slowPrint("'Endlich bist du wach. Jemand hat Ole umgebracht. Wir haben"
+                + " schon die Polizei verständigt.' Ana, die Aushilfe steht vor dir."
+                + " Dein Schädel brummt und du kannst dich an nichts erinnern. 'Sie sind"
+                + " in ungefähr 30 Minuten da. Aber vielleicht kannst du vorher rausfinden,"
+                + " wer Ole das angetan hat. Ich gehe mal lieber auf mein Zimmer, nicht dass "
+                + "mir noch was passiert.'");
     }
 
     public void mainLoop() {
@@ -208,6 +237,12 @@ class Game {
         if (System.currentTimeMillis() / 1000 - startTime > 30 * 60) {
             endGame();
         }
+    }
+    private void killGame() {
+        System.out.println("Das Haus ist still. Nur der Hund bellt im Garten");
+        
+
+
     }
 
     private void endGame() {
@@ -226,7 +261,8 @@ class Game {
             SlowPrint.slowPrint(
                     "Die Polizei verhaftet dich. Es wurden belastende Beweise gegen dich gefunden.");
             SlowPrint.slowPrint(
-                    "Du planst, in der Hoffnung auf Strafminderung gegen den Auftraggeber auszusagen. Auf dem Weg zum Gericht ruft er dich an. Bevor du ans Telefon gehen kannst, wird der Gefangenentransporter gerammt und explodiert.");
+                    "Du planst, in der Hoffnung auf Strafminderung gegen den Auftraggeber auszusagen. "
+                    +"Auf dem Weg zum Gericht ruft er dich an. Bevor du ans Telefon gehen kannst, wird der Gefangenentransporter gerammt und explodiert.");
             SlowPrint.slowPrint("Du hast das Spiel verloren. 😢");
         }
     }

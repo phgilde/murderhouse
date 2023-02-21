@@ -1,22 +1,22 @@
-package room.zimmer.zimmertrude;
+package room.zimmer.zimmersam;
 
 import java.util.Optional;
 
 import item.Item;
 import room.view.human.Human;
 
-public class Trude extends Human {
+public class Sam extends Human {
 
     @Override
     public String talk(Optional<Item> heldItem) {
         if (n == 0) {
             if (heldItem.isEmpty()) {
-                return "'Er ist tot! Wie konnte das nur passieren???'";
-            } else if (heldItem.get().getName().equals("baseballschlaeger")) {
-                return "'Ja das ist Ben's. Oh was ist den da soviel Farbe dran? Da habe ich wohl beim Malen nicht gut aufgepasst.'";
+                return "'Geh weg!'";
+            } else if (heldItem.get().getName().equals("boxhandschuhe")) {
+                return "'Ich boxe in meiner Freizeit. Ich mache manchmal bei Boxkaempfen mit die ... naja die nur so quasi legal sind'";
 
             } else {
-                return "'Darueber weiß ich leider nichts.'";
+                return "'Ich will nicht mit dir reden'";
             }
         } else {
             return null;
@@ -26,19 +26,19 @@ public class Trude extends Human {
     @Override
     public String getDescription() {
         if (n == 0) {
-            return "Trude ist eine etwa mitte 20-Jahre alte Frau.";
+            return "Sam ist etwa 18-Jahre alt, er hat eine sportlliche Figur.";
         } else {
-            return "Trude scheint zu schlafen.";
+            return "Sam liegt auf dem Boden. Er sieht ein wenig blass aus.";
         }
     }
 
     @Override
     public String ask(String q) {
         if (n == 0) {
-            if (q == "Malsachen") {
-                return "'Ich male gerne um zu entspannen'";
+            if (q == "Knall") {
+                return "'Knall, welcher Knall? Papa hat nur die Kuehlschranktuer zugeworfen, sonst war da nichts'";
             } else if (q == "Streit") {
-                return "'Ja wir streiten uns manchmal wegen der Firma. Aber ich würde ihm nie etwas tun! Er ist mein Vater!'";
+                return "'Er nervt -- Hat immer rumgenervt wegen meinen Verhaftungen, er glaubt das ich mein Leben nicht auf die Reihe kriege.'";
             } else {
                 return null;
             }
@@ -50,7 +50,7 @@ public class Trude extends Human {
     @Override
     public String getName() {
         // TODO Auto-generated method stub
-        return "Trude Fredericke Dödade";
+        return "Samuel Ole Doedade";
     }
 
     @Override
