@@ -170,33 +170,45 @@ class Game {
                 SlowPrint.slowPrint("Du trinkst den Zaubertrank.");
                 SlowPrint.slowPrint("Du wachst auf und bist in einem Wald.");
                 SlowPrint.slowPrint(
-                        "Um dich stehen die sieben Götter des Olymp. 'WO IST MEIN GELD???' ruft Zeus. Du versuchst zu antworten, aber du kannst nicht. Du bist gelähmt.");
+                        "Um dich stehen die sieben Götter des Olymp. 'WO IST MEIN GELD???' ruft Zeus."
+                                + " Du versuchst zu antworten, aber du kannst nicht. Du bist gelähmt.");
                 SlowPrint.slowPrint(
-                        "Tutanchamun erscheint und sagt: 'Du hast es nicht verdient.' Daraufhin wird er von einem Blitz getroffen und du spürst einen stechenden Schmerz.");
+                        "Tutanchamun erscheint und sagt: 'Du hast es nicht verdient.' Daraufhin wird "
+                                + "er von einem Blitz getroffen und du spürst einen stechenden Schmerz.");
                 SlowPrint.slowPrint(
-                        "Während die Götter besprechen, was sie mit dir machen sollen, wirst du von einem schwarzen Vogel gefressen.              ");
+                        "Während die Götter besprechen, was sie mit dir machen sollen, wirst du"
+                                + " von einem schwarzen Vogel gefressen.              ");
                 SlowPrint.slowPrint(
-                        "'Endlich bist du wach. Jemand hat Ole umgebracht. Wir haben schon die Polizei verständigt.' Ana, die Aushilfe steht vor dir."
-                                + " Dein Schädel brummt und du kannst dich an nichts erinnern. 'Sie sind in ungefähr 30 Minuten da. Aber vielleicht kannst du vorher rausfinden,"
-                                + " wer Ole das angetan hat. Ich gehe mal lieber auf mein Zimmer, nicht dass mir noch was passiert.'");
+                        "'Endlich bist du wach. Jemand hat Ole umgebracht. Wir haben schon die Polizei"
+                                + " verständigt.' Ana, die Aushilfe steht vor dir."
+                                + " Dein Schädel brummt und du kannst dich an nichts erinnern. 'Sie sind"
+                                + " in ungefähr 30 Minuten da. Aber vielleicht kannst du vorher rausfinden,"
+                                + " wer Ole das angetan hat. Ich gehe mal lieber auf mein Zimmer, nicht dass"
+                                + " mir noch was passiert.'");
                 SlowPrint.slowPrint(
-                        "Als du versuchst, aufzustehen. Erscheint eine 3 Meter große, dunkle Gestalt vor dir. 'DIETER DER DETEKTIV! DU SCHULDEST ZEUS GELD! DU WIRST ZAHLEN!'"
-                                + " Du versuchst zu fliehen, aber es ist zu spät. Die Gestalt holt einen merkwürdigen Gegenstand aus ihrer Tasche und hält ihn dir vor die Nase. Du spürst einen stechenden Schmerz und fällst zu Boden."
-                                + " Ein Stimmenchor flüstert aus den Ecken des Zimmers: 'Deine Seele. Deine Seele, sie wird, wird vom Seelenklempner geholt.' Die Stimmen verschwinden, "
-                                +"doch du fühlst dich innerlich leer. Es ist, als hätte die Gestalt alle Emotionen und alle Liebe aus deinem Körper gezogen. Die Gestalt steht noch immer vor dir und beobachtet dich aufmerksam.");
+                        "Als du versuchst, aufzustehen. Erscheint eine 3 Meter große, dunkle Gestalt vor dir. "
+                                + "'DIETER DER DETEKTIV! DU SCHULDEST ZEUS GELD! DU WIRST ZAHLEN!'"
+                                + " Du versuchst zu fliehen, aber es ist zu spät. Die Gestalt holt einen merkwürdigen "
+                                + "Gegenstand aus ihrer Tasche und hält ihn dir vor die Nase. Du spürst einen stechenden Schmerz und fällst zu Boden."
+                                + " Ein Stimmenchor flüstert aus den Ecken des Zimmers: 'Deine Seele. Deine Seele,"
+                                + " sie wird, wird vom Seelenklempner geholt.' Die Stimmen verschwinden, "
+                                + "doch du fühlst dich innerlich leer. Es ist, als hätte die Gestalt alle Emotionen "
+                                + "und alle Liebe aus deinem Körper gezogen. Die Gestalt steht noch immer vor dir und beobachtet dich aufmerksam.");
                 SlowPrint.slowPrint(
-                        "Plötzlich verschwindet der Boden unter dir. Du fällst in eine tiefe, schwarze Schlucht. Du versuchst, dich zu retten, aber du kannst nicht schwimmen. Du versinkst im Wasser.");
-                SlowPrint.slowPrint(
-                    "Um dich herum ist nichts als Kälte und unendliche Schwärze.");
+                        "Plötzlich verschwindet der Boden unter dir. Du fällst in eine tiefe, schwarze Schlucht."
+                                + " Du versuchst, dich zu retten, aber du kannst nicht schwimmen. Du versinkst im Wasser.");
+                SlowPrint.slowPrint("Um dich herum ist nichts als Kälte und unendliche Schwärze.");
                 SlowPrint.slowPrint("Du hast verloren.");
             }
         });
         parser.setCatch((command) -> SlowPrint.slowPrint(command
                 + " ist kein gueltiger Befehl. Gib 'hilfe' ein, um eine Liste der Befehle zu erhalten."));
-        SlowPrint.slowPrint(
-                "'Endlich bist du wach. Jemand hat Ole umgebracht. Wir haben schon die Polizei verständigt.' Ana, die Aushilfe steht vor dir."
-                        + " Dein Schädel brummt und du kannst dich an nichts erinnern. 'Sie sind in ungefähr 30 Minuten da. Aber vielleicht kannst du vorher rausfinden,"
-                        + " wer Ole das angetan hat. Ich gehe mal lieber auf mein Zimmer, nicht dass mir noch was passiert.'");
+        SlowPrint.slowPrint("'Endlich bist du wach. Jemand hat Ole umgebracht. Wir haben"
+                + " schon die Polizei verständigt.' Ana, die Aushilfe steht vor dir."
+                + " Dein Schädel brummt und du kannst dich an nichts erinnern. 'Sie sind"
+                + " in ungefähr 30 Minuten da. Aber vielleicht kannst du vorher rausfinden,"
+                + " wer Ole das angetan hat. Ich gehe mal lieber auf mein Zimmer, nicht dass "
+                + "mir noch was passiert.'");
     }
 
     public void mainLoop() {
@@ -224,7 +236,8 @@ class Game {
             SlowPrint.slowPrint(
                     "Die Polizei verhaftet dich. Es wurden belastende Beweise gegen dich gefunden.");
             SlowPrint.slowPrint(
-                    "Du planst, in der Hoffnung auf Strafminderung gegen den Auftraggeber auszusagen. Auf dem Weg zum Gericht ruft er dich an. Bevor du ans Telefon gehen kannst, wird der Gefangenentransporter gerammt und explodiert.");
+                    "Du planst, in der Hoffnung auf Strafminderung gegen den Auftraggeber auszusagen. "
+                    +"Auf dem Weg zum Gericht ruft er dich an. Bevor du ans Telefon gehen kannst, wird der Gefangenentransporter gerammt und explodiert.");
             SlowPrint.slowPrint("Du hast das Spiel verloren. 😢");
         }
     }
