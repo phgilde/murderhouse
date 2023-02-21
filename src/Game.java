@@ -1,4 +1,5 @@
 import java.util.HashMap;
+import java.util.Map;
 import java.util.Optional;
 import java.util.Scanner;
 import java.util.LinkedList;
@@ -9,7 +10,6 @@ import item.Item;
 import room.Room;
 import room.arbeitszimmer.Arbeitszimmer;
 import room.badezimmer.Badezimmer;
-import room.saal.Saal;
 import room.flur.Flur;
 import room.geheimzimmer.Geheimzimmer;
 import room.kueche.Kueche;
@@ -197,7 +197,7 @@ class Game {
                 SlowPrint.slowPrint(
                         "'Endlich bist du wach. Jemand hat Ole umgebracht. Wir haben schon die Polizei verständigt.' Ana, die Aushilfe steht vor dir."
                                 + " Dein Schädel brummt und du kannst dich an nichts erinnern. 'Sie sind in ungefähr 30 Minuten da. Aber vielleicht kannst du vorher rausfinden,"
-                                + " wer Ole das angetan hat.'");
+                                + " wer Ole das angetan hat. Ich gehe mal lieber auf mein Zimmer, nicht dass mir noch was passiert.'");
                 SlowPrint.slowPrint(
                         "Als du versuchst, aufzustehen. Erscheint eine 3 Meter große, dunkle Gestalt vor dir. 'DIETER DER DETEKTIV! DU SCHULDEST ZEUS GELD! DU WIRST ZAHLEN!'"
                                 + " Du versuchst zu fliehen, aber es ist zu spät. Die Gestalt holt einen merkwürdigen Gegenstand aus ihrer Tasche und hält ihn dir vor die Nase. Du spürst einen stechenden Schmerz und fällst zu Boden."
@@ -210,7 +210,7 @@ class Game {
         SlowPrint.slowPrint(
                 "'Endlich bist du wach. Jemand hat Ole umgebracht. Wir haben schon die Polizei verständigt.' Ana, die Aushilfe steht vor dir."
                         + " Dein Schädel brummt und du kannst dich an nichts erinnern. 'Sie sind in ungefähr 30 Minuten da. Aber vielleicht kannst du vorher rausfinden,"
-                        + " wer Ole das angetan hat.'");
+                        + " wer Ole das angetan hat. Ich gehe mal lieber auf mein Zimmer, nicht dass mir noch was passiert.'");
     }
 
     public void mainLoop() {
@@ -263,6 +263,28 @@ class Game {
             }
         }
         return false;
+    }
+
+    private void initPreisliste(){
+        preisliste.put("USB-Stick", 300);
+        preisliste.put("goldkette", 200);
+        preisliste.put("bueste", 100);
+        preisliste.put("zigarre", 20);
+        preisliste.put();
+    }
+
+    private void claculateScore(){
+        int score;
+        for(Map.Entry<String, Item> set : inventory.entrySet()){
+            if(preisliste.containsKey(set.getKey())){
+                SlowPrint.slowPrint(set.getValue().getName() + ": (+ " + preisliste.get(set.getKey()) + ")");
+                score += preisliste.get(set.getKey());
+            } else {
+                SlowPrint.slowPrint(set.getValue().getName() + ": (+ 10)");
+                score += 10;
+            }
+        }
+        SlowPrint.slowPrint("Du hast " + score + "Punkte erspielt.");
     }
 
     public boolean notOver() {
