@@ -5,7 +5,7 @@ import item.Item;
 import room.view.View;
 
 public abstract class Human extends View {
-
+     protected int n =0; 
     /**
      * Gibt eine Reaktion auf ein Item zurueck.
      * 
@@ -20,6 +20,14 @@ public abstract class Human extends View {
      * 
      */
     public abstract String ask(String q);
+
+    public /*abstract*/ String totallyNotDead (int t){
+        if(t==1){
+          return this.getName() + "ist nicht tot, diese Person wird nur ab jetzt komischer Weise nicht mehr ansprechbar sein und nur noch auf dem Boden rumliegen."; 
+        }else{
+            return null; 
+        }
+    }
 
 
 

@@ -1,6 +1,7 @@
 import java.util.HashMap;
 import java.util.Optional;
 import java.util.Scanner;
+import java.util.LinkedList;
 
 import control.Parser;
 import interaction.Reaction;
@@ -19,6 +20,7 @@ import room.zimmer.zimmerole.ZimmerOle;
 import room.zimmer.zimmersam.ZimmerSam;
 import room.zimmer.zimmertrude.ZimmerTrude;
 import util.SlowPrint;
+import room.wohnzimmer.Wohnzimmer; 
 
 class Game {
     Optional<View> currentView = Optional.empty();
@@ -28,6 +30,7 @@ class Game {
     Parser parser = new Parser();
     Optional<Item> heldItem = Optional.empty();
     HashMap<String, Room> rooms = new HashMap<String, Room>();
+    LinkedList<String> amLeben = new LinkedList<String>();
 
     private boolean notOver = true;
     private double startTime = System.currentTimeMillis() / 1000.0;
@@ -46,6 +49,10 @@ class Game {
         rooms.put("trudes zimmer", new ZimmerTrude());
         rooms.put("anas zimmer", new ZimmerAna());
         rooms.put("sams zimmer", new ZimmerSam());
+        amLeben.push("Fredericke");
+        amLeben.push("Sam");
+        amLeben.push("Trude");
+        amLeben.push("Ana");
         parser.setSimpleCommand("umsehen", () -> SlowPrint.slowPrint(currentRoom.getDescription()));
         parser.setSimpleCommand("inventar", () -> {
             if (inventory.size() != 0) {
@@ -114,19 +121,30 @@ class Game {
                 }
             }
 
-
         });
-        parser.setParamCommand("treffe", () ->{
-            if (heldItem.get().getName() == "gewehr"){
-            if(currentView.isPresent()){
-                if(currentView.get() instanceof Human){
-                  ((Human) currentView.get()).ask(frage); 
+        parser.setSimpleCommand("treffe", () -> {
+            if (heldItem.get().getName() == "gewehr") {
+                if (currentView.isPresent()) {
+                    if (currentView.get() instanceof Human) {
 
+                        if (((Human) currentView.get()).getName().equals("svaeltande")) {
+
+                            System.out.println("Was ist falsch mit dir????????");
+                            endGame();
+                        } else {
+                            amLeben.remove(currentView.get().getName());
+                            ((Human) currentView.get()).totallyNotDead(1);
+                            if (amLeben.isEmpty()) {
+                                killGame();
+                            }
+                        }
+                    }
                 }
+            } else {
+
             }
-        }else{
-            
-        }
+
+        
 
         });
         parser.setSimpleCommand("interagiere", () -> {
@@ -184,7 +202,7 @@ class Game {
                         "Als du versuchst, aufzustehen. Erscheint eine 3 Meter große, dunkle Gestalt vor dir. 'DIETER DER DETEKTIV! DU SCHULDEST ZEUS GELD! DU WIRST ZAHLEN!'"
                                 + " Du versuchst zu fliehen, aber es ist zu spät. Die Gestalt holt einen merkwürdigen Gegenstand aus ihrer Tasche und hält ihn dir vor die Nase. Du spürst einen stechenden Schmerz und fällst zu Boden."
                                 + " Ein Stimmenchor flüstert aus den Ecken des Zimmers: 'Deine Seele. Deine Seele, sie wird, wird vom Seelenklempner geholt.' Die Stimmen verschwinden, "
-                                +"doch du fühlst dich innerlich leer. Es ist, als hätte die Gestalt alle Emotionen und alle Liebe aus deinem Körper gezogen. Die Gestalt steht noch immer vor dir und beobachtet dich aufmerksam.");
+                                + "doch du fühlst dich innerlich leer. Es ist, als hätte die Gestalt alle Emotionen und alle Liebe aus deinem Körper gezogen. Die Gestalt steht noch immer vor dir und beobachtet dich aufmerksam.");
             }
         });
         parser.setCatch((command) -> SlowPrint.slowPrint(command
@@ -202,6 +220,12 @@ class Game {
         if (System.currentTimeMillis() / 1000 - startTime > 30 * 60) {
             endGame();
         }
+    }
+    private void killGame() {
+        System.out.println("Das Haus ist still. Nur der Hund bellt im Garten");
+        
+
+
     }
 
     private void endGame() {

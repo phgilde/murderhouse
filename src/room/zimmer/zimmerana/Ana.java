@@ -10,6 +10,7 @@ public class Ana extends Human {
 
     @Override
     public String talk(Optional<Item> heldItem) {
+        if (n == 0) {
         if (heldItem.isEmpty()) {
             return "'Ich weiss gar nicht was ich denken soll! Der arme Mann ist einfach Tod!'"
                     + "'Das tut mir ja wahnsinnig leid fuer ihn. Und er hatte gerade erst einen |Streit| mit beiden Kindern. Ach gottchen'";
@@ -33,13 +34,18 @@ public class Ana extends Human {
         } else {
             return "'Ach, Hallo Dieter, sind Sie schon weiter mit dem Fall?'";
         }
-
+    } else{
+        return null; 
+    }
     }
 
     @Override
     public String getDescription() {
-
+        if (n == 0) {
         return "Ana Blurr ist eine etwa 30-jaehrige Frau";
+        }else{
+            return "Ana Blurr ist eine etwa 30-jaehrige Frau. Gerade liegt sie ohne sich zu bewegen auf dem Boden";
+        }
     }
 
     @Override
@@ -50,6 +56,7 @@ public class Ana extends Human {
 
     @Override
     public String ask(String q) {
+        if (n == 0) {
         if (q == "Streit") {
             return "'Naja, erst hatte der Alte sich am Freitag mit Trude gestritten, sie ist sehr involviert in die Zukunft der Famillien-Firma. Und eigentlich immer was anderes vor als Ole."
                     + "Dann am gestern stritt er sich mit Sam: Der Sam, muessen Sie Wissen, ist kein Musterjunge. Er wurde schon zweimal verhaftet, gestern sind sie dann nocheinmal aneinader gefahren...  "
@@ -60,12 +67,15 @@ public class Ana extends Human {
         } else {
             return null;
         }
+    }else {
+        return null; 
+    }
     }
 
     @Override
     public String getName() {
         // TODO Auto-generated method stub
-        return null;
+        return "Anabell Blurr";
     }
 
 }
