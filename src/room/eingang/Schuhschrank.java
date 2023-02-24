@@ -17,7 +17,8 @@ public class Schuhschrank extends View {
     }
 
     public String getDescription() {
-        return "du siehst sechs Schuhe";
+        String[] zahlen = {"ein", "zwei", "drei", "vier", "fünf", "sechs"};
+        return "Du siehst " + zahlen[items.size() - 1] + " Paar Schuhe";
     }
 
     @Override
