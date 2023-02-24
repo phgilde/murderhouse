@@ -100,6 +100,9 @@ class Game {
                 SlowPrint.slowPrint("Du kannst das nicht inspizieren.");
             }
         });
+
+        parser.setParamCommand("insp", (String view) -> {parser.parse("inspiziere " + view);});
+
         parser.setParamCommand("halte", (String item) -> {
             if (inventory.containsKey(item)) {
                 heldItem = Optional.of(inventory.get(item));
@@ -164,6 +167,9 @@ class Game {
                 SlowPrint.slowPrint("Du kannst nicht interagieren.");
             }
         });
+
+        parser.setSimpleCommand("inter", () -> {parser.parse("interagiere");});
+
         parser.setParamCommand("nimm", (String item) -> {
             if (currentView.isPresent()) {
                 Optional<Item> takenItem = currentView.get().takeItem(item);
