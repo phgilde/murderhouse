@@ -34,8 +34,8 @@ public class Herdplatte extends View {
     public Reaction interactReaction(Optional<Item> heldItem) {
         if (heldItem.isEmpty()) {
             if (isOn) {
-                if (medicineRequired.equals(medicineFound) && !cookingDone) {
-                    items.put("Zaubertrank", new SimpleItem("Zaubertrank",
+                if ((medicineFound.containsAll(medicineRequired)) && !cookingDone) {
+                    items.put("zaubertrank", new SimpleItem("Zaubertrank",
                             "Eine dunkle, zaehe Fluessigkeit mit einem unangenehmen Geruch. Sie scheint zu glitzern."));
                     cookingDone = true;
                     return new Reaction("Du schaltest den Herd aus. Der Kochtopf ist heiss."
