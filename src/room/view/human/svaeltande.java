@@ -24,7 +24,7 @@ public class svaeltande extends Human {
         }
         return new Reaction("");
     }else{
-        return new Reaction("");
+        return new Reaction("Du streichelst den Hund.");
     }
     }
     
