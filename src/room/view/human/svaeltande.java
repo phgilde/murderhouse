@@ -21,6 +21,7 @@ public class svaeltande extends Human {
         if (heldItem.isPresent()){
         if (heldItem.get().getName().equals("steak")) {
             return new Reaction("Du fütterst den Hund mit " + heldItem.get().getName() , true);
+            
         }
         return new Reaction("");
     }else{
@@ -36,7 +37,7 @@ public class svaeltande extends Human {
 
     @Override
     public String getName() {
-        return "svaeltande";
+        return "Svaeltande";
     }
 
     @Override

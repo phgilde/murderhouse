@@ -7,20 +7,13 @@ import room.view.View;
 public class Schluesselkiste extends View {
 
     public Schluesselkiste() {
-        items.put("brauner schluessel", new SimpleItem("brauner Schluessel",
+        items.put("brauner schluessel", new SimpleItem("brauner schluessel",
                 "Ein brauner Schluessel mit einem ledernen Schluesselband."));
 
     }
 
     public String getDescription() {
-        if(items.size() == 2){
-            return "Du siehst zwei Schluessel";
-        } else if(items.size() == 1){
-            return "Du siehst einen Schlüssel.";
-        } else {
-            return "Die Schluesselkiste ist leer";
-        }
-        
+        return "Du siehts einen braunen Schluessel";
     }
 
     @Override

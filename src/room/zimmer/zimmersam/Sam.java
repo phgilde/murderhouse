@@ -49,13 +49,11 @@ public class Sam extends Human {
 
     @Override
     public String getName() {
-        // TODO Auto-generated method stub
         return "Samuel Ole Doedade";
     }
 
     @Override
     public String interact(Optional<Item> heldItem) {
-        // TODO Auto-generated method stub
         return null;
     }
 

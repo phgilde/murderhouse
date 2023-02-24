@@ -1,4 +1,4 @@
-package room.zimmer.zimmerole;
+package room.zimmer.schlafzimmer;
 
 import java.util.Optional;
 import item.Item;

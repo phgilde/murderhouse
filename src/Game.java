@@ -15,13 +15,14 @@ import room.geheimzimmer.Geheimzimmer;
 import room.kueche.Kueche;
 import room.view.View;
 import room.view.human.Human;
+import room.zimmer.schlafzimmer.Schlafzimmer;
 import room.zimmer.zimmerana.ZimmerAna;
-import room.zimmer.zimmerole.ZimmerOle;
 import room.zimmer.zimmersam.ZimmerSam;
 import room.zimmer.zimmertrude.ZimmerTrude;
 import util.SlowPrint;
-import room.wohnzimmer.Wohnzimmer; 
-import room.saal.Saal; 
+import room.wohnzimmer.Wohnzimmer;
+import room.saal.Saal;
+import room.eingang.Eingang;
 
 class Game {
     Optional<View> currentView = Optional.empty();
@@ -44,7 +45,7 @@ class Game {
         rooms.put("flur", new Flur());
         rooms.put("eingang", new Eingang());
         rooms.put("arbeitszimmer", new Arbeitszimmer());
-        rooms.put("oles zimmer", new ZimmerOle());
+        rooms.put("schlafzimmer", new Schlafzimmer());
         rooms.put("geheimzimmer", new Geheimzimmer());
         rooms.put("kueche", new Kueche());
         rooms.put("badezimmer", new Badezimmer());
@@ -150,13 +151,14 @@ class Game {
 
             }
 
-        
-
         });
         parser.setSimpleCommand("interagiere", () -> {
             if (currentView.isPresent()) {
                 currentRoom.interact(currentView.get(), heldItem);
                 Reaction reaction = currentView.get().interactReaction(heldItem);
+                if (currentView.get().getName().equals("svaeltande") && heldItem.get().getName().equals("steak")){
+                    killGame(); 
+                }
                 if (reaction.consumesItem()) {
                     if (heldItem.isPresent()) {
                         inventory.remove(heldItem.get().getName());
@@ -196,6 +198,7 @@ class Game {
             if (heldItem.isPresent() && heldItem.get().getName().equals("Zaubertrank")) {
                 notOver = false;
                 SlowPrint.slowPrint("Du trinkst den Zaubertrank.");
+                SlowPrint.slowPrint("...                             ...                             ...                      ");
                 SlowPrint.slowPrint("Du wachst auf und bist in einem Wald.");
                 SlowPrint.slowPrint(
                         "Um dich stehen die sieben Götter des Olymp. 'WO IST MEIN GELD???' ruft Zeus."
@@ -206,6 +209,8 @@ class Game {
                 SlowPrint.slowPrint(
                         "Während die Götter besprechen, was sie mit dir machen sollen, wirst du"
                                 + " von einem schwarzen Vogel gefressen.              ");
+                                
+                SlowPrint.slowPrint("...                             ...                             ...                      ");
                 SlowPrint.slowPrint(
                         "'Endlich bist du wach. Jemand hat Ole umgebracht. Wir haben schon die Polizei"
                                 + " verständigt.' Ana, die Aushilfe steht vor dir."
@@ -213,6 +218,8 @@ class Game {
                                 + " in ungefähr 30 Minuten da. Aber vielleicht kannst du vorher rausfinden,"
                                 + " wer Ole das angetan hat. Ich gehe mal lieber auf mein Zimmer, nicht dass"
                                 + " mir noch was passiert.'");
+                                
+                SlowPrint.slowPrint("...                             ...                             ...                      ");
                 SlowPrint.slowPrint(
                         "Als du versuchst, aufzustehen. Erscheint eine 3 Meter große, dunkle Gestalt vor dir. "
                                 + "'DIETER DER DETEKTIV! DU SCHULDEST ZEUS GELD! DU WIRST ZAHLEN!'"
@@ -222,10 +229,16 @@ class Game {
                                 + " sie wird, wird vom Seelenklempner geholt.' Die Stimmen verschwinden, "
                                 + "doch du fühlst dich innerlich leer. Es ist, als hätte die Gestalt alle Emotionen "
                                 + "und alle Liebe aus deinem Körper gezogen. Die Gestalt steht noch immer vor dir und beobachtet dich aufmerksam.");
+                                
+                SlowPrint.slowPrint("...                             ...                             ...                      ");
                 SlowPrint.slowPrint(
                         "Plötzlich verschwindet der Boden unter dir. Du fällst in eine tiefe, schwarze Schlucht."
                                 + " Du versuchst, dich zu retten, aber du kannst nicht schwimmen. Du versinkst im Wasser.");
+                                
+                SlowPrint.slowPrint("...                             ...                             ...                      ");
                 SlowPrint.slowPrint("Um dich herum ist nichts als Kälte und unendliche Schwärze.");
+                
+                SlowPrint.slowPrint("...                             ...                             ...                      ");
                 SlowPrint.slowPrint("Du hast verloren.");
             }
         });
@@ -233,7 +246,7 @@ class Game {
                 + " ist kein gueltiger Befehl. Gib 'hilfe' ein, um eine Liste der Befehle zu erhalten."));
         SlowPrint.slowPrint("'Endlich bist du wach. Jemand hat Ole umgebracht. Wir haben"
                 + " schon die Polizei verständigt.' Ana, die Aushilfe steht vor dir."
-                + " Dein Schädel brummt und du kannst dich an nichts erinnern. 'Sie sind"
+                + " Dein Schädel brummt und du kannst dich an kaum etwas erinnern. 'Sie sind"
                 + " in ungefähr 30 Minuten da. Aber vielleicht kannst du vorher rausfinden,"
                 + " wer Ole das angetan hat. Ich gehe mal lieber auf mein Zimmer, nicht dass "
                 + "mir noch was passiert.'");
@@ -247,19 +260,25 @@ class Game {
             endGame();
         }
     }
+
     private void killGame() {
-        if (itemExists("steak")){
-        System.out.println("Das Haus ist still. Nur der Hund bellt im Garten. Du solltest dich beeilen, vielleicht hat Ana auch schon die Polizei gerufen");
-        System.out.println("Du solltest jemanden finden der sich auf der Insel auskennt. Der Hund bellt draußen weiter");
-        System.out.println("Vielleicht kannst du jemanden dazu bewegen dir den Weg zum Boot zu zeigen. Vielleicht mit etwas zu essen..."); 
-        }else{
-            notOver = false; 
-            System.out.println( " Der Hund kommt angelaufen und zeigt dir den Weg zum Boot und deiner Freiheit.");
-            System.out.println("Du hast das Spiel erfolgreich abgeschlossen. Nachdem du am Ufer angekommen bist, berichtest du deinen Arbeitgeber von deiner Mission");
+        if (itemExists("steak")) {
+            System.out.println(
+                    "Das Haus ist still. Nur der Hund bellt im Garten. Du solltest dich beeilen, vielleicht hat Ana auch schon die Polizei gerufen");
+            System.out.println(
+                    "Du solltest jemanden finden der sich auf der Insel auskennt. Der Hund bellt draußen weiter");
+            System.out.println(
+                    "Vielleicht kannst du jemanden dazu bewegen dir den Weg zum Boot zu zeigen. Vielleicht mit etwas zu essen...");
+        } else if (!itemExists("steak") && inventory.containsKey("brauner schluessel")) {
+            notOver = false;
+            System.out.println(" Der Hund kommt angelaufen und zeigt dir den Weg zum Boot und deiner Freiheit.");
+            System.out.println(
+                    "Du hast das Spiel erfolgreich abgeschlossen. Nachdem du am Ufer angekommen bist, berichtest du deinen Arbeitgeber von deiner Mission");
+
+        } else {
+            System.out.println(
+                    "Der Hund kommt zur Tuer und will anscheinend nach draußen. Wenn du versuchst die Tür aufzumachen bemerkst du das diese geschlossen ist.");
         }
-
-        
-
 
     }
 
@@ -267,7 +286,7 @@ class Game {
         notOver = false;
         SlowPrint.slowPrint(
                 "Die Polizei ist angekommen. Sie befragen alle und durchsuchen das Haus und die Personen akribisch.");
-        if (inventory.containsKey("schuhrosa") && inventory.containsKey("bueste")
+        if (inventory.containsKey("rosa Tanzschuhe") && inventory.containsKey("bueste")
                 && !itemExists("notizbuch") && !itemExists("gewehr")
                 && inventory.containsKey("brief")) {
             SlowPrint.slowPrint(
@@ -280,7 +299,7 @@ class Game {
                     "Die Polizei verhaftet dich. Es wurden belastende Beweise gegen dich gefunden.");
             SlowPrint.slowPrint(
                     "Du planst, in der Hoffnung auf Strafminderung gegen den Auftraggeber auszusagen. "
-                    +"Auf dem Weg zum Gericht ruft er dich an. Bevor du ans Telefon gehen kannst, wird der Gefangenentransporter gerammt und explodiert.");
+                            + "Auf dem Weg zum Gericht ruft er dich an. Bevor du ans Telefon gehen kannst, wird der Gefangenentransporter gerammt und explodiert.");
             SlowPrint.slowPrint("Du hast das Spiel verloren. 😢");
         }
     }
@@ -301,17 +320,17 @@ class Game {
         return false;
     }
 
-    private void initPreisliste(){
+    private void initPreisliste() {
         preisliste.put("usb-stick", 300);
         preisliste.put("goldkette", 200);
         preisliste.put("bueste", 100);
         preisliste.put("zigarre", 20);
     }
 
-    private void claculateScore(){
+    private void claculateScore() {
         int score = 0;
-        for(Map.Entry<String, Item> set : inventory.entrySet()){
-            if(preisliste.containsKey(set.getKey())){
+        for (Map.Entry<String, Item> set : inventory.entrySet()) {
+            if (preisliste.containsKey(set.getKey())) {
                 SlowPrint.slowPrint(set.getValue().getName() + ": (+ " + preisliste.get(set.getKey()) + ")");
                 score += preisliste.get(set.getKey());
             } else {
