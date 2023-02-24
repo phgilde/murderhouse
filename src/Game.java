@@ -101,6 +101,9 @@ class Game {
                 SlowPrint.slowPrint("Du kannst das nicht inspizieren.");
             }
         });
+
+        parser.setParamCommand("insp", (String view) -> {parser.parse("inspiziere " + view);});
+
         parser.setParamCommand("halte", (String item) -> {
             if (inventory.containsKey(item)) {
                 heldItem = Optional.of(inventory.get(item));
@@ -166,6 +169,9 @@ class Game {
                 SlowPrint.slowPrint("Du kannst nicht interagieren.");
             }
         });
+
+        parser.setSimpleCommand("inter", () -> {parser.parse("interagiere");});
+
         parser.setParamCommand("nimm", (String item) -> {
             if (currentView.isPresent()) {
                 Optional<Item> takenItem = currentView.get().takeItem(item);
@@ -191,6 +197,7 @@ class Game {
             if (heldItem.isPresent() && heldItem.get().getName().equals("Zaubertrank")) {
                 notOver = false;
                 SlowPrint.slowPrint("Du trinkst den Zaubertrank.");
+                SlowPrint.slowPrint("...                             ...                             ...                      ");
                 SlowPrint.slowPrint("Du wachst auf und bist in einem Wald.");
                 SlowPrint.slowPrint(
                         "Um dich stehen die sieben Götter des Olymp. 'WO IST MEIN GELD???' ruft Zeus."
@@ -201,6 +208,8 @@ class Game {
                 SlowPrint.slowPrint(
                         "Während die Götter besprechen, was sie mit dir machen sollen, wirst du"
                                 + " von einem schwarzen Vogel gefressen.              ");
+                                
+                SlowPrint.slowPrint("...                             ...                             ...                      ");
                 SlowPrint.slowPrint(
                         "'Endlich bist du wach. Jemand hat Ole umgebracht. Wir haben schon die Polizei"
                                 + " verständigt.' Ana, die Aushilfe steht vor dir."
@@ -208,6 +217,8 @@ class Game {
                                 + " in ungefähr 30 Minuten da. Aber vielleicht kannst du vorher rausfinden,"
                                 + " wer Ole das angetan hat. Ich gehe mal lieber auf mein Zimmer, nicht dass"
                                 + " mir noch was passiert.'");
+                                
+                SlowPrint.slowPrint("...                             ...                             ...                      ");
                 SlowPrint.slowPrint(
                         "Als du versuchst, aufzustehen. Erscheint eine 3 Meter große, dunkle Gestalt vor dir. "
                                 + "'DIETER DER DETEKTIV! DU SCHULDEST ZEUS GELD! DU WIRST ZAHLEN!'"
@@ -217,10 +228,16 @@ class Game {
                                 + " sie wird, wird vom Seelenklempner geholt.' Die Stimmen verschwinden, "
                                 + "doch du fühlst dich innerlich leer. Es ist, als hätte die Gestalt alle Emotionen "
                                 + "und alle Liebe aus deinem Körper gezogen. Die Gestalt steht noch immer vor dir und beobachtet dich aufmerksam.");
+                                
+                SlowPrint.slowPrint("...                             ...                             ...                      ");
                 SlowPrint.slowPrint(
                         "Plötzlich verschwindet der Boden unter dir. Du fällst in eine tiefe, schwarze Schlucht."
                                 + " Du versuchst, dich zu retten, aber du kannst nicht schwimmen. Du versinkst im Wasser.");
+                                
+                SlowPrint.slowPrint("...                             ...                             ...                      ");
                 SlowPrint.slowPrint("Um dich herum ist nichts als Kälte und unendliche Schwärze.");
+                
+                SlowPrint.slowPrint("...                             ...                             ...                      ");
                 SlowPrint.slowPrint("Du hast verloren.");
             }
         });
@@ -268,7 +285,7 @@ class Game {
         notOver = false;
         SlowPrint.slowPrint(
                 "Die Polizei ist angekommen. Sie befragen alle und durchsuchen das Haus und die Personen akribisch.");
-        if (inventory.containsKey("schuhrosa") && inventory.containsKey("bueste")
+        if (inventory.containsKey("rosa Tanzschuhe") && inventory.containsKey("bueste")
                 && !itemExists("notizbuch") && !itemExists("gewehr")
                 && inventory.containsKey("brief")) {
             SlowPrint.slowPrint(
