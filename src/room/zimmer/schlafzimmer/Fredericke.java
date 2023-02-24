@@ -1,4 +1,4 @@
-package room.zimmer.zimmerole;
+package room.zimmer.schlafzimmer;
 
 import java.util.Optional;
 
@@ -14,7 +14,7 @@ public class Fredericke extends Human {
                 return "'Da muss irgendein Hooligan eingebrochen sein und wollte wohl eine von Ole's teuren Uhren stehlen! Ole muss sich wohl gewaehrt haben! Der Gute!' *Schluchz* *Fredericke sinkt in vollkomender verzweiflung auf das Bett zurueck*";
             } else if (heldItem.get().getName().equals("boxhandschuhe")) {
                 return "Niemals! Mein Sohn wuerde so etwas niemals machen!"
-                        + "Was sind Sie den fuer ein Detektiv das Sie solche Hirngespenster in betracht ziehen! Also wirklich Dirk! Von Ihnen haette ich sowas nicht erwartet";
+                        + " Was sind Sie den fuer ein Detektiv das Sie solche Hirngespenster in betracht ziehen! Also wirklich Dirk! Von Ihnen haette ich sowas nicht erwartet";
             } else {
                 return "'Lassen Sie mich bitte in Ruhe. Mein Mann ist gerade gestorben! Ist das nicht genug?' *Schluchz*";
             }
@@ -34,19 +34,16 @@ public class Fredericke extends Human {
 
     @Override
     public String interact(Optional<Item> heldItem) {
-        // TODO Auto-generated method stub
         return null;
     }
 
     @Override
     public String ask(String q) {
-        // TODO Auto-generated method stub
         return null;
     }
 
     @Override
     public String getName() {
-        // TODO Auto-generated method stub
         return "Fredericke Hildegart Dödade";
     }
 

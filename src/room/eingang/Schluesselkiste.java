@@ -7,13 +7,13 @@ import room.view.View;
 public class Schluesselkiste extends View {
 
     public Schluesselkiste() {
-        items.put("brauner Schluessel", new SimpleItem("brauner Schluessel",
+        items.put("brauner schluessel", new SimpleItem("brauner schluessel",
                 "Ein brauner Schluessel mit einem ledernen Schluesselband."));
 
     }
 
     public String getDescription() {
-        return "du seihts zwei Schluessel";
+        return "Du siehts einen braunen Schluessel";
     }
 
     @Override

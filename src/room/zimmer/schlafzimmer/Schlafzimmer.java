@@ -1,4 +1,4 @@
-package room.zimmer.zimmerole;
+package room.zimmer.schlafzimmer;
 
 import java.util.Map;
 import java.util.Optional;
@@ -7,9 +7,9 @@ import room.Room;
 import room.view.View;
 
 
-public class ZimmerOle extends Room {
+public class Schlafzimmer extends Room {
 
-    public ZimmerOle() {
+    public Schlafzimmer() {
         adjacentRooms.add("flur");
         views.put("kommode", new Kommode());
         views.put("nachttisch links", new NachttischLinks());
