@@ -26,7 +26,7 @@ public class Ana extends Human {
                         + "'Seit dem Unfall vor 6 Monaten war Bella bereits mehrere Male hier im Haus. Sie ist Freitag erst kurz bevor Sie gekommen sind abgefahren.'"
                         + "'Ich bin, um ehrlich mit Ihnen zu sein, erstaunt dass Fredericke noch nichts von Ole's Affaere mitbekommen hat. Sie ist eigentlich sehr aufmerksam.'";
             }
-        } else if (heldItem.get().getName().equals("schuhrosa")) {
+        } else if (heldItem.get().getName().equals("rosa Tanzschuhe")) {
             n = n + 1;
             return "'Das sind die Tanzschuhe von Fredericke oder nicht?? Hahaha. '";
         } else if (heldItem.get().getName().equals("morphin")) {

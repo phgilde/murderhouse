@@ -277,7 +277,7 @@ class Game {
         notOver = false;
         SlowPrint.slowPrint(
                 "Die Polizei ist angekommen. Sie befragen alle und durchsuchen das Haus und die Personen akribisch.");
-        if (inventory.containsKey("schuhrosa") && inventory.containsKey("bueste")
+        if (inventory.containsKey("rosa Tanzschuhe") && inventory.containsKey("bueste")
                 && !itemExists("notizbuch") && !itemExists("gewehr")
                 && inventory.containsKey("brief")) {
             SlowPrint.slowPrint(

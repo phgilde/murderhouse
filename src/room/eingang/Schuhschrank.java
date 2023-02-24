@@ -2,17 +2,14 @@ import room.view.View;
 import java.util.Optional;
 
 import item.Item;
-import item.Schuhe;
+import item.SimpleItem;
 
 public class Schuhschrank extends View {
 
     public Schuhschrank() {
-        items.put("schuhrosa", new Schuhe("rosa"));
-        items.put("schuhbraun", new Schuhe("braun"));
-        items.put("schuhblau", new Schuhe("blau"));
-        items.put("schuhschwarz", new Schuhe("schwarz"));
-        items.put("schuhweiss", new Schuhe("weiss"));
-        items.put("schuhgrau", new Schuhe("grau"));
+        items.put("rosa tanzschuhe", new SimpleItem("rosa Tanzschuhe", "Ein paar rosa Tanzschuhe aus Satin."));
+        items.put("wanderschuhe", new SimpleItem("Wanderschuhe", "Orange Wanderschuhe Salomon Speedcross 3 Gradient Cherry Tomato."));
+        items.put("laufschuhe", new SimpleItem("Laufschuhe", "Gelbe Laufschuhe von Nike."));
 
     }
 
