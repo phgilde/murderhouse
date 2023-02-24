@@ -31,6 +31,7 @@ class Game {
     Parser parser = new Parser();
     Optional<Item> heldItem = Optional.empty();
     HashMap<String, Room> rooms = new HashMap<String, Room>();
+    HashMap<String, Integer> preisliste = new HashMap<String, Integer>();
     LinkedList<String> amLeben = new LinkedList<String>();
 
     private boolean notOver = true;
@@ -294,15 +295,14 @@ class Game {
     }
 
     private void initPreisliste(){
-        preisliste.put("USB-Stick", 300);
+        preisliste.put("usb-stick", 300);
         preisliste.put("goldkette", 200);
         preisliste.put("bueste", 100);
         preisliste.put("zigarre", 20);
-        preisliste.put();
     }
 
     private void claculateScore(){
-        int score;
+        int score = 0;
         for(Map.Entry<String, Item> set : inventory.entrySet()){
             if(preisliste.containsKey(set.getKey())){
                 SlowPrint.slowPrint(set.getValue().getName() + ": (+ " + preisliste.get(set.getKey()) + ")");
