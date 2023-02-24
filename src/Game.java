@@ -21,6 +21,7 @@ import room.zimmer.zimmersam.ZimmerSam;
 import room.zimmer.zimmertrude.ZimmerTrude;
 import util.SlowPrint;
 import room.wohnzimmer.Wohnzimmer; 
+import room.saal.Saal; 
 
 class Game {
     Optional<View> currentView = Optional.empty();
@@ -239,7 +240,16 @@ class Game {
         }
     }
     private void killGame() {
-        System.out.println("Das Haus ist still. Nur der Hund bellt im Garten");
+        if (itemExists("steak")){
+        System.out.println("Das Haus ist still. Nur der Hund bellt im Garten. Du solltest dich beeilen, vielleicht hat Ana auch schon die Polizei gerufen");
+        System.out.println("Du solltest jemanden finden der sich auf der Insel auskennt. Der Hund bellt draußen weiter");
+        System.out.println("Vielleicht kannst du jemanden dazu bewegen dir den Weg zum Boot zu zeigen. Vielleicht mit etwas zu essen..."); 
+        }else{
+            notOver = false; 
+            System.out.println( " Der Hund kommt angelaufen und zeigt dir den Weg zum Boot und deiner Freiheit.");
+            System.out.println("Du hast das Spiel erfolgreich abgeschlossen. Nachdem du am Ufer angekommen bist, berichtest du deinen Arbeitgeber von deiner Mission");
+        }
+
         
 
 
