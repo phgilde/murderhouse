@@ -29,6 +29,8 @@ public class Tisch extends View {
         "Du hebst die Bueste an und bemerkst, dass sie gar nicht so schwer ist wie erwartet. Du gugckst dir die Blutflecken genauer an.\n"
         + "Du bemerkst das auf der Büste gar nicht der Name Shakespeer steeht, sonder eine Gravur: Für Fredericke."
         ));
+
+        items.put("gewehr", new SimpleItem("gewehr", "Das Gewehr ist voll geladen und hat an der Schulterstütze ein paar Kratzer"));
     }
 
     @Override

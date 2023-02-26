@@ -81,6 +81,7 @@ class Game {
             SlowPrint.slowPrint("ansehen: Beschreibt den gehaltenen Gegenstand");
             SlowPrint.slowPrint("interagiere: Interagiert mit der Ansicht");
             SlowPrint.slowPrint("nimm <Gegenstand>: Nimm den angegebenen Gegenstand");
+            SlowPrint.slowPrint("einstecken: Legt den gehaltenen Gegenstand ins Inventar");
         });
         parser.setParamCommand("gehe", (String direction) -> {
             if (currentRoom.getAdjacentRooms().contains(direction)) {

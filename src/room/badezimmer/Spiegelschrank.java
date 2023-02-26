@@ -19,9 +19,17 @@ public class Spiegelschrank extends View {
 
     @Override
     public String getDescription() {
-        return "Im Schrank befinden sich mehrere Zahnbuersten, zwei Sorten Zahnpasta. Weiterhin liegt hier eine Schachtel *Ibuprofen*."
-                + "        ...         " + "        ...         "
-                + "Hinter einem Zahnputzbecher bemerkst du einen *Rosa Schluessel*";
+        String str = "";
+        str += "Im Schrank befinden sich mehrere Zahnbuersten, zwei Sorten Zahnpasta. ";
+        if(items.containsKey("ibuprofen")){
+            str += "Weiterhin liegt hier eine Schachtel *Ibuprofen*.";
+        }
+        if(items.containsKey("rosa schluessel")){
+            str += "        ...         " + "        ...         "
+            + "Hinter einem Zahnputzbecher bemerkst du einen *Rosa Schluessel*";
+        }
+
+        return str;
     }
 
 }

@@ -23,6 +23,6 @@ public class Schluesselkiste extends View {
 
     @Override
     public String getName() {
-        return "schluesselkiste";
+        return "Schluesselkiste";
     }
 }
