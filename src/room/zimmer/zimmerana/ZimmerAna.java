@@ -7,6 +7,7 @@ public class ZimmerAna extends Room {
     public ZimmerAna() {
         adjacentRooms.add("flur");
         views.put("topfpflanze", new Topfpflanze());
+        views.put("Ana", new Ana()); 
     }
 
     @Override
@@ -17,7 +18,7 @@ public class ZimmerAna extends Room {
     @Override
     public String getDescription() {
         return "Das Zimmer ist ziemlich klein, aber es ist sehr gemütlich."
-                + "Hier ist ein Bett mit einem Schrank darunter. Auf dem Fensterbrett steht eine *Topfpflanze*. Die Wände sind voller Kunstdrucke.";
+                + "Hier ist ein Bett mit einem Schrank darunter. Am Schreibtisch sitzt Ana. Auf dem Fensterbrett steht eine *Topfpflanze*. Die Wände sind voller Kunstdrucke.";
     }
 
 }

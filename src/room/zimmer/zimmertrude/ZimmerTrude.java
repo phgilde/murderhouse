@@ -9,6 +9,7 @@ public class ZimmerTrude extends Room {
         views.put("bett", new Bett());
         views.put("schreibtisch", new Schreibtisch());
         views.put("schrank", new Schrank());
+        views.put("trude", new Trude()); 
     }
     @Override
     public String getName() {
@@ -18,7 +19,7 @@ public class ZimmerTrude extends Room {
     @Override
     public String getDescription() {
         return "Du stehst in einem wirklich großen Zimmer, das irgendwie leer erscheint. Du siehst ein *Bett*,"
-                + "einen *Schreibtisch* und einen *Schrank*."
+                + "einen *Schreibtisch* auf dem eine Frau sitzt und einen *Schrank*."
                 + "Von hier aus kannst du in den *Flur* gehen.";
     }
 
