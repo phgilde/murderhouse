@@ -125,7 +125,7 @@ class Game {
         });
        
         parser.setParamCommand("frage", (String frage) -> {
-            HumanDa();
+            selectHumanInRoom();
 
             if (currentView.get() instanceof Human) {
                 ((Human) currentView.get()).ask(frage);
@@ -135,7 +135,7 @@ class Game {
         });
 
         parser.setSimpleCommand("rede",() -> {
-            HumanDa();
+            selectHumanInRoom();
 
             if (currentView.get() instanceof Human) {
                 ((Human) currentView.get()).talk(heldItem);
@@ -274,19 +274,12 @@ class Game {
                 + " wer Ole das angetan hat. Ich gehe mal lieber auf mein Zimmer, nicht dass "
                 + "mir noch was passiert.'");
     }
-    private void HumanDa(){
-        String view1 = "fredericke";
-        String view2 = "ana";
-        String view3 = "sam";
-        String view4 = "trude";
-        if (currentRoom.getViews().containsKey(view1)) {
-            currentView = Optional.of(currentRoom.getViews().get(view1));
-        } else if (currentRoom.getViews().containsKey(view2)) {
-            currentView = Optional.of(currentRoom.getViews().get(view2));
-        } else if (currentRoom.getViews().containsKey(view3)) {
-            currentView = Optional.of(currentRoom.getViews().get(view3));
-        } else if (currentRoom.getViews().containsKey(view4)) {
-            currentView = Optional.of(currentRoom.getViews().get(view4));
+    private void selectHumanInRoom(){
+        for (View view : currentRoom.getViews().values()) {
+            if (view instanceof Human) {
+                currentView = Optional.of(view);
+                break;
+            }
         }
     }
 
