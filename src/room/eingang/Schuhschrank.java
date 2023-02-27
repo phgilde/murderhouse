@@ -7,15 +7,22 @@ import item.SimpleItem;
 public class Schuhschrank extends View {
 
     public Schuhschrank() {
-        items.put("rosa tanzschuhe", new SimpleItem("rosa Tanzschuhe", "Ein paar rosa Tanzschuhe aus Satin."));
-        items.put("wanderschuhe", new SimpleItem("Wanderschuhe", "Orange Wanderschuhe Salomon Speedcross 3 Gradient Cherry Tomato."));
+        items.put("tanzschuhe",
+                new SimpleItem("Tanzschuhe", "Ein paar rosa Tanzschuhe aus Satin."));
+        items.put("wanderschuhe", new SimpleItem("Wanderschuhe",
+                "Orange Wanderschuhe Salomon Speedcross 3 Gradient Cherry Tomato."));
         items.put("laufschuhe", new SimpleItem("Laufschuhe", "Gelbe Laufschuhe von Nike."));
 
     }
 
     public String getDescription() {
-        String[] zahlen = {"ein", "zwei", "drei", "vier", "fünf", "sechs"};
-        return "Du siehst " + zahlen[items.size() - 1] + " Paar Schuhe";
+        return "Ein Holzschrank mit mehreren Klappschubladen. Auf dem Schrank liegt ein seidenes Tuch, auf dem in Gläsern verschiedene schöne Steine und Kristalle liegen."
+                + (items.size() != 0
+                        ? " In den Schubladen befinden sich "
+                                + (items.containsKey("tanzschuhe") ? "*Tanzschuhe*, " : "")
+                                + (items.containsKey("wanderschuhe") ? "*Wanderschuhe*, " : "")
+                                + (items.containsKey("laufschuhe") ? "*Laufschuhe*. " : "")
+                        : "");
     }
 
     @Override
