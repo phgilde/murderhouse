@@ -6,7 +6,7 @@ public class Bilderrahmen extends View {
     public Bilderrahmen() {
         items.put("oelgemaelde", new SimpleItem("Oelgemaelde",
                 "Eine weiß bemalte Leinwand. Auf der Leinwand ist ein Schneesturm zu sehen. "
-                        + "Es handelt sich um das Gemaelde 'Der Schneesturm' von Arnfast Anderberg."));
+                        + "Es handelt sich um das Gemaelde 'Der Schneesturm' von Arnfast Anderberg.", 67500000));
     }
 
     @Override
