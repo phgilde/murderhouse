@@ -123,7 +123,7 @@ class Game {
                 SlowPrint.slowPrint("Du haeltst nichts.");
             }
         });
-       
+
         parser.setParamCommand("frage", (String frage) -> {
             selectHumanInRoom();
 
@@ -134,7 +134,7 @@ class Game {
 
         });
 
-        parser.setSimpleCommand("rede",() -> {
+        parser.setSimpleCommand("rede", () -> {
             selectHumanInRoom();
 
             if (currentView.get() instanceof Human) {
@@ -171,7 +171,8 @@ class Game {
             if (currentView.isPresent()) {
                 currentRoom.interact(currentView.get(), heldItem);
                 Reaction reaction = currentView.get().interactReaction(heldItem);
-                if (currentView.get().getName().equals("svaeltande") && heldItem.get().getName().equals("steak")) {
+                if (currentView.get().getName().equals("svaeltande")
+                        && heldItem.get().getName().equals("steak")) {
                     killGame();
                 }
                 if (reaction.consumesItem()) {
@@ -267,7 +268,8 @@ class Game {
         });
         parser.setSimpleCommand("schlafe", () -> {
             if (currentRoom.getViews().containsKey("bett")) {
-                SlowPrint.slowPrint("Du merkst, wie du sehr müde wirst. Du legst dich ins Bett und schläfst ein.");
+                SlowPrint.slowPrint(
+                        "Du merkst, wie du sehr müde wirst. Du legst dich ins Bett und schläfst ein.");
                 SlowPrint.slowPrint(
                         "...                             ...                             ...                      ");
                 SlowPrint.slowPrint("Ein Klingeln an der Tür weckt dich.");
@@ -283,7 +285,8 @@ class Game {
                 + " wer Ole das angetan hat. Ich gehe mal lieber auf mein Zimmer, nicht dass "
                 + "mir noch was passiert.'");
     }
-    private void selectHumanInRoom(){
+
+    private void selectHumanInRoom() {
         for (View view : currentRoom.getViews().values()) {
             if (view instanceof Human) {
                 currentView = Optional.of(view);
@@ -311,7 +314,8 @@ class Game {
                     "Vielleicht kannst du jemanden dazu bewegen dir den Weg zum Boot zu zeigen. Vielleicht mit etwas zu essen...");
         } else if (!itemExists("steak") && inventory.containsKey("brauner schluessel")) {
             notOver = false;
-            System.out.println(" Der Hund kommt angelaufen und zeigt dir den Weg zum Boot und deiner Freiheit.");
+            System.out.println(
+                    " Der Hund kommt angelaufen und zeigt dir den Weg zum Boot und deiner Freiheit.");
             System.out.println(
                     "Du hast das Spiel erfolgreich abgeschlossen. Nachdem du am Ufer angekommen bist, berichtest du deinen Arbeitgeber von deiner Mission");
 
@@ -371,7 +375,8 @@ class Game {
         int score = 0;
         for (Map.Entry<String, Item> set : inventory.entrySet()) {
             if (preisliste.containsKey(set.getKey())) {
-                SlowPrint.slowPrint(set.getValue().getName() + ": (+ " + preisliste.get(set.getKey()) + ")");
+                SlowPrint.slowPrint(
+                        set.getValue().getName() + ": (+ " + preisliste.get(set.getKey()) + ")");
                 score += preisliste.get(set.getKey());
             } else {
                 SlowPrint.slowPrint(set.getValue().getName() + ": (+ 10)");
