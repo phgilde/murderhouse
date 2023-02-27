@@ -152,7 +152,7 @@ class Game {
                         if (((Human) currentView.get()).getName().equals("svaeltande")) {
 
                             System.out.println("Was ist falsch mit dir????????");
-                            endGame();
+                            policeEnd();
                         } else {
                             amLeben.remove(currentView.get().getName());
                             ((Human) currentView.get()).totallyNotDead(1);
@@ -265,6 +265,15 @@ class Game {
                 SlowPrint.slowPrint("Du hast verloren.");
             }
         });
+        parser.setSimpleCommand("schlafe", () -> {
+            if (currentRoom.getViews().containsKey("bett")) {
+                SlowPrint.slowPrint("Du merkst, wie du sehr müde wirst. Du legst dich ins Bett und schläfst ein.");
+                SlowPrint.slowPrint(
+                        "...                             ...                             ...                      ");
+                SlowPrint.slowPrint("Ein Klingeln an der Tür weckt dich.");
+                policeEnd();
+            }
+        });
         parser.setCatch((command) -> SlowPrint.slowPrint(command
                 + " ist kein gueltiger Befehl. Gib 'hilfe' ein, um eine Liste der Befehle zu erhalten."));
         SlowPrint.slowPrint("'Endlich bist du wach. Jemand hat Ole umgebracht. Wir haben"
@@ -288,7 +297,7 @@ class Game {
         String input = scanner.nextLine();
         parser.parse(input);
         if (System.currentTimeMillis() / 1000 - startTime > 30 * 60) {
-            endGame();
+            policeEnd();
         }
     }
 
@@ -313,7 +322,7 @@ class Game {
 
     }
 
-    private void endGame() {
+    private void policeEnd() {
         notOver = false;
         SlowPrint.slowPrint(
                 "Die Polizei ist angekommen. Sie befragen alle und durchsuchen das Haus und die Personen akribisch.");
