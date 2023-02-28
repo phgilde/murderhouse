@@ -33,7 +33,7 @@ public class Leiche extends Human {
 
     @Override
     public String getName() {
-        return "leiche";
+        return "Leiche";
     }
 
     @Override

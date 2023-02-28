@@ -3,8 +3,6 @@ package murderhouse.control;
 import java.util.HashMap;
 import java.util.function.Consumer;
 
-import javax.management.ConstructorParameters;
-
 public class Parser {
     private HashMap<String, Runnable> simpleCommands;
     private HashMap<String, Consumer<String>> paramCommands;
