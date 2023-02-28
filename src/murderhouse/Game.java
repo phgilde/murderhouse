@@ -308,6 +308,8 @@ class Game {
                 + " in ungefaehr 30 Minuten da. Aber vielleicht kannst du vorher rausfinden,"
                 + " wer Ole das angetan hat. Ich gehe mal lieber auf mein Zimmer, nicht dass "
                 + "mir noch was passiert.'");
+        
+        initPreisliste();
     }
 
     private Optional<Human> getHumanInRoom() {
@@ -362,6 +364,7 @@ class Game {
             SlowPrint.slowPrint(
                     "Auf dem Weg nach Hause ruft dich dein Arbeitgeber an und bedankt sich fuer deine Hilfe.");
             SlowPrint.slowPrint("Du hast das Spiel gewonnen! 🥳🎉");
+            claculateScore();
         } else {
             SlowPrint.slowPrint(
                     "Die Polizei verhaftet dich. Es wurden belastende Beweise gegen dich gefunden.");
@@ -393,6 +396,8 @@ class Game {
         preisliste.put("goldkette", 200);
         preisliste.put("bueste", 100);
         preisliste.put("zigarre", 20);
+        preisliste.put("tanzschuhe", 50);
+        preisliste.put("oelgemaelde", 743000);
     }
 
     private void claculateScore() {
@@ -407,6 +412,8 @@ class Game {
                 score += 10;
             }
         }
+        SlowPrint.slowPrint("Bezahlung vom Auftraggeber: (+ 20000)");
+        score += 20000;
         SlowPrint.slowPrint("Du hast " + score + "Punkte erspielt.");
     }
 
