@@ -1,20 +1,22 @@
-package murderhouse.room.view.human;
+package murderhouse.room.zimmer.garten;
 
 import java.util.Optional;
 
 import murderhouse.interaction.Reaction;
 import murderhouse.item.Item;
+import murderhouse.room.view.human.Human;
 
 public class svaeltande extends Human {
 
     @Override
     public String talk(Optional<Item> heldItem) {
-        if(heldItem.get().getName().equals("steak")){
-            return "'Wau! Wau! wooof!!!'" ;
-       
-        }else{
-            return "'woof'";
+        if(heldItem.isPresent() && heldItem.get().getName().equals("steak")){
+                return "'Wau! Wau! wooof!!!'" ;
+           
+            }else{
+                return "'woof'";    
         }
+        
     }
     @Override
     public Reaction interactReaction(Optional<Item> heldItem) {
