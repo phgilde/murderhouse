@@ -2,6 +2,7 @@ package murderhouse.util;
 
 public class SlowPrint {
     static private int lineSize = 50;
+    static private int delay = 0;
 
     public static void slowPrint(String s) {
         int i = 0;
@@ -18,7 +19,7 @@ public class SlowPrint {
                 newlineDue = false;
             }
             try {
-                Thread.sleep(25);
+                Thread.sleep(delay);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
