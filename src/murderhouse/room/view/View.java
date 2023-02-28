@@ -54,4 +54,13 @@ public abstract class View {
             return Optional.empty();
         }
     }
+
+    /**
+     * Ueberprueft, ob die Ansicht einen Gegenstand enthaelt.
+     * @param itemName Name des Gegenstands.
+     * @return true, falls der Gegenstand enthalten ist.
+     */
+    public boolean hasItem(String itemName) {
+        return items.containsKey(itemName);
+    }
 }

@@ -21,5 +21,4 @@ public class Kuehlschrank extends View {
         }
         return str + ".";
     }
-
 }

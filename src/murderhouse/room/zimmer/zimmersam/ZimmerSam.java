@@ -5,6 +5,7 @@ import murderhouse.room.Room;
 public class ZimmerSam extends Room {
 
     public ZimmerSam() {
+        adjacentRooms.add("flur");
         views.put("schreibtisch", new Schreibtisch());
         views.put("sam", new Sam()); 
     }

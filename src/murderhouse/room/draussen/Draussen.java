@@ -4,6 +4,11 @@ import murderhouse.room.Room;
 
 public class Draussen extends Room {
 
+    public Draussen() {
+        adjacentRooms.add("eingang");
+        adjacentRooms.add("garten");
+    }
+
     @Override
     public String getName() {
         return "Draussen";

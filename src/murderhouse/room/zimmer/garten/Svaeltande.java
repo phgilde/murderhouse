@@ -10,7 +10,7 @@ public class Svaeltande extends Human {
 
     @Override
     public String talk(Optional<Item> heldItem) {
-        if(heldItem.isPresent() && heldItem.get().getName().equals("steak")){
+        if(heldItem.isPresent() && heldItem.get().getName().equals("Steak")){
                 return "'Wau! Wau! wooof!!!'" ;
            
             }else{
@@ -21,7 +21,7 @@ public class Svaeltande extends Human {
     @Override
     public Reaction interactReaction(Optional<Item> heldItem) {
         if (heldItem.isPresent()){
-        if (heldItem.get().getName().equals("steak")) {
+        if (heldItem.get().getName().equals("Steak")) {
             return new Reaction("Du fuetterst den Hund mit " + heldItem.get().getName() , true);
             
         }

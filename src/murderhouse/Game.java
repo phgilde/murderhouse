@@ -12,6 +12,7 @@ import murderhouse.item.Item;
 import murderhouse.room.Room;
 import murderhouse.room.arbeitszimmer.Arbeitszimmer;
 import murderhouse.room.badezimmer.Badezimmer;
+import murderhouse.room.draussen.Draussen;
 import murderhouse.room.flur.Flur;
 import murderhouse.room.geheimzimmer.Geheimzimmer;
 import murderhouse.room.kueche.Kueche;
@@ -57,6 +58,7 @@ class Game {
         rooms.put("trudes zimmer", new ZimmerTrude());
         rooms.put("anas zimmer", new ZimmerAna());
         rooms.put("sams zimmer", new ZimmerSam());
+        rooms.put("draussen", new Draussen());
         amLeben.push("Fredericke");
         amLeben.push("Sam");
         amLeben.push("Trude");
@@ -192,8 +194,9 @@ class Game {
             if (currentView.isPresent()) {
                 currentRoom.interact(currentView.get(), heldItem);
                 Reaction reaction = currentView.get().interactReaction(heldItem);
-                if (currentView.get().getName().equals("svaeltande")
-                        && heldItem.get().getName().equals("steak")) {
+
+                if (currentView.get().getName().equals("Svaeltande")
+                        && heldItem.get().getName().equals("Steak")) {
                     killGame();
                 }
                 if (reaction.consumesItem()) {
@@ -382,7 +385,7 @@ class Game {
         }
         for (Room room : rooms.values()) {
             for (View view : room.getViews().values()) {
-                if (view.takeItem(item).isPresent()) {
+                if (view.hasItem(item)) {
                     return true;
                 }
             }
