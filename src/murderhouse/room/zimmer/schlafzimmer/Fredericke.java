@@ -22,7 +22,7 @@ public class Fredericke extends Human {
 
     @Override
     public String getDescription() {
-        return "Fredericke ist eine mitte 50-Jahre alte Frau. Ihr Haar beginnt zu grauen, und sie ist querschnittsgelaehmt";
+        return "Fredericke ist eine Mitte 50-Jahre alte Frau. Ihr Haar beginnt zu grauen, und sie ist querschnittsgelaehmt";
     }
 
 

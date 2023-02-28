@@ -31,7 +31,7 @@ public class Sam extends Human {
         } else if (q == "streit") {
             return "'Er nervt -- Hat immer rumgenervt wegen meinen Verhaftungen, er glaubt das ich mein Leben nicht auf die Reihe kriege.'";
         } else {
-            return null;
+            return "'Keine Ahnung wovon du redest.'";
         }
     }
 
@@ -40,9 +40,6 @@ public class Sam extends Human {
         return "Samuel Ole Doedade";
     }
 
-    @Override
-    public String interact(Optional<Item> heldItem) {
-        return null;
-    }
+
 
 }
