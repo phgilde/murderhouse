@@ -15,7 +15,7 @@ public class Schrank extends View {
 
     @Override
     public String getDescription() {
-        return "Du suchst nach dem naechsten Meisterwerk, das du lesen willst, als ploetzlich etwas glaenzendes deine Aufmerksamkeit weckt.\n"
+        return "Du suchst nach dem naechsten Meisterwerk, das du lesen willst, als ploetzlich etwas glaenzendes deine Aufmerksamkeit weckt. "
                 + "Im *Schrank* ist ein gruenes Schloss versteckt. Scheinbar wollte Ole etwas verbergen...";
     }
 
@@ -23,7 +23,7 @@ public class Schrank extends View {
     public String interact(Optional<Item> heldItem) {
         if (heldItem.isPresent()) {
             if (heldItem.get().getName().equals("gruener schluessel")) {
-                return "Der Schrank beginnt sich ploetzlich zu bewegen und du schreckst zurueck. *Es oeffnet sich eine Tuer zu einem Geheimzimmer*, dass du nun betreten kannst.";
+                return "Der Schrank beginnt sich ploetzlich zu bewegen und du schreckst zurueck. Es oeffnet sich eine Tuer zu einem *Geheimzimmer*, dass du nun betreten kannst.";
             }
 
         }

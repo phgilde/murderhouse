@@ -279,6 +279,8 @@ class Game {
                         "...                             ...                             ...                      ");
                 SlowPrint.slowPrint("Ein Klingeln an der Tür weckt dich.");
                 policeEnd();
+            } else {
+                SlowPrint.slowPrint("Du kannst nicht schlafen.");
             }
         });
         parser.setCatch((command) -> SlowPrint.slowPrint(command
@@ -335,7 +337,7 @@ class Game {
         notOver = false;
         SlowPrint.slowPrint(
                 "Die Polizei ist angekommen. Sie befragen alle und durchsuchen das Haus und die Personen akribisch.");
-        if (inventory.containsKey("rosa Tanzschuhe") && inventory.containsKey("bueste")
+        if (inventory.containsKey("tanzschuhe") && inventory.containsKey("bueste")
                 && !itemExists("notizbuch") && !itemExists("gewehr")
                 && inventory.containsKey("brief")) {
             SlowPrint.slowPrint(
