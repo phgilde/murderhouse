@@ -15,7 +15,7 @@ public class ZimmerSam extends Room {
 
     @Override
     public String getDescription() {
-        return "Du befindest dich in Sams Zimmer. Sam hat ein riesiges Bett auf dem er ein Buch zulesen scheint, ein Regal mit vielen Büchern und ein *Schreibtisch* mit einem Computer. Von hier kannst den *Flur* gehen.";
+        return "Du befindest dich in Sams Zimmer. Sam hat ein riesiges Bett auf dem er ein Buch zu lesen scheint, ein Regal mit vielen Büchern und ein *Schreibtisch* mit einem Computer. Von hier kannst den *Flur* gehen.";
     }
     
 }
