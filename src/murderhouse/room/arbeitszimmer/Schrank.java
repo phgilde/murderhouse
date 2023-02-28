@@ -21,7 +21,7 @@ public class Schrank extends View {
     @Override
     public String interact(Optional<Item> heldItem) {
         if (heldItem.isPresent()) {
-            if (heldItem.get().getName().equals("gruener schluessel")) {
+            if (heldItem.get().getName().equals("gruener Schluessel")) {
                 return "Der Schrank beginnt sich ploetzlich zu bewegen und du schreckst zurueck. Es oeffnet sich eine Tuer zu einem *Geheimzimmer*, dass du nun betreten kannst.";
             }
 

@@ -33,6 +33,7 @@ public class Arbeitszimmer extends Room {
     @Override
     public void interact(View view, Optional<Item> heldItem) {
         if (heldItem.isPresent()) {
+            System.out.println(view);
             if (view.getName().equals("schrank")
                     && heldItem.get().getName().equals("gruener Schluessel")
                     && !adjacentRooms.contains("geheimzimmer")) {
