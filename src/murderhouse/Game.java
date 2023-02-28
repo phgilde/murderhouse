@@ -331,21 +331,21 @@ class Game {
 
     private void killGame() {
         if (itemExists("steak")) {
-            System.out.println(
+            SlowPrint.slowPrint(
                     "Das Haus ist still. Nur der Hund bellt im Garten. Du solltest dich beeilen, vielleicht hat Ana auch schon die Polizei gerufen");
-            System.out.println(
+            SlowPrint.slowPrint(
                     "Du solltest jemanden finden der sich auf der Insel auskennt. Der Hund bellt draussen weiter");
-            System.out.println(
+            SlowPrint.slowPrint(
                     "Vielleicht kannst du jemanden dazu bewegen dir den Weg zum Boot zu zeigen. Vielleicht mit etwas zu essen...");
         } else if (!itemExists("steak") && inventory.containsKey("brauner schluessel")) {
             notOver = false;
-            System.out.println(
+            SlowPrint.slowPrint(
                     " Der Hund kommt angelaufen und zeigt dir den Weg zum Boot und deiner Freiheit.");
-            System.out.println(
+            SlowPrint.slowPrint(
                     "Du hast das Spiel erfolgreich abgeschlossen. Nachdem du am Ufer angekommen bist, berichtest du deinen Arbeitgeber von deiner Mission");
 
         } else {
-            System.out.println(
+            SlowPrint.slowPrint(
                     "Der Hund kommt zur Tuer und will anscheinend nach draussen. Wenn du versuchst die Tuer aufzumachen bemerkst du das diese geschlossen ist.");
         }
 
