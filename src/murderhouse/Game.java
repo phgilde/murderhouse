@@ -414,7 +414,7 @@ class Game {
         }
         SlowPrint.slowPrint("Bezahlung vom Auftraggeber: (+ 20000)");
         score += 20000;
-        SlowPrint.slowPrint("Du hast " + score + "Punkte erspielt.");
+        SlowPrint.slowPrint("Du hast Gegenstaende im Wert von " + score + " Euro eingesackt.");
     }
 
     public boolean notOver() {
