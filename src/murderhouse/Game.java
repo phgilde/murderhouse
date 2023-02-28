@@ -176,7 +176,6 @@ class Game {
                                             + ((Human) currentView.get()).getName()
                                             + " getroffen.");
                             amLeben.remove(currentView.get().getName());
-                            SlowPrint.slowPrint(((Human) currentView.get()).totallyNotDead(1));
                             if (amLeben.isEmpty()) {
                                 killGame();
                             }
