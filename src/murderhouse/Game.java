@@ -187,7 +187,6 @@ class Game {
                 SlowPrint.slowPrint(
                         "Du bildest mit deiner Hand eine Fingerpistole und schreist laut \"PENG\"");
             }
-
         });
         parser.setSimpleCommand("interagiere", () -> {
             if (currentView.isPresent()) {

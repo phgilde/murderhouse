@@ -17,7 +17,6 @@ public class Fredericke extends Human {
         } else {
             return "'Lassen Sie mich bitte in Ruhe. Mein Mann ist gerade gestorben! Ist das nicht genug?' *Schluchz*";
         }
-
     }
 
     @Override
