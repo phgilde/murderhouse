@@ -8,7 +8,6 @@ public class NachttischRechts extends View {
 
     @Override
     public String getDescription() {
-        // TODO Auto-generated method stub
         return "Ein kleiner Nachttisch aus Holz. Auf dem Nachttisch liegt ein *Buch*. Der Nachttisch hat eine Schublade mit einem lilafarbenen Schloss.";
     }
 
