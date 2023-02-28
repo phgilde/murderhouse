@@ -22,7 +22,7 @@ public class Trude extends Human {
 
     @Override
     public String getDescription() {
-        return "Trude ist eine etwa mitte 20-Jahre alte Frau.";
+        return "Trude ist eine etwa Mitte 20-Jahre alte Frau.";
 
     }
 
