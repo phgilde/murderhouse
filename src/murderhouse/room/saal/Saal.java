@@ -30,11 +30,11 @@ public class Saal extends Room {
     @Override
     public String getDescription() {
         return "Du stehst in der Mitte des Saals. Von hier kommst du in fast alle Raeume des Hauses."
-                + "Im *Wohnzimmer* brennt noch das Licht.\n"
-                + "Aus der *Kueche* duftet es praechtig nach deinem Lieblingsessen: Schokokuchen. \n"
-                + "ueberdeckt wird dieser goettliche Duft mit einer uebelriechende Fahne aus dem *Arbeitszimmer*. \n"
-                + "In deinem Nacken spuerst du den kalten Windzug aus dem *Eingang* des Hauses. \n"
-                + "Dein Blick wandert auf die Treppe mit einem prachtvollen roten Teppich auf den Stufen, die zum oberen *Flur* fuehrt. \n"
+                + "Im *Wohnzimmer* brennt noch das Licht. "
+                + "Aus der *Kueche* duftet es praechtig nach deinem Lieblingsessen: Schokokuchen.  "
+                + "ueberdeckt wird dieser goettliche Duft mit einer uebelriechende Fahne aus dem *Arbeitszimmer*.  "
+                + "In deinem Nacken spuerst du den kalten Windzug aus dem *Eingang* des Hauses.  "
+                + "Dein Blick wandert auf die Treppe mit einem prachtvollen roten Teppich auf den Stufen, die zum oberen *Flur* fuehrt.  "
                 + "Am Handlauf ist der Aufzug fuer einen Rollstuhl angebracht.";
     }
 

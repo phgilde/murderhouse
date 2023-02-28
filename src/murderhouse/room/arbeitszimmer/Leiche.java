@@ -18,7 +18,7 @@ public class Leiche extends Human {
     public String getDescription() {
         String str = "Ole traegt eine gruene Jacke und eine graue Hose. Seine Hauschuhe sind ueberall verteilt.";
         if (items.containsKey("gruener schluessel")) {
-            str += "\nUm Oles Hals haengt ein gruener Schluessel";
+            str += " Um Oles Hals haengt ein *gruener Schluessel*.";
         }
         return str;
     }

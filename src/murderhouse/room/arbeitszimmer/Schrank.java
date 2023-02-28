@@ -15,7 +15,7 @@ public class Schrank extends View {
 
     @Override
     public String getDescription() {
-        return "Du suchst nach dem naechsten Meisterwerk, das du lesen willst, als ploetzlich etwas glaenzendes deine Aufmerksamkeit weckt.\n"
+        return "Du suchst nach dem naechsten Meisterwerk, das du lesen willst, als ploetzlich etwas glaenzendes deine Aufmerksamkeit weckt. "
                 + "Im *Schrank* ist ein gruenes Schloss versteckt. Scheinbar wollte Ole etwas verbergen...";
     }
 
