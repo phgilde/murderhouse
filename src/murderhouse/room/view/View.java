@@ -22,7 +22,7 @@ public abstract class View {
     /**
      * Fuehrt eine Interaktion mit der Ansicht durch.
      * 
-     * @param action Die Interaktion.
+     * @param item Übergibt das vom Spieler gehaltene Item
      * @return Reaktion auf die Interaktion.
      */
     public String interact(Optional<Item> heldItem) {
@@ -32,8 +32,8 @@ public abstract class View {
     /**
      * Fuehrt eine Interaktion mit der Ansicht durch.
      * 
-     * @param action Die Interaktion.
-     * @return Reaktion auf die Interaktion.
+     * @param item Übergibt das vom Spieler gehaltene Item
+     * @return Reaktion auf die Interaktion, mit Möglichkeit das Item zu konsumieren
      */
     public Reaction interactReaction(Optional<Item> heldItem) {
         return new Reaction(interact(heldItem));

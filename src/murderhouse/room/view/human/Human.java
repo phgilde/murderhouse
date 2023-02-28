@@ -15,8 +15,8 @@ public abstract class Human extends View {
 
     /**
      * Gibt eine Reaktion auf ein Wort zurueck.
-     * 
-     * 
+     * @param q Frage 
+     * @return Antwort der Person 
      */
     public abstract String ask(String q);
 }
