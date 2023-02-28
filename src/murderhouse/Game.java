@@ -133,7 +133,7 @@ class Game {
 
             if (getHumanInRoom().isPresent()) {
                 currentView = Optional.of(getHumanInRoom().get());
-                SlowPrint.slowPrint(((Human) currentView.get()).ask(frage));
+                SlowPrint.slowPrint(((Human) currentView.get()).ask(frage.toLowerCase()));
 
             } else{
                 SlowPrint.slowPrint("Hier gibt es niemanden zum Befragen.");
