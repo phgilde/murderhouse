@@ -166,6 +166,7 @@ class Game {
         parser.setSimpleCommand("treffe", () -> {
             if (heldItem.isPresent() && heldItem.get().getName().equals("Gewehr")) {
                 if (getHumanInRoom().isPresent()) {
+                    currentView = Optional.of(getHumanInRoom().get());
                     if (((Human) currentView.get()).getName().equals("svaeltande")) {
                         System.out.println("Was ist falsch mit dir????????");
                         policeEnd();
