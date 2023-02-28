@@ -9,7 +9,6 @@ public class Sam extends Human {
 
     @Override
     public String talk(Optional<Item> heldItem) {
-        if (n == 0) {
             if (heldItem.isEmpty()) {
                 return "'Geh weg!'";
             } else if (heldItem.get().getName().equals("boxhandschuhe")) {
@@ -18,18 +17,11 @@ public class Sam extends Human {
             } else {
                 return "'Ich will nicht mit dir reden'";
             }
-        } else {
-            return null;
-        }
     }
 
     @Override
     public String getDescription() {
-        if (n == 0) {
             return "Sam ist etwa 18-Jahre alt, er hat eine sportliche Figur.";
-        } else {
-            return "Sam liegt auf dem Boden. Er sieht ein wenig blass aus.";
-        }
     }
 
     @Override

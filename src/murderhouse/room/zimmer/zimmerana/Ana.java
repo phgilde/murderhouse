@@ -10,13 +10,12 @@ public class Ana extends Human {
 
     @Override
     public String talk(Optional<Item> heldItem) {
-        if (n == 0) {
-            if (heldItem.isEmpty()) {
-                return "'Ich weiss gar nicht was ich denken soll! Der arme Mann ist einfach Tod!'"
-                        + "'Das tut mir ja wahnsinnig leid fuer ihn. Und er hatte gerade erst einen |Streit| mit beiden Kindern. Ach gottchen'";
-            } else if (heldItem.get().getName().equals("baseballschlaeger")) {
-                return "'Ach das ist doch der von Trudes Freund! Tja Ben, der Gute, ist leider sehr vergesslich. Der wuerde seinen eigenen Kopf vergessen waere er nicht angeschraubt!"
-                        + " Was sind denn diese roten Spritzer? Da muss Trude den Schlaeger wohl auf ihrem Maltisch gehabt haben!'";
+        if (heldItem.isEmpty()) {
+            return "'Ich weiss gar nicht was ich denken soll! Der arme Mann ist einfach Tod!'"
+                    + "'Das tut mir ja wahnsinnig leid fuer ihn. Und er hatte gerade erst einen |Streit| mit beiden Kindern. Ach gottchen'";
+        } else if (heldItem.get().getName().equals("baseballschlaeger")) {
+            return "'Ach das ist doch der von Trudes Freund! Tja Ben, der Gute, ist leider sehr vergesslich. Der wuerde seinen eigenen Kopf vergessen waere er nicht angeschraubt!"
+                    + " Was sind denn diese roten Spritzer? Da muss Trude den Schlaeger wohl auf ihrem Maltisch gehabt haben!'";
         } else if (heldItem.get().getName().equals("brief")) {
             if (tanzschuheGesehen) {
                 return "'Was ist das denn?'";
@@ -34,9 +33,6 @@ public class Ana extends Human {
         } else {
             return "'Ach, Hallo Dieter, sind Sie schon weiter mit dem Fall?'";
         }
-    } else{
-        return null; 
-    }
     }
 
     @Override
@@ -46,13 +42,12 @@ public class Ana extends Human {
 
     @Override
     public String interact(Optional<Item> heldItem) {
-            return null;
+        return null;
     }
 
     @Override
     public String ask(String q) {
         q.toLowerCase();
-        if (n == 0) {
         if (q.equals("streit")) {
             return "'Naja, erst hatte der Alte sich am Freitag mit Trude gestritten, sie ist sehr involviert in die Zukunft der Familien-Firma. Und eigentlich immer was anderes vor als Ole."
                     + " Dann am gestern stritt er sich mit Sam: Der Sam, muessen Sie Wissen, ist kein Musterjunge. Er wurde schon zweimal verhaftet, gestern sind sie dann noch einmal aneinander gefahren...  "
@@ -63,8 +58,8 @@ public class Ana extends Human {
         } else if (q.equals("Knall")) {
             return "Ich hab keine Ahnung woher der Knall genau kam. Frag Sam...";
         } else {
-            return "Ich weiß leider nicht was du meinst."; 
-        } else 
+            return "Ich weiß leider nicht was du meinst.";
+        }
     }
 
     @Override
