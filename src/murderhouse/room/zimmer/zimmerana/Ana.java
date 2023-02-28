@@ -56,11 +56,11 @@ public class Ana extends Human {
     @Override
     public String ask(String q) {
         if (n == 0) {
-        if (q == "Streit") {
+        if (q == "streit") {
             return "'Naja, erst hatte der Alte sich am Freitag mit Trude gestritten, sie ist sehr involviert in die Zukunft der Famillien-Firma. Und eigentlich immer was anderes vor als Ole."
                     + " Dann am gestern stritt er sich mit Sam: Der Sam, muessen Sie Wissen, ist kein Musterjunge. Er wurde schon zweimal verhaftet, gestern sind sie dann nocheinmal aneinader gefahren...  "
                     + " Das war so um 21 Uhr... Oh nein kurz danach habe ich ein |Knall| gehoert. Ich dachte das waere die Kuehlschranktuer, aber was wenn Sam seinen Vater erschlagen hat?'";
-        } else if (q == "Fingerhut") {
+        } else if (q == "fingerhut") {
             return "'Finden Sie nicht auch der Fingerhut ist eine faszinierende Pflanze? Sie ist hochgiftig und trotzdem wunderschoen. Ich hab mich schon als kleines Maedchen dafuer interessiert."
                     + " Ich studiere auch gerade online Arznei. Ich moechte naemlich spaeter eine Apotheke eroeffnen'";
         } else {

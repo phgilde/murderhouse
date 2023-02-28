@@ -35,9 +35,9 @@ public class Trude extends Human {
     @Override
     public String ask(String q) {
         if (n == 0) {
-            if (q == "Malsachen") {
+            if (q == "malsachen") {
                 return "'Ich male gerne um zu entspannen'";
-            } else if (q == "Streit") {
+            } else if (q == "streit") {
                 return "'Ja wir streiten uns manchmal wegen der Firma. Aber ich würde ihm nie etwas tun! Er ist mein Vater!'";
             } else {
                 return null;
