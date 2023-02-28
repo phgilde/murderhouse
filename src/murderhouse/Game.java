@@ -136,10 +136,11 @@ class Game {
         });
 
         parser.setParamCommand("frage", (String frage) -> {
-
-
             if (getHumanInRoom().isPresent()) {
-                System.out.println("human present");
+                if (!amLeben.contains(getHumanInRoom().get().getName())) {
+                    SlowPrint.slowPrint("Du kannst " + getHumanInRoom().get().getName() + " nicht mehr befragen.");
+                    return;
+                }
                 currentView = Optional.of(getHumanInRoom().get());
                 SlowPrint.slowPrint(((Human) currentView.get()).ask(frage.toLowerCase()));
 
@@ -150,6 +151,10 @@ class Game {
 
         parser.setSimpleCommand("rede", () -> {
             if (getHumanInRoom().isPresent()) {
+                if (!amLeben.contains(getHumanInRoom().get().getName())) {
+                    SlowPrint.slowPrint("Du kannst nicht mehr mit " + getHumanInRoom().get().getName() + " sprechen.");
+                    return;
+                }
                 currentView = Optional.of(getHumanInRoom().get());
                 SlowPrint.slowPrint(((Human) currentView.get()).talk(heldItem));
             } else {
