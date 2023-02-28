@@ -40,6 +40,7 @@ class Game {
 
     private boolean notOver = true;
     private double startTime = System.currentTimeMillis() / 1000.0;
+    private int maxTime = 30 * 60;
 
     public Game() {
         currentRoom = new Wohnzimmer();
@@ -306,7 +307,7 @@ class Game {
         System.out.print(">>> ");
         String input = scanner.nextLine();
         parser.parse(input);
-        if (System.currentTimeMillis() / 1000 - startTime > 30 * 60) {
+        if (System.currentTimeMillis() / 1000 - startTime > maxTime) {
             policeEnd();
         }
     }
