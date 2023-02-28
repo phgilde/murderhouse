@@ -10,7 +10,7 @@ public class Geheimzimmer extends Room {
 
     public Geheimzimmer(){
 
-        adjacentRooms.add("saal");
+        adjacentRooms.add("areitszimmer");
         views.put("tisch", new Tisch());
         views.put("computer", new Computer());
     }   
@@ -24,7 +24,7 @@ public class Geheimzimmer extends Room {
     public String getDescription() {
         return "Das Geheimzimmer ist ein kleiner dunkler Raum, der sehr unaufgeraeumt ist. Ein Regal mit Konservendosen und Wasserkanistern steht neben einem kleinen Bett. "
         + "Im Geheimzimmer siehst du den Arbeitsplatz von Ole vor dir. Der *Tisch* ist überfuellt mit jeglichen Sachen: Dokumente, Zettel und Elektronik.  "
-        + "In der Mitte des Tisches steht der *Computer* von Ole. Du wanderst hin und her und ueberlegst was du als naechstes machen willst";
+        + "In der Mitte des Tisches steht der *Computer* von Ole. Du wanderst hin und her und ueberlegst was du als naechstes machen willst. Von Hier aus kannst du wieder ins *Arbeitszimmer* zurueckkehren.";
     }
 
 }

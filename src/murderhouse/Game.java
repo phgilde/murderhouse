@@ -76,7 +76,7 @@ class Game {
             SlowPrint.slowPrint("Du kannst folgende Befehle eingeben:");
             SlowPrint.slowPrint("umsehen: Beschreibt den Raum");
             SlowPrint.slowPrint("inventar: Zeigt das Inventar an");
-            SlowPrint.slowPrint("gehe <Richtung>: Geht in die angegebene Richtung");
+            SlowPrint.slowPrint("gehe <Raum>: Geht in den angegebenen Raum");
             SlowPrint.slowPrint("quit: Beendet das Spiel");
             SlowPrint.slowPrint("hilfe: Zeigt diese Hilfe an");
             SlowPrint.slowPrint("inspiziere <Ansicht>: Inspiziert die angegebene Ansicht");

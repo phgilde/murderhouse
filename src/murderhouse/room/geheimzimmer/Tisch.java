@@ -19,7 +19,7 @@ public class Tisch extends View {
         +" "
         +"26. Juli 2019: "
         +"Ich habe den belastenden USB-Stick gefunden. Jetzt muss ich nur noch spurlos verschwinden. Sollte das nicht klappen  "
-        +"muss Ole von der Bildflaeche entfernt werden. Der Mord ließe sich eventuell mithilfe der Shakespeer Bueste auf die Fredericke schieben. "
+        +"muss Ole von der Bildflaeche entfernt werden. Der Mord ließe sich eventuell mithilfe der Shakespeare Bueste auf die Fredericke schieben. "
         +"------ Ende -------"
 
 
@@ -27,7 +27,7 @@ public class Tisch extends View {
 
         items.put("bueste", new SimpleItem("bueste", 
         "Du hebst die Bueste an und bemerkst, dass sie gar nicht so schwer ist wie erwartet. Du gugckst dir die Blutflecken genauer an. "
-        + "Du bemerkst das auf der Büste gar nicht der Name Shakespeer steeht, sonder eine Gravur: Für Fredericke."
+        + "Du bemerkst das auf der Büste gar nicht der Name Shakespeare steeht, sonder eine Gravur: Für Fredericke."
         ));
 
         items.put("gewehr", new SimpleItem("gewehr", "Das Gewehr ist voll geladen und hat an der Schulterstütze ein paar Kratzer"));
@@ -46,7 +46,7 @@ public class Tisch extends View {
         }
         
         if(items.containsKey("bueste")){
-        str += "Dein Blick wandert in die Ecke, wo die *Bueste* von Shakespeer steht. Dich wundert warum diese hier ist und vor allem, warum Blutspuren an der scharfen Kante erkennbar sind.  ";
+        str += "Dein Blick wandert in die Ecke, wo die *Bueste* von Shakespeare steht. Dich wundert warum diese hier ist und vor allem, warum Blutspuren an der scharfen Kante erkennbar sind.  ";
         }
         
         if(items.containsKey("gewehr")){
