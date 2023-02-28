@@ -15,6 +15,7 @@ import room.geheimzimmer.Geheimzimmer;
 import room.kueche.Kueche;
 import room.view.View;
 import room.view.human.Human;
+import room.zimmer.schlafzimmer.Fredericke;
 import room.zimmer.schlafzimmer.Schlafzimmer;
 import room.zimmer.zimmerana.ZimmerAna;
 import room.zimmer.zimmersam.ZimmerSam;
@@ -105,7 +106,9 @@ class Game {
             }
         });
 
-        parser.setParamCommand("insp", (String view) -> {parser.parse("inspiziere " + view);});
+        parser.setParamCommand("insp", (String view) -> {
+            parser.parse("inspiziere " + view);
+        });
 
         parser.setParamCommand("halte", (String item) -> {
             if (inventory.containsKey(item)) {
@@ -122,13 +125,26 @@ class Game {
                 SlowPrint.slowPrint("Du haeltst nichts.");
             }
         });
+
         parser.setParamCommand("frage", (String frage) -> {
-            if (currentView.isPresent()) {
-                if (currentView.get() instanceof Human) {
-                    SlowPrint.slowPrint(((Human) currentView.get()).talk(null));
-                }
+            selectHumanInRoom();
+
+            if (currentView.get() instanceof Human) {
+                ((Human) currentView.get()).ask(frage);
+
             }
         });
+
+        parser.setSimpleCommand("rede", () -> {
+            selectHumanInRoom();
+
+            if (currentView.get() instanceof Human) {
+                ((Human) currentView.get()).talk(heldItem);
+
+            }
+
+        });
+
         parser.setSimpleCommand("treffe", () -> {
             if (heldItem.get().getName() == "gewehr") {
                 if (currentView.isPresent()) {
@@ -137,7 +153,7 @@ class Game {
                         if (((Human) currentView.get()).getName().equals("svaeltande")) {
 
                             System.out.println("Was ist falsch mit dir????????");
-                            endGame();
+                            policeEnd();
                         } else {
                             amLeben.remove(currentView.get().getName());
                             ((Human) currentView.get()).totallyNotDead(1);
@@ -156,8 +172,9 @@ class Game {
             if (currentView.isPresent()) {
                 currentRoom.interact(currentView.get(), heldItem);
                 Reaction reaction = currentView.get().interactReaction(heldItem);
-                if (currentView.get().getName().equals("svaeltande") && heldItem.get().getName().equals("steak")){
-                    killGame(); 
+                if (currentView.get().getName().equals("svaeltande")
+                        && heldItem.get().getName().equals("steak")) {
+                    killGame();
                 }
                 if (reaction.consumesItem()) {
                     if (heldItem.isPresent()) {
@@ -171,7 +188,9 @@ class Game {
             }
         });
 
-        parser.setSimpleCommand("inter", () -> {parser.parse("interagiere");});
+        parser.setSimpleCommand("inter", () -> {
+            parser.parse("interagiere");
+        });
 
         parser.setParamCommand("nimm", (String item) -> {
             if (currentView.isPresent()) {
@@ -198,7 +217,8 @@ class Game {
             if (heldItem.isPresent() && heldItem.get().getName().equals("Zaubertrank")) {
                 notOver = false;
                 SlowPrint.slowPrint("Du trinkst den Zaubertrank.");
-                SlowPrint.slowPrint("...                             ...                             ...                      ");
+                SlowPrint.slowPrint(
+                        "...                             ...                             ...                      ");
                 SlowPrint.slowPrint("Du wachst auf und bist in einem Wald.");
                 SlowPrint.slowPrint(
                         "Um dich stehen die sieben Götter des Olymp. 'WO IST MEIN GELD???' ruft Zeus."
@@ -209,8 +229,9 @@ class Game {
                 SlowPrint.slowPrint(
                         "Während die Götter besprechen, was sie mit dir machen sollen, wirst du"
                                 + " von einem schwarzen Vogel gefressen.              ");
-                                
-                SlowPrint.slowPrint("...                             ...                             ...                      ");
+
+                SlowPrint.slowPrint(
+                        "...                             ...                             ...                      ");
                 SlowPrint.slowPrint(
                         "'Endlich bist du wach. Jemand hat Ole umgebracht. Wir haben schon die Polizei"
                                 + " verständigt.' Ana, die Aushilfe steht vor dir."
@@ -218,8 +239,9 @@ class Game {
                                 + " in ungefähr 30 Minuten da. Aber vielleicht kannst du vorher rausfinden,"
                                 + " wer Ole das angetan hat. Ich gehe mal lieber auf mein Zimmer, nicht dass"
                                 + " mir noch was passiert.'");
-                                
-                SlowPrint.slowPrint("...                             ...                             ...                      ");
+
+                SlowPrint.slowPrint(
+                        "...                             ...                             ...                      ");
                 SlowPrint.slowPrint(
                         "Als du versuchst, aufzustehen. Erscheint eine 3 Meter große, dunkle Gestalt vor dir. "
                                 + "'DIETER DER DETEKTIV! DU SCHULDEST ZEUS GELD! DU WIRST ZAHLEN!'"
@@ -229,17 +251,30 @@ class Game {
                                 + " sie wird, wird vom Seelenklempner geholt.' Die Stimmen verschwinden, "
                                 + "doch du fühlst dich innerlich leer. Es ist, als hätte die Gestalt alle Emotionen "
                                 + "und alle Liebe aus deinem Körper gezogen. Die Gestalt steht noch immer vor dir und beobachtet dich aufmerksam.");
-                                
-                SlowPrint.slowPrint("...                             ...                             ...                      ");
+
+                SlowPrint.slowPrint(
+                        "...                             ...                             ...                      ");
                 SlowPrint.slowPrint(
                         "Plötzlich verschwindet der Boden unter dir. Du fällst in eine tiefe, schwarze Schlucht."
                                 + " Du versuchst, dich zu retten, aber du kannst nicht schwimmen. Du versinkst im Wasser.");
-                                
-                SlowPrint.slowPrint("...                             ...                             ...                      ");
+
+                SlowPrint.slowPrint(
+                        "...                             ...                             ...                      ");
                 SlowPrint.slowPrint("Um dich herum ist nichts als Kälte und unendliche Schwärze.");
-                
-                SlowPrint.slowPrint("...                             ...                             ...                      ");
+
+                SlowPrint.slowPrint(
+                        "...                             ...                             ...                      ");
                 SlowPrint.slowPrint("Du hast verloren.");
+            }
+        });
+        parser.setSimpleCommand("schlafe", () -> {
+            if (currentRoom.getViews().containsKey("bett")) {
+                SlowPrint.slowPrint(
+                        "Du merkst, wie du sehr müde wirst. Du legst dich ins Bett und schläfst ein.");
+                SlowPrint.slowPrint(
+                        "...                             ...                             ...                      ");
+                SlowPrint.slowPrint("Ein Klingeln an der Tür weckt dich.");
+                policeEnd();
             }
         });
         parser.setCatch((command) -> SlowPrint.slowPrint(command
@@ -252,12 +287,21 @@ class Game {
                 + "mir noch was passiert.'");
     }
 
+    private void selectHumanInRoom() {
+        for (View view : currentRoom.getViews().values()) {
+            if (view instanceof Human) {
+                currentView = Optional.of(view);
+                break;
+            }
+        }
+    }
+
     public void mainLoop() {
         System.out.print(">>> ");
         String input = scanner.nextLine();
         parser.parse(input);
         if (System.currentTimeMillis() / 1000 - startTime > 30 * 60) {
-            endGame();
+            policeEnd();
         }
     }
 
@@ -271,7 +315,8 @@ class Game {
                     "Vielleicht kannst du jemanden dazu bewegen dir den Weg zum Boot zu zeigen. Vielleicht mit etwas zu essen...");
         } else if (!itemExists("steak") && inventory.containsKey("brauner schluessel")) {
             notOver = false;
-            System.out.println(" Der Hund kommt angelaufen und zeigt dir den Weg zum Boot und deiner Freiheit.");
+            System.out.println(
+                    " Der Hund kommt angelaufen und zeigt dir den Weg zum Boot und deiner Freiheit.");
             System.out.println(
                     "Du hast das Spiel erfolgreich abgeschlossen. Nachdem du am Ufer angekommen bist, berichtest du deinen Arbeitgeber von deiner Mission");
 
@@ -282,7 +327,7 @@ class Game {
 
     }
 
-    private void endGame() {
+    private void policeEnd() {
         notOver = false;
         SlowPrint.slowPrint(
                 "Die Polizei ist angekommen. Sie befragen alle und durchsuchen das Haus und die Personen akribisch.");
@@ -331,7 +376,8 @@ class Game {
         int score = 0;
         for (Map.Entry<String, Item> set : inventory.entrySet()) {
             if (preisliste.containsKey(set.getKey())) {
-                SlowPrint.slowPrint(set.getValue().getName() + ": (+ " + preisliste.get(set.getKey()) + ")");
+                SlowPrint.slowPrint(
+                        set.getValue().getName() + ": (+ " + preisliste.get(set.getKey()) + ")");
                 score += preisliste.get(set.getKey());
             } else {
                 SlowPrint.slowPrint(set.getValue().getName() + ": (+ 10)");

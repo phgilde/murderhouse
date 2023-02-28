@@ -11,9 +11,10 @@ public class Fernseher extends View {
     @Override
     public String getDescription() {
         if (isOn) {
-            return "Ein alter Roehrenfernseher. Der Fernseher ist an. Du siehst eine Nachrichtensendung.";
+            return "Ein alter Roehrenfernseher, der sicherlich mal sehr teuer war, aber hier nur noch fehl am Platz wirkt. Der Fernseher ist an. Ein Nachrichtensprecher"
+            + " erzählt neben einer Aufnahme eines Skigebietes ohne Schnee, etwas, du kannst aber nichts verstehen, weil der Ton aus ist.";
         } else {
-            return "Ein alter Roehrenfernseher. Der Fernseher ist aus.";
+            return "Ein alter Roehrenfernseher, der sicherlich mal sehr teuer war, aber hier nur noch fehl am Platz wirkt. Der Fernseher ist aus.";
         }
     }
 
