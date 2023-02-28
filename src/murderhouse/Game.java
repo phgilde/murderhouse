@@ -1,4 +1,5 @@
 package murderhouse;
+
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Optional;
@@ -129,13 +130,13 @@ class Game {
         });
 
         parser.setParamCommand("frage", (String frage) -> {
-           
+
 
             if (getHumanInRoom().isPresent()) {
                 currentView = Optional.of(getHumanInRoom().get());
                 SlowPrint.slowPrint(((Human) currentView.get()).ask(frage.toLowerCase()));
 
-            } else{
+            } else {
                 SlowPrint.slowPrint("Hier gibt es niemanden zum Befragen.");
             }
         });
@@ -144,7 +145,7 @@ class Game {
             if (getHumanInRoom().isPresent()) {
                 currentView = Optional.of(getHumanInRoom().get());
                 SlowPrint.slowPrint(((Human) currentView.get()).talk(heldItem));
-            }   else {
+            } else {
                 SlowPrint.slowPrint("Hier gibt es niemanden zum Reden.");
             }
 
@@ -158,18 +159,24 @@ class Game {
                             System.out.println("Was ist falsch mit dir????????");
                             policeEnd();
                         } else {
+                            SlowPrint.slowPrint(
+                                    "Ein ohrenbetaeubender Knall erschuettert das Haus. Der Rueckstoss haut dich aus den Socken. Du hast "
+                                            + ((Human) currentView.get()).getName()
+                                            + " getroffen.");
                             amLeben.remove(currentView.get().getName());
-                            ((Human) currentView.get()).totallyNotDead(1);
+                            SlowPrint.slowPrint(((Human) currentView.get()).totallyNotDead(1));
                             if (amLeben.isEmpty()) {
                                 killGame();
                             }
                         }
                     }
                 } else {
-                    SlowPrint.slowPrint("Mit einem lauten Knall wirst du ein paar Meter zurückgeschleudert. In der Wand ist ein Loch.");
+                    SlowPrint.slowPrint(
+                            "Mit einem lauten Knall wirst du ein paar Meter zurückgeschleudert. In der Wand ist ein Loch.");
                 }
             } else {
-                SlowPrint.slowPrint("Du bildest mit deiner Hand eine Fingerpistole und schreist laut \"PENG\"");
+                SlowPrint.slowPrint(
+                        "Du bildest mit deiner Hand eine Fingerpistole und schreist laut \"PENG\"");
             }
 
         });
@@ -298,7 +305,7 @@ class Game {
         for (View view : currentRoom.getViews().values()) {
             if (view instanceof Human) {
                 return Optional.of((Human) view);
-            } 
+            }
         }
         return Optional.empty();
     }
