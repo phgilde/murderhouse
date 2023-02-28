@@ -20,7 +20,7 @@ public class Arbeitszimmer extends Room {
     @Override
     public String getName() {
 
-        return "arbeitszimmmer";
+        return "Arbeitszimmmer";
     }
 
     @Override
