@@ -131,7 +131,7 @@ class Game {
             selectHumanInRoom();
 
             if (currentView.get() instanceof Human) {
-                ((Human) currentView.get()).ask(frage);
+                SlowPrint.slowPrint(((Human) currentView.get()).ask(frage));
 
             }
         });
