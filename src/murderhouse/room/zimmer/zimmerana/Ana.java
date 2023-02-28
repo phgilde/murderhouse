@@ -6,7 +6,7 @@ import murderhouse.item.Item;
 import murderhouse.room.view.human.Human;
 
 public class Ana extends Human {
-    int n = 0;
+    boolean tanzschuheGesehen = false;
 
     @Override
     public String talk(Optional<Item> heldItem) {
@@ -18,7 +18,7 @@ public class Ana extends Human {
                 return "'Ach das ist doch der von Trudes Freund! Tja Ben, der Gute, ist leider sehr vergesslich. Der wuerde seinen eigenen Kopf vergessen waere er nicht angeschraubt!"
                         + " Was sind denn diese roten Spritzer? Da muss Trude den Schlaeger wohl auf ihrem Maltisch gehabt haben!'";
         } else if (heldItem.get().getName().equals("brief")) {
-            if (n == 0) {
+            if (tanzschuheGesehen) {
                 return "'Was ist das denn?'";
             } else {
                 return "'Ahhhhh... Ich sehe Sie haben eins und eins zusammen gezaehlt. Ja das ist eine recht unangenehme Angelegenheit. Sie sehen seit dem Unfall war Fredericke verstaendlicher Weise nicht mehr Sie selbst.'"
@@ -27,7 +27,7 @@ public class Ana extends Human {
                         + " Ich bin, um ehrlich mit Ihnen zu sein, erstaunt dass Fredericke noch nichts von Ole's Affaere mitbekommen hat. Sie ist eigentlich sehr aufmerksam.'";
             }
         } else if (heldItem.get().getName().equals("rosa Tanzschuhe")) {
-            n = n + 1;
+            tanzschuheGesehen = true;
             return "'Das sind die Tanzschuhe von Fredericke oder nicht?? Hahaha. '";
         } else if (heldItem.get().getName().equals("morphin")) {
             return "'Morphin ist in hohen Mengen toedlich! Aber es wurde Fredericke wegen dem Autounfall verschrieben' ";
