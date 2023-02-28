@@ -166,20 +166,17 @@ class Game {
         parser.setSimpleCommand("treffe", () -> {
             if (heldItem.isPresent() && heldItem.get().getName().equals("Gewehr")) {
                 if (getHumanInRoom().isPresent()) {
-                    if (currentView.get() instanceof Human) {
-                        if (((Human) currentView.get()).getName().equals("svaeltande")) {
-                            System.out.println("Was ist falsch mit dir????????");
-                            policeEnd();
-                        } else {
-                            SlowPrint.slowPrint(
-                                    "Ein ohrenbetaeubender Knall erschuettert das Haus. Der Rueckstoss haut dich aus den Socken. Du hast "
-                                            + ((Human) currentView.get()).getName()
-                                            + " getroffen.");
-                            amLeben.remove(currentView.get().getName());
-                            SlowPrint.slowPrint(((Human) currentView.get()).totallyNotDead(1));
-                            if (amLeben.isEmpty()) {
-                                killGame();
-                            }
+                    if (((Human) currentView.get()).getName().equals("svaeltande")) {
+                        System.out.println("Was ist falsch mit dir????????");
+                        policeEnd();
+                    } else {
+                        SlowPrint.slowPrint(
+                            "Ein ohrenbetaeubender Knall erschuettert das Haus. Der Rueckstoss haut dich aus den Socken. Du hast "
+                                    + ((Human) currentView.get()).getName()
+                                    + " getroffen.");
+                        amLeben.remove(currentView.get().getName());
+                        if (amLeben.isEmpty()) {
+                            killGame();
                         }
                     }
                 } else {
