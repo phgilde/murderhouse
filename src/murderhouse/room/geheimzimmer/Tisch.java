@@ -30,7 +30,7 @@ public class Tisch extends View {
         + "Du bemerkst das auf der Bueste gar nicht der Name Shakespeare steeht, sonder eine Gravur: Fuer Fredericke."
         ));
 
-        items.put("gewehr", new SimpleItem("gewehr", "Das Gewehr ist voll geladen und hat an der Schulterstuetze ein paar Kratzer"));
+        items.put("gewehr", new SimpleItem("Gewehr", "Das Gewehr ist voll geladen und hat an der Schulterstuetze ein paar Kratzer"));
     }
 
     @Override
