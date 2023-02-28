@@ -28,7 +28,7 @@ public class Fredericke extends Human {
 
     @Override
     public String ask(String q) {
-        return null;
+        return "Ich habe nichts damit zu tun. Lassen Sie mich in Ruhe.";
     }
 
     @Override
