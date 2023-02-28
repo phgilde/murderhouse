@@ -364,7 +364,7 @@ class Game {
             SlowPrint.slowPrint(
                     "Auf dem Weg nach Hause ruft dich dein Arbeitgeber an und bedankt sich fuer deine Hilfe.");
             SlowPrint.slowPrint("Du hast das Spiel gewonnen! 🥳🎉");
-            claculateScore();
+            calculateScore();
         } else {
             SlowPrint.slowPrint(
                     "Die Polizei verhaftet dich. Es wurden belastende Beweise gegen dich gefunden.");
@@ -400,7 +400,7 @@ class Game {
         preisliste.put("oelgemaelde", 743000);
     }
 
-    private void claculateScore() {
+    private void calculateScore() {
         int score = 0;
         for (Map.Entry<String, Item> set : inventory.entrySet()) {
             if (preisliste.containsKey(set.getKey())) {
