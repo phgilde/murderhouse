@@ -1,13 +1,10 @@
 
 package murderhouse.room.arbeitszimmer;
 
-import java.util.HashMap;
-import java.util.Map;
 import java.util.Optional;
 
 import murderhouse.item.Item;
 import murderhouse.room.Room;
-import murderhouse.room.geheimzimmer.Geheimzimmer;
 import murderhouse.room.view.View;
 
 public class Arbeitszimmer extends Room {

@@ -1,10 +1,6 @@
 package murderhouse.room.eingang;
 
-import java.util.Optional;
-
-import murderhouse.item.Item;
 import murderhouse.room.Room;
-import murderhouse.room.view.View;
 
 public class Eingang extends Room {
 
@@ -31,14 +27,6 @@ public class Eingang extends Room {
                 + "Was du zunaechst fuer einen Picasso-Druck haeltst, ist in Wirklichkeit ein goldverzierter Spiegel, der den Raum optisch vergroessert."
                 + "Gegenueber des Spiegels haengt ein *Bilderrahmen*, dessen Gemaelde du nicht genau erkennen kannst."
                 + "Hier befindet sich ein *Schuhschrank*, eine *Pflanze*, eine *Schluesselbox* und die Eingangstuer";
-
-    }
-
-
-
-    @Override
-    public void interact(View view, Optional<Item> heldItem) {
-        // TODO Auto-generated method stub
 
     }
 }

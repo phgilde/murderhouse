@@ -1,8 +1,6 @@
 package murderhouse.room.kueche;
 
-import java.util.Map;
 import murderhouse.room.Room;
-import murderhouse.room.view.View;
 
 public class Kueche extends Room {
 

@@ -2,7 +2,6 @@ package murderhouse.room.zimmer.schlafzimmer;
 
 import java.util.Optional;
 import murderhouse.item.Item;
-import murderhouse.item.SimpleItem;
 import murderhouse.room.view.View;
 
 public class NachttischRechts extends View {

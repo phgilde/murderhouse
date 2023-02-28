@@ -17,7 +17,6 @@ import murderhouse.room.geheimzimmer.Geheimzimmer;
 import murderhouse.room.kueche.Kueche;
 import murderhouse.room.view.View;
 import murderhouse.room.view.human.Human;
-import murderhouse.room.zimmer.schlafzimmer.Fredericke;
 import murderhouse.room.zimmer.schlafzimmer.Schlafzimmer;
 import murderhouse.room.zimmer.zimmerana.ZimmerAna;
 import murderhouse.room.zimmer.zimmersam.ZimmerSam;

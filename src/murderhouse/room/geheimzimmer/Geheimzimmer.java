@@ -1,9 +1,6 @@
 package murderhouse.room.geheimzimmer;
 
-import java.util.Map;
-
 import murderhouse.room.Room;
-import murderhouse.room.view.View;
 
 public class Geheimzimmer extends Room {
 

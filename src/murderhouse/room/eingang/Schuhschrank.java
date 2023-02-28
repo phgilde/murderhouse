@@ -1,9 +1,6 @@
 package murderhouse.room.eingang;
 
 import murderhouse.room.view.View;
-import java.util.Optional;
-
-import murderhouse.item.Item;
 import murderhouse.item.SimpleItem;
 
 public class Schuhschrank extends View {
