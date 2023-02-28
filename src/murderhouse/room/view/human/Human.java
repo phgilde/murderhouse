@@ -15,14 +15,8 @@ public abstract class Human extends View {
 
     /**
      * Gibt eine Reaktion auf ein Wort zurueck.
-     * 
-     * 
+     * @param q Frage 
+     * @return Antwort der Person 
      */
     public abstract String ask(String q);
-
-    /**
-     * Gibt zurück den Namen der Person die mit dem Gewehr getroffen wird
-     * 
-     * 
-     */
 }

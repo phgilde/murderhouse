@@ -3,11 +3,15 @@ package murderhouse.control;
 import java.util.HashMap;
 import java.util.function.Consumer;
 
+import javax.management.ConstructorParameters;
+
 public class Parser {
     private HashMap<String, Runnable> simpleCommands;
     private HashMap<String, Consumer<String>> paramCommands;
     private Consumer<String> catcher;
-
+    /**
+     * Erstellt die HashMaps, die Schlüsselwörter mit Funktionen assozieren
+     */
     public Parser() {
         simpleCommands = new HashMap<>();
         paramCommands = new HashMap<>();
@@ -25,6 +29,11 @@ public class Parser {
         catcher = action;
     }
 
+    /**
+     * Verarbeitet den vom Spieler eingegebenen Befehl
+     * 
+     * @param input Befehl des Spielers
+     */
     public void parse(String input) {
         String[] parts = input.split(" ");
         String command = parts[0];
