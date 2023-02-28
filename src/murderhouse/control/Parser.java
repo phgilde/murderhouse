@@ -1,4 +1,4 @@
-package control;
+package murderhouse.control;
 
 import java.util.HashMap;
 import java.util.function.Consumer;

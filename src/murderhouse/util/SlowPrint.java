@@ -1,4 +1,4 @@
-package util;
+package murderhouse.util;
 
 public class SlowPrint {
     public static void slowPrint(String s) {

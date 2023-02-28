@@ -1,8 +1,8 @@
-package interaction;
+package murderhouse.interaction;
 
 import java.util.List;
 
-import item.Item;
+import murderhouse.item.Item;
 
 /**
  * Eine Reaktion auf eine Interaktion mit einem View.

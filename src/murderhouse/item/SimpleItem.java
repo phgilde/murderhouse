@@ -1,4 +1,4 @@
-package item;
+package murderhouse.item;
 
 public class SimpleItem extends Item {
     private String name;

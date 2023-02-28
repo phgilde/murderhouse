@@ -1,4 +1,4 @@
-package item;
+package murderhouse.item;
 
 public abstract class Item {
     public abstract String getName();
