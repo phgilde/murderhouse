@@ -58,8 +58,8 @@ public class Ana extends Human {
         q.toLowerCase();
         if (n == 0) {
         if (q.equals("streit")) {
-            return "'Naja, erst hatte der Alte sich am Freitag mit Trude gestritten, sie ist sehr involviert in die Zukunft der Famillien-Firma. Und eigentlich immer was anderes vor als Ole."
-                    + " Dann am gestern stritt er sich mit Sam: Der Sam, muessen Sie Wissen, ist kein Musterjunge. Er wurde schon zweimal verhaftet, gestern sind sie dann nocheinmal aneinader gefahren...  "
+            return "'Naja, erst hatte der Alte sich am Freitag mit Trude gestritten, sie ist sehr involviert in die Zukunft der Familien-Firma. Und eigentlich immer was anderes vor als Ole."
+                    + " Dann am gestern stritt er sich mit Sam: Der Sam, muessen Sie Wissen, ist kein Musterjunge. Er wurde schon zweimal verhaftet, gestern sind sie dann noch einmal aneinander gefahren...  "
                     + " Das war so um 21 Uhr... Oh nein kurz danach habe ich ein |Knall| gehoert. Ich dachte das waere die Kuehlschranktuer, aber was wenn Sam seinen Vater erschlagen hat?'";
         } else if (q.equals("fingerhut")) {
             return "'Finden Sie nicht auch der Fingerhut ist eine faszinierende Pflanze? Sie ist hochgiftig und trotzdem wunderschoen. Ich hab mich schon als kleines Maedchen dafuer interessiert."

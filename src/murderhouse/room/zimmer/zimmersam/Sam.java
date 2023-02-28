@@ -26,7 +26,7 @@ public class Sam extends Human {
     @Override
     public String getDescription() {
         if (n == 0) {
-            return "Sam ist etwa 18-Jahre alt, er hat eine sportlliche Figur.";
+            return "Sam ist etwa 18-Jahre alt, er hat eine sportliche Figur.";
         } else {
             return "Sam liegt auf dem Boden. Er sieht ein wenig blass aus.";
         }
