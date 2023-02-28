@@ -20,7 +20,7 @@ public class Arbeitszimmer extends Room {
     @Override
     public String getName() {
 
-        return "arbeitszimmmer";
+        return "Arbeitszimmmer";
     }
 
     @Override
@@ -33,7 +33,6 @@ public class Arbeitszimmer extends Room {
     @Override
     public void interact(View view, Optional<Item> heldItem) {
         if (heldItem.isPresent()) {
-            System.out.println(view);
             if (view.getName().equals("Schrank")
                     && heldItem.get().getName().equals("gruener Schluessel")
                     && !adjacentRooms.contains("geheimzimmer")) {

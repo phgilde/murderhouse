@@ -164,7 +164,7 @@ class Game {
 
         });
 
-        parser.setSimpleCommand("treffe", () -> {
+        parser.setSimpleCommand("schieße", () -> {
             if (heldItem.isPresent() && heldItem.get().getName().equals("Gewehr")) {
                 if (getHumanInRoom().isPresent()) {
                     currentView = Optional.of(getHumanInRoom().get());
