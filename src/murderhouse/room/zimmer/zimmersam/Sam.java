@@ -37,7 +37,7 @@ public class Sam extends Human {
 
     @Override
     public String getName() {
-        return "Samuel Ole Doedade";
+        return "Sam";
     }
 
 

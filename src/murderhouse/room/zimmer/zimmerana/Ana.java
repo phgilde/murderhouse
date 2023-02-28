@@ -61,7 +61,7 @@ public class Ana extends Human {
 
     @Override
     public String getName() {
-        return "Anabell Blurr";
+        return "Ana";
     }
 
 }

@@ -39,6 +39,6 @@ public class Trude extends Human {
 
     @Override
     public String getName() {
-        return "Trude Fredericke Doedade";
+        return "Trude";
     }
 }

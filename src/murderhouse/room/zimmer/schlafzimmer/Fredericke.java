@@ -33,7 +33,7 @@ public class Fredericke extends Human {
 
     @Override
     public String getName() {
-        return "Fredericke Hildegart Doedade";
+        return "Fredericke";
     }
 
 }
