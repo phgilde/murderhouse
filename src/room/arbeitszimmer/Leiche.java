@@ -30,7 +30,6 @@ public class Leiche extends Human {
 
     @Override
     public String talk(Optional<Item> heldItem) {
-        // TODO lustige Optionen
         if (istTot) {
             return "Ole schweigt.";
         }
