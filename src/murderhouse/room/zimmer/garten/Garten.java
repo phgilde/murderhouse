@@ -11,6 +11,7 @@ public class Garten extends Room{
     public Garten(){
     adjacentRooms.add("wohnzimmer");
     adjacentRooms.add("arbeitszimmer"); 
+    views.put("svaeltande", new svaeltande());
     }
     @Override
     public String getName() {
