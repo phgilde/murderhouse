@@ -333,20 +333,21 @@ class Game {
     }
 
     private void killGame() {
-        if (itemExists("steak")) {
+        if (heldItem.isPresent() && heldItem.get().getName().equals("Steak") && inventory.containsKey("brauner schluessel")) {
+            notOver = false;
+            SlowPrint.slowPrint(
+                    " Der Hund kommt angelaufen und zeigt dir den Weg zum Boot und deiner Freiheit.");
+            SlowPrint.slowPrint(
+                    "Du hast das Spiel erfolgreich abgeschlossen. Nachdem du am Ufer angekommen bist, berichtest du deinem Arbeitgeber von deiner Mission.");
+            calculateScore();
+
+        } else if (itemExists("steak")) {
             SlowPrint.slowPrint(
                     "Das Haus ist still. Nur der Hund bellt im Garten. Du solltest dich beeilen, vielleicht hat Ana auch schon die Polizei gerufen");
             SlowPrint.slowPrint(
                     "Du solltest jemanden finden der sich auf der Insel auskennt. Der Hund bellt draussen weiter");
             SlowPrint.slowPrint(
                     "Vielleicht kannst du jemanden dazu bewegen dir den Weg zum Boot zu zeigen. Vielleicht mit etwas zu essen...");
-        } else if (!itemExists("steak") && inventory.containsKey("brauner schluessel")) {
-            notOver = false;
-            SlowPrint.slowPrint(
-                    " Der Hund kommt angelaufen und zeigt dir den Weg zum Boot und deiner Freiheit.");
-            SlowPrint.slowPrint(
-                    "Du hast das Spiel erfolgreich abgeschlossen. Nachdem du am Ufer angekommen bist, berichtest du deinen Arbeitgeber von deiner Mission");
-
         } else {
             SlowPrint.slowPrint(
                     "Der Hund kommt zur Tuer und will anscheinend nach draussen. Wenn du versuchst die Tuer aufzumachen bemerkst du das diese geschlossen ist.");

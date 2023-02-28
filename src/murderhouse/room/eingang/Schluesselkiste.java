@@ -12,7 +12,7 @@ public class Schluesselkiste extends View {
     }
 
     public String getDescription() {
-        return "Du siehts einen braunen Schluessel";
+        return "In einer kleinen Schluesselkiste hängt ein *brauner Schluessel*.";
     }
 
 
