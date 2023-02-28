@@ -75,27 +75,33 @@ class Game {
         parser.setSimpleCommand("quit", () -> System.exit(0));
         parser.setSimpleCommand("hilfe", () -> {
             SlowPrint.slowPrint("Du kannst folgende Befehle eingeben:");
+            SlowPrint.slowPrint("--- Zum Bewegen ---");
             SlowPrint.slowPrint("umsehen: Beschreibt den Raum");
-            SlowPrint.slowPrint("inventar: Zeigt das Inventar an");
             SlowPrint.slowPrint("gehe <Raum>: Geht in den angegebenen Raum");
-            SlowPrint.slowPrint("quit: Beendet das Spiel");
-            SlowPrint.slowPrint("hilfe: Zeigt diese Hilfe an");
             SlowPrint.slowPrint("inspiziere <Ansicht>: Inspiziert die angegebene Ansicht");
-            SlowPrint.slowPrint("halte <Gegenstand>: Gegenstand aus dem Inventar halten");
+            SlowPrint.slowPrint("--- Für Items ---");
+            SlowPrint.slowPrint("inventar: Zeigt das Inventar an");
+            SlowPrint.slowPrint("nimm <Gegenstand>: Nimm den angegebenen Gegenstand");
             SlowPrint.slowPrint("ansehen: Beschreibt den gehaltenen Gegenstand");
             SlowPrint.slowPrint("interagiere: Interagiert mit der Ansicht");
-            SlowPrint.slowPrint("nimm <Gegenstand>: Nimm den angegebenen Gegenstand");
+            SlowPrint.slowPrint("halte <Gegenstand>: Gegenstand aus dem Inventar halten");
             SlowPrint.slowPrint("einstecken: Legt den gehaltenen Gegenstand ins Inventar");
+            SlowPrint.slowPrint("--- Reden und Befragen ---");
+            SlowPrint.slowPrint("rede : Redet mit der Person im Raum (gehaltenes Item spielt eine Rolle)");
+            SlowPrint.slowPrint("frage <Stichwort>: Befragt die Person nach einem Stichwort");
+            SlowPrint.slowPrint("--- Nützlich ---");
+            SlowPrint.slowPrint("hilfe: Zeigt diese Hilfe an");
+            SlowPrint.slowPrint("quit: Beendet das Spiel");
+            
         });
         parser.setParamCommand("gehe", (String direction) -> {
             if (currentRoom.getAdjacentRooms().contains(direction)) {
                 currentRoom = rooms.get(direction);
                 currentView = Optional.empty();
-                // Erster Buchstabe gross
-                String str = currentRoom.getName();
-                SlowPrint.slowPrint(
-                        "Du bist in " + str.substring(0, 1).toUpperCase() + str.substring(1));
-            } else {
+                SlowPrint.slowPrint("Du bist in " + currentRoom.getName());
+            } else if(currentRoom.getName().toLowerCase().equals(direction)){
+                SlowPrint.slowPrint("Du bist bereits in " + currentRoom.getName());
+            } else{
                 SlowPrint.slowPrint("Du kannst nicht in diese Richtung gehen.");
             }
         });
@@ -132,7 +138,10 @@ class Game {
            
 
             if (getHumanInRoom().isPresent()) {
+                System.out.println("human present");
                 currentView = Optional.of(getHumanInRoom().get());
+                System.out.println(currentView);
+                System.out.println(((Human) currentView.get()).ask(frage));
                 SlowPrint.slowPrint(((Human) currentView.get()).ask(frage));
 
             } else{
@@ -151,8 +160,8 @@ class Game {
         });
 
         parser.setSimpleCommand("treffe", () -> {
-            if (heldItem.isPresent() && heldItem.get().getName() == "gewehr") {
-                if (currentView.isPresent()) {
+            if (heldItem.isPresent() && heldItem.get().getName().equals("Gewehr")) {
+                if (getHumanInRoom().isPresent()) {
                     if (currentView.get() instanceof Human) {
                         if (((Human) currentView.get()).getName().equals("svaeltande")) {
                             System.out.println("Was ist falsch mit dir????????");
