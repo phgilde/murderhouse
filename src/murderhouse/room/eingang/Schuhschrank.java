@@ -27,11 +27,6 @@ public class Schuhschrank extends View {
                         : "");
     }
 
-    @Override
-    public String interact(Optional<Item> heldItem) {
-        return null;
-
-    }
 
     @Override
     public String getName() {

@@ -18,10 +18,7 @@ public class Schluesselkiste extends View {
         return "Du siehts einen braunen Schluessel";
     }
 
-    @Override
-    public String interact(Optional<Item> heldItem) {
-        return null;
-    }
+
 
     @Override
     public String getName() {

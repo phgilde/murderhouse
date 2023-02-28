@@ -30,7 +30,7 @@ public abstract class Human extends View {
         if(t==1){
           return this.getName() + "ist nicht tot, diese Person wird nur ab jetzt komischer Weise nicht mehr ansprechbar sein und nur noch auf dem Boden rumliegen."; 
         }else{
-            return null; 
+            return ""; 
         }
     }
 

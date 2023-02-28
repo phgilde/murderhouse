@@ -35,9 +35,9 @@ public class Sam extends Human {
     @Override
     public String ask(String q) {
         if (n == 0) {
-            if (q == "Knall") {
+            if (q == "knall") {
                 return "'Knall, welcher Knall? Papa hat nur die Kuehlschranktuer zugeworfen, sonst war da nichts'";
-            } else if (q == "Streit") {
+            } else if (q == "streit") {
                 return "'Er nervt -- Hat immer rumgenervt wegen meinen Verhaftungen, er glaubt das ich mein Leben nicht auf die Reihe kriege.'";
             } else {
                 return null;

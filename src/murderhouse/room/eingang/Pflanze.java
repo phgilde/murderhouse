@@ -11,13 +11,9 @@ public class Pflanze extends View {
     @Override
     public String getDescription() {
 
-        return "Das ist eine GrOssE gRueNe ZiMmErPlAnZe";
+        return "Das ist ein sehr gut gepflegter Gummibaum. Er ist sehr hoch und hat viele Blaetter.";
     }
 
-    @Override
-    public String interact(Optional<Item> heldItem) {
-        return null;
-    }
 
     @Override
     public String getName() {
