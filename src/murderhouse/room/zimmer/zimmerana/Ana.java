@@ -30,7 +30,7 @@ public class Ana extends Human {
             n = n + 1;
             return "'Das sind die Tanzschuhe von Fredericke oder nicht?? Hahaha. '";
         } else if (heldItem.get().getName().equals("morphin")) {
-            return "'Morphin ist in hohen Menge toedlich! Aber es wurde Fredericke wegen dem Autounfall verschrieben' ";
+            return "'Morphin ist in hohen Mengen toedlich! Aber es wurde Fredericke wegen dem Autounfall verschrieben' ";
         } else {
             return "'Ach, Hallo Dieter, sind Sie schon weiter mit dem Fall?'";
         }
@@ -55,20 +55,20 @@ public class Ana extends Human {
 
     @Override
     public String ask(String q) {
+        q.toLowerCase();
         if (n == 0) {
-        if (q == "Streit") {
+        if (q.equals("streit")) {
             return "'Naja, erst hatte der Alte sich am Freitag mit Trude gestritten, sie ist sehr involviert in die Zukunft der Famillien-Firma. Und eigentlich immer was anderes vor als Ole."
                     + " Dann am gestern stritt er sich mit Sam: Der Sam, muessen Sie Wissen, ist kein Musterjunge. Er wurde schon zweimal verhaftet, gestern sind sie dann nocheinmal aneinader gefahren...  "
                     + " Das war so um 21 Uhr... Oh nein kurz danach habe ich ein |Knall| gehoert. Ich dachte das waere die Kuehlschranktuer, aber was wenn Sam seinen Vater erschlagen hat?'";
-        } else if (q == "Fingerhut") {
+        } else if (q.equals("fingerhut")) {
             return "'Finden Sie nicht auch der Fingerhut ist eine faszinierende Pflanze? Sie ist hochgiftig und trotzdem wunderschoen. Ich hab mich schon als kleines Maedchen dafuer interessiert."
                     + " Ich studiere auch gerade online Arznei. Ich moechte naemlich spaeter eine Apotheke eroeffnen'";
+        } else if (q.equals("Knall")) {
+            return "Ich hab keine Ahnung woher der Knall genau kam. Frag Sam...";
         } else {
-            return null;
-        }
-    }else {
-        return null; 
-    }
+            return "Ich weiß leider nicht was du meinst."; 
+        } else 
     }
 
     @Override
