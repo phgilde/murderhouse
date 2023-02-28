@@ -19,7 +19,7 @@ public class Flur extends Room {
 
     @Override
     public String getName() {
-        return "flur";
+        return "Flur";
     }
 
     @Override

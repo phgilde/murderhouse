@@ -16,13 +16,12 @@ public class Pflanze extends View {
 
     @Override
     public String interact(Optional<Item> heldItem) {
-        // TODO Auto-generated method stub
         return null;
     }
 
     @Override
     public String getName() {
-        return "pflanze";
+        return "Pflanze";
     }
 
 }

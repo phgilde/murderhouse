@@ -10,7 +10,7 @@ public class Computer extends View{
     }
     @Override
     public String getName() {
-        return "computer";
+        return "Computer";
     }
 
     @Override

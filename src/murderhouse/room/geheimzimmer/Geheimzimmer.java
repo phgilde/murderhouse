@@ -10,14 +10,14 @@ public class Geheimzimmer extends Room {
 
     public Geheimzimmer(){
 
-        adjacentRooms.add("areitszimmer");
+        adjacentRooms.add("arbeitszimmer");
         views.put("tisch", new Tisch());
         views.put("computer", new Computer());
     }   
 
     @Override
     public String getName() {
-        return "geheimzimmer";
+        return "Geheimzimmer";
     }
 
     @Override

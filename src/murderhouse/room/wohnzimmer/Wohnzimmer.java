@@ -14,7 +14,7 @@ public class Wohnzimmer extends Room {
 
     @Override
     public String getName() {
-        return "wohnzimmer";
+        return "Wohnzimmer";
     }
 
     @Override

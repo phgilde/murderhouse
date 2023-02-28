@@ -6,7 +6,7 @@ public class Topfpflanze extends View {
 
     @Override
     public String getName() {
-        return "topfpflanze";
+        return "Topfpflanze";
     }
 
     @Override

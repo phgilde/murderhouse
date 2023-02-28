@@ -25,6 +25,6 @@ public class NachttischRechts extends View {
 
     @Override
     public String getName() {
-        return "rechter nachttisch";
+        return "rechter Nachttisch";
     }
 }

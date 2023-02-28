@@ -9,13 +9,12 @@ import murderhouse.room.Room;
 public class Garten extends Room{
     
     public Garten(){
-    adjacentRooms.add("wohnzimmer");
-    adjacentRooms.add("arbeitszimmer"); 
-    views.put("svaeltande", new svaeltande());
+    adjacentRooms.add("draussen");
+    views.put("svaeltande", new Svaeltande());
     }
     @Override
     public String getName() {
-        return "garten";
+        return "Garten";
     }
 
     @Override

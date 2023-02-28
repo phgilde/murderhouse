@@ -24,7 +24,7 @@ public class Saal extends Room {
 
     @Override
     public String getName() {
-        return "saal";
+        return "Saal";
     }
 
     @Override

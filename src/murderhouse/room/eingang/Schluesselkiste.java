@@ -9,7 +9,7 @@ import murderhouse.room.view.View;
 public class Schluesselkiste extends View {
 
     public Schluesselkiste() {
-        items.put("brauner schluessel", new SimpleItem("brauner schluessel",
+        items.put("brauner schluessel", new SimpleItem("brauner Schluessel",
                 "Ein brauner Schluessel mit einem ledernen Schluesselband."));
 
     }

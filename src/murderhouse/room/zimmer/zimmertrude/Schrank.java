@@ -5,7 +5,7 @@ public class Schrank extends View {
 
     @Override
     public String getName() {
-        return "schrank";
+        return "Schrank";
     }
 
     @Override

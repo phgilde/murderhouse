@@ -6,7 +6,7 @@ import murderhouse.interaction.Reaction;
 import murderhouse.item.Item;
 import murderhouse.room.view.human.Human;
 
-public class svaeltande extends Human {
+public class Svaeltande extends Human {
 
     @Override
     public String talk(Optional<Item> heldItem) {

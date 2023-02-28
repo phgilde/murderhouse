@@ -13,7 +13,7 @@ public class Bilderrahmen extends View {
 
     @Override
     public String getName() {
-        return "oelgemaelde";
+        return "Oelgemaelde";
     }
 
     @Override

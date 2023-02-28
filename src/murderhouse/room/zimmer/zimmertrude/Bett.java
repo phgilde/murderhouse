@@ -12,7 +12,7 @@ public class Bett extends View {
 
     @Override
     public String getName() {
-        return "bett";
+        return "Bett";
     }
 
     @Override

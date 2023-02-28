@@ -12,7 +12,7 @@ public class ZimmerAna extends Room {
 
     @Override
     public String getName() {
-        return "anas zimmer";
+        return "Anas Zimmer";
     }
 
     @Override

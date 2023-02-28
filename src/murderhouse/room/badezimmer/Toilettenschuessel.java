@@ -9,7 +9,7 @@ public class Toilettenschuessel extends View {
 
     @Override
     public String getName() {
-        return "toilettenschuessel";
+        return "Toilettenschuessel";
     }
 
     @Override

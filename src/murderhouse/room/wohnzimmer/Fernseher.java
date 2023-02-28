@@ -33,7 +33,7 @@ public class Fernseher extends View {
 
     @Override
     public String getName() {
-        return "fernseher";
+        return "Fernseher";
     }
 
 

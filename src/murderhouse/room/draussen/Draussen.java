@@ -6,7 +6,7 @@ public class Draussen extends Room {
 
     @Override
     public String getName() {
-        return "draussen";
+        return "Draussen";
     }
 
     @Override

@@ -30,6 +30,6 @@ public class NachttischLinks extends View {
 
     @Override
     public String getName() {
-        return "linker nachttisch";
+        return "linker Nachttisch";
     }
 }

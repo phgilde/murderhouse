@@ -7,14 +7,14 @@ public class Spiegelschrank extends View {
 
     public Spiegelschrank() {
         items.put("ibuprofen",
-                new SimpleItem("ibuprofen", "Eine Schachtel Ibuprofen 600 der Marke Bayer."));
-        items.put("rosa schluessel", new SimpleItem("rosa schluessel",
+                new SimpleItem("Ibuprofen", "Eine Schachtel Ibuprofen 600 der Marke Bayer."));
+        items.put("rosa schluessel", new SimpleItem("rosa Schluessel",
                 "Ein Schluessel aus Rosafarbenem Metall. Dem Gewicht nach scheint es sich um Rósegold zu handeln."));
     }
 
     @Override
     public String getName() {
-        return "spiegelschrank";
+        return "Spiegelschrank";
     }
 
     @Override

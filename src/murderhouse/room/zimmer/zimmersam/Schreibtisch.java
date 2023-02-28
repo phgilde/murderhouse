@@ -11,7 +11,7 @@ public class Schreibtisch extends View {
 
     @Override
     public String getName() {
-        return "schreibtisch";
+        return "Schreibtisch";
     }
 
     @Override

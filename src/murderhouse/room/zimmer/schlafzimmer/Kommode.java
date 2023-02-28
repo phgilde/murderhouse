@@ -28,7 +28,7 @@ public class Kommode extends View {
 
     @Override
     public String getName() {
-        return "kommode";
+        return "Kommode";
     }
 
 }

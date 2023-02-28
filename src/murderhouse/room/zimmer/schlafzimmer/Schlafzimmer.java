@@ -19,7 +19,7 @@ public class Schlafzimmer extends Room {
 
     @Override
     public String getName() {
-        return "oles schlafzimmer";
+        return "Oles Schlafzimmer";
     }
 
     @Override

@@ -6,7 +6,7 @@ import murderhouse.room.view.View;
 public class Tisch extends View {
 
     public Tisch(){
-        items.put("notizbuch", new SimpleItem("notizbuch", 
+        items.put("notizbuch", new SimpleItem("Notizbuch", 
         "----- Notizbuch von Detektiv Dieter ----- "
         +"3. Juli 2019: "
         +"Der Auftrag für mich besteht darin, belastende Inhalte gegen meinen Arbeitgeber von Objekt Ole zurückzuholen. "
