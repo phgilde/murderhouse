@@ -25,11 +25,8 @@ public class Fredericke extends Human {
 
     @Override
     public String getDescription() {
-        if (n == 0) {
-            return "Fredericke ist eine mitte 50-Jahre alte Frau. Ihr Haar beginnt zu grauen, und sie ist querschnittsgelaehmt";
-        } else {
-            return "Fredericke ist eine mitte 50-Jahre alte Frau. Ihr Haar beginnt zu grauen, und sie ist querschnittsgelaehmt und liegt bewegungslos am Boden und scheint zu schlafen.";
-        }
+        return "Fredericke ist eine mitte 50-Jahre alte Frau. Ihr Haar beginnt zu grauen, und sie ist querschnittsgelaehmt";
+
     }
 
 
