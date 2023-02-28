@@ -11,12 +11,12 @@ public class Ana extends Human {
     @Override
     public String talk(Optional<Item> heldItem) {
         if (n == 0) {
-        if (heldItem.isEmpty()) {
-            return "'Ich weiss gar nicht was ich denken soll! Der arme Mann ist einfach Tod!'"
-                    + "'Das tut mir ja wahnsinnig leid fuer ihn. Und er hatte gerade erst einen |Streit| mit beiden Kindern. Ach gottchen'";
-        } else if (heldItem.get().getName().equals("baseballschlaeger")) {
-            return "'Ach das ist doch der von Trudes Freund! Tja Ben, der Gute, ist leider sehr vergesslich. Der wuerde seinen eigenen Kopf vergessen waere er nicht angeschraubt!"
-                    + " Was sind denn diese roten Spritzer? Da muss Trude den Schlaeger wohl auf ihrem Maltisch gehabt haben!'";
+            if (heldItem.isEmpty()) {
+                return "'Ich weiss gar nicht was ich denken soll! Der arme Mann ist einfach Tod!'"
+                        + "'Das tut mir ja wahnsinnig leid fuer ihn. Und er hatte gerade erst einen |Streit| mit beiden Kindern. Ach gottchen'";
+            } else if (heldItem.get().getName().equals("baseballschlaeger")) {
+                return "'Ach das ist doch der von Trudes Freund! Tja Ben, der Gute, ist leider sehr vergesslich. Der wuerde seinen eigenen Kopf vergessen waere er nicht angeschraubt!"
+                        + " Was sind denn diese roten Spritzer? Da muss Trude den Schlaeger wohl auf ihrem Maltisch gehabt haben!'";
         } else if (heldItem.get().getName().equals("brief")) {
             if (n == 0) {
                 return "'Was ist das denn?'";
@@ -41,11 +41,7 @@ public class Ana extends Human {
 
     @Override
     public String getDescription() {
-        if (n == 0) {
         return "Ana Blurr ist eine etwa 30-jaehrige Frau";
-        }else{
-            return "Ana Blurr ist eine etwa 30-jaehrige Frau. Gerade liegt sie ohne sich zu bewegen auf dem Boden";
-        }
     }
 
     @Override
