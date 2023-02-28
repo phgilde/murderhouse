@@ -9,7 +9,6 @@ public class Geheimzimmer extends Room {
 
 
     public Geheimzimmer(){
-
         adjacentRooms.add("arbeitszimmer");
         views.put("tisch", new Tisch());
         views.put("computer", new Computer());
