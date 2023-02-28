@@ -9,6 +9,7 @@ import murderhouse.room.view.human.Human;
 public class Leiche extends Human {
     boolean hatSchluessel = true;
     boolean istTot = true;
+    private String[] replies = {"Ole schweigt.", "Ole sagt nichts.", "Ole starrt dich stumm an.", "Ole schaut dich an und sagt nichts.", "Ole bleibt liegen."};
 
     public Leiche() {
         items.put("gruener schluessel", new SimpleItem("gruener Schluessel", ""));
@@ -23,17 +24,11 @@ public class Leiche extends Human {
         return str;
     }
 
-    @Override
-    public String interact(Optional<Item> heldItem) {
-        return null;
-    }
+    
 
     @Override
     public String talk(Optional<Item> heldItem) {
-        if (istTot) {
-            return "Ole schweigt.";
-        }
-        return null;
+        return replies[(int) Math.random() * replies.length];
     }
 
     @Override
