@@ -1,9 +1,6 @@
 package murderhouse.room.wohnzimmer;
 
-import java.util.Optional;
-import murderhouse.item.Item;
 import murderhouse.room.Room;
-import murderhouse.room.view.View;
 
 public class Wohnzimmer extends Room {
     public Wohnzimmer() {
@@ -25,8 +22,4 @@ public class Wohnzimmer extends Room {
                 + "ueber dem Kamin dekonstruiert ein kubistisches Gemaelde die norwegischen Fjorde."
                 + "Von hier aus kannst du in den *Saal* und in den *Garten* gehen.";
     }
-
-    @Override
-    public void interact(View view, Optional<Item> heldItem) {}
-
 }
