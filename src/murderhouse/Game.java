@@ -139,7 +139,7 @@ class Game {
         parser.setSimpleCommand("rede", () -> {
             selectHumanInRoom();
 
-            if (currentView.get() instanceof Human) {
+            if (currentView.isPresent() && currentView.get() instanceof Human) {
                 SlowPrint.slowPrint(((Human) currentView.get()).talk(heldItem));
 
             }
