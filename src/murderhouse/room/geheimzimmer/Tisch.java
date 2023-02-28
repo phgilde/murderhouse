@@ -25,7 +25,7 @@ public class Tisch extends View {
 
         ));
 
-        items.put("bueste", new SimpleItem("bueste", 
+        items.put("bueste", new SimpleItem("Bueste", 
         "Du hebst die Bueste an und bemerkst, dass sie gar nicht so schwer ist wie erwartet. Du gugckst dir die Blutflecken genauer an. "
         + "Du bemerkst das auf der Bueste gar nicht der Name Shakespeare steeht, sonder eine Gravur: Fuer Fredericke."
         ));
