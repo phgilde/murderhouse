@@ -1,11 +1,6 @@
 package murderhouse.room.flur;
 
-import java.util.Map;
-import java.util.Optional;
-
-import murderhouse.item.Item;
 import murderhouse.room.Room;
-import murderhouse.room.view.View;
 
 public class Flur extends Room {
 

@@ -17,8 +17,8 @@ public class ZimmerAna extends Room {
 
     @Override
     public String getDescription() {
-        return "Das Zimmer ist ziemlich klein, aber es ist sehr gemütlich."
-                + "Hier ist ein Bett mit einem Schrank darunter. Am Schreibtisch sitzt Ana. Auf dem Fensterbrett steht eine *Topfpflanze*. Die Wände sind voller Kunstdrucke.";
+        return "Das Zimmer ist ziemlich klein, aber es ist sehr gemuetlich."
+                + "Hier ist ein Bett mit einem Schrank darunter. Am Schreibtisch sitzt Ana. Auf dem Fensterbrett steht eine *Topfpflanze*. Die Waende sind voller Kunstdrucke.";
     }
 
 }

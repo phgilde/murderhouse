@@ -1,8 +1,5 @@
 package murderhouse.room.eingang;
 
-import java.util.Optional;
-
-import murderhouse.item.Item;
 import murderhouse.room.view.View;
 
 public class Pflanze extends View {

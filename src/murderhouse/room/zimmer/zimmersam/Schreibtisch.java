@@ -16,6 +16,6 @@ public class Schreibtisch extends View {
 
     @Override
     public String getDescription() {
-        return "Ein ziemlich aufgeräumter Schreibtisch. Auf dem Schreibtisch steht ein iMac, ein dekorativer Sukkulent und ein paar *Boxhandschuhe*.";
+        return "Ein ziemlich aufgeraeumter Schreibtisch. Auf dem Schreibtisch steht ein iMac, ein dekorativer Sukkulent und ein paar *Boxhandschuhe*.";
     }
 }

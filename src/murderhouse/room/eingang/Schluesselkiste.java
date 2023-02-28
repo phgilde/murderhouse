@@ -1,8 +1,5 @@
 package murderhouse.room.eingang;
 
-import java.util.Optional;
-
-import murderhouse.item.Item;
 import murderhouse.item.SimpleItem;
 import murderhouse.room.view.View;
 

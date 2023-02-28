@@ -18,7 +18,7 @@ public class ZimmerTrude extends Room {
 
     @Override
     public String getDescription() {
-        return "Du stehst in einem wirklich großen Zimmer, das irgendwie leer erscheint. Du siehst ein *Bett*, "
+        return "Du stehst in einem wirklich grossen Zimmer, das irgendwie leer erscheint. Du siehst ein *Bett*, "
                 + "einen *Schreibtisch* auf dem eine Frau sitzt und einen *Schrank*. "
                 + "Von hier aus kannst du in den *Flur* gehen.";
     }

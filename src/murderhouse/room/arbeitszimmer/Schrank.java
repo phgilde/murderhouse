@@ -9,7 +9,6 @@ public class Schrank extends View {
 
     @Override
     public String getName() {
-        // TODO Auto-generated method stub
         return "Schrank";
     }
 

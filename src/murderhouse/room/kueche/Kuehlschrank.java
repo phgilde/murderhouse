@@ -15,7 +15,7 @@ public class Kuehlschrank extends View {
 
     @Override
     public String getDescription() {
-        String str = "Ein ziemlich großer Kuehlschrank. Der Kuehlschrank ist komplett leer";
+        String str = "Ein ziemlich grosser Kuehlschrank. Der Kuehlschrank ist komplett leer";
         if(items.containsKey("steak")){
             str += ", bis auf ein riesiges *Steak*";
         }

@@ -15,7 +15,7 @@ public class Trude extends Human {
             return "'Ja das ist Ben's. Oh was ist den da soviel Farbe dran? Da habe ich wohl beim Malen nicht gut aufgepasst.'";
 
         } else {
-            return "'Darueber weiß ich leider nichts.'";
+            return "'Darueber weiss ich leider nichts.'";
         }
 
     }
@@ -31,7 +31,7 @@ public class Trude extends Human {
         if (q == "malsachen") {
             return "'Ich male gerne um zu entspannen'";
         } else if (q == "streit") {
-            return "'Ja wir streiten uns manchmal wegen der Firma. Aber ich würde ihm nie etwas tun! Er ist mein Vater!'";
+            return "'Ja wir streiten uns manchmal wegen der Firma. Aber ich wuerde ihm nie etwas tun! Er ist mein Vater!'";
         } else {
             return "Was meinst du denn?";
         }
@@ -39,6 +39,6 @@ public class Trude extends Human {
 
     @Override
     public String getName() {
-        return "Trude Fredericke Dödade";
+        return "Trude";
     }
 }

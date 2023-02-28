@@ -2,14 +2,12 @@ package murderhouse.room.zimmer.schlafzimmer;
 
 import java.util.Optional;
 import murderhouse.item.Item;
-import murderhouse.item.SimpleItem;
 import murderhouse.room.view.View;
 
 public class NachttischRechts extends View {
 
     @Override
     public String getDescription() {
-        // TODO Auto-generated method stub
         return "Ein kleiner Nachttisch aus Holz. Auf dem Nachttisch liegt ein *Buch*. Der Nachttisch hat eine Schublade mit einem lilafarbenen Schloss.";
     }
 

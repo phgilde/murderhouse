@@ -55,13 +55,13 @@ public class Ana extends Human {
         } else if (q.equals("Knall")) {
             return "Ich hab keine Ahnung woher der Knall genau kam. Frag Sam...";
         } else {
-            return "Ich weiß leider nicht was du meinst.";
+            return "Ich weiss leider nicht was du meinst.";
         }
     }
 
     @Override
     public String getName() {
-        return "Anabell Blurr";
+        return "Ana";
     }
 
 }

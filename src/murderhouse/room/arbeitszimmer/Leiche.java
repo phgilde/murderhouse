@@ -38,8 +38,7 @@ public class Leiche extends Human {
 
     @Override
     public String ask(String q) {
-        // TODO Auto-generated method stub
-        return "Stille...";
+        return replies[(int) Math.random() * replies.length];
     }
     
 }

@@ -10,6 +10,6 @@ public class Schrank extends View {
 
     @Override
     public String getDescription() {
-        return "Ein grosser Schrank aus grün bemaltem Holz.";
+        return "Ein grosser Schrank aus gruen bemaltem Holz.";
     }
 }

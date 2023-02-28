@@ -1,8 +1,6 @@
 package murderhouse.room.kueche;
 
-import java.util.Map;
 import murderhouse.room.Room;
-import murderhouse.room.view.View;
 
 public class Kueche extends Room {
 
@@ -20,7 +18,7 @@ public class Kueche extends Room {
     @Override
     public String getDescription() {
         return "Du befindest dich in der Kueche. Auf dem Tisch steht ein phantastisch duftender Schokokuchen. "
-                + "Hier befindet sich eine *Herdplatte* mit einem Kochtopf darauf. Neben der Herdplatte steht ein großer *Kuehlschrank*."
+                + "Hier befindet sich eine *Herdplatte* mit einem Kochtopf darauf. Neben der Herdplatte steht ein grosser *Kuehlschrank*."
                 + "von hier kannst du in den *Saal* gehen.";
     }
 }

@@ -1,6 +1,5 @@
 package murderhouse.room.zimmer.schlafzimmer;
 
-import java.util.Map;
 import java.util.Optional;
 import murderhouse.item.Item;
 import murderhouse.room.Room;

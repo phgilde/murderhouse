@@ -1,9 +1,6 @@
 package murderhouse.room.eingang;
 
 import murderhouse.room.view.View;
-import java.util.Optional;
-
-import murderhouse.item.Item;
 import murderhouse.item.SimpleItem;
 
 public class Schuhschrank extends View {
@@ -18,7 +15,7 @@ public class Schuhschrank extends View {
     }
 
     public String getDescription() {
-        return "Ein Holzschrank mit mehreren Klappschubladen. Auf dem Schrank liegt ein seidenes Tuch, auf dem in Gläsern verschiedene schöne Steine und Kristalle liegen."
+        return "Ein Holzschrank mit mehreren Klappschubladen. Auf dem Schrank liegt ein seidenes Tuch, auf dem in Glaesern verschiedene schoene Steine und Kristalle liegen."
                 + (items.size() != 0
                         ? " In den Schubladen befinden sich "
                                 + (items.containsKey("tanzschuhe") ? "*Tanzschuhe*, " : "")
