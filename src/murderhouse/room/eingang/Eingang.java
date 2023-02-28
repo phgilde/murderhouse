@@ -28,8 +28,8 @@ public class Eingang extends Room {
                 + "Der Boden ist mit einem stilvollen Teppich ausgelegt, der die Eingangstuer umrahmt."
                 + "Die Wande sind mit einem edlen Tapetenbehang verziert."
                 + "Die Decke ist mit einem prachtvollen Kronleuchter beleuchtet."
-                + "Was du zunächst für einen Picasso-Druck hältst, ist in Wirklichkeit ein goldverzierter Spiegel, der den Raum optisch vergrößert."
-                + "Gegenüber des Spiegels hängt ein *Bilderrahmen*, dessen Gemaelde du nicht genau erkennen kannst."
+                + "Was du zunaechst fuer einen Picasso-Druck haeltst, ist in Wirklichkeit ein goldverzierter Spiegel, der den Raum optisch vergroessert."
+                + "Gegenueber des Spiegels haengt ein *Bilderrahmen*, dessen Gemaelde du nicht genau erkennen kannst."
                 + "Hier befindet sich ein *Schuhschrank*, eine *Pflanze*, eine *Schluesselbox* und die Eingangstuer";
 
     }

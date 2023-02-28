@@ -29,7 +29,7 @@ public class Arbeitszimmer extends Room {
     @Override
     public String getDescription() {
         return "Im Arbeitszimmer angekommen siehst du die *Leiche* von Ole. Neben dir befindet sich ein schoener *Schrank*, der die gesamte Wand ausfuellt. "
-        + "Gegenüber des Schranks steht ein Schreibtisch. Über dem Schreibtisch hängt ein recht kleines Gemälde, welches eine Vase mit gelben Pechnelken und einigen Mohnblumen abbildet. "
+        + "Gegenueber des Schranks steht ein Schreibtisch. ueber dem Schreibtisch haengt ein recht kleines Gemaelde, welches eine Vase mit gelben Pechnelken und einigen Mohnblumen abbildet. "
                 + "Dir wird schwindelig und du setzt dich auf den Stuhl hinter dir, um in Ruhe zu ueberlegen was du als naechstes machen willst.";
     }
 

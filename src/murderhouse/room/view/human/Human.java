@@ -21,7 +21,7 @@ public abstract class Human extends View {
     public abstract String ask(String q);
 
     /**
-     * Gibt zurück den Namen der Person die mit dem Gewehr getroffen wird
+     * Gibt zurueck den Namen der Person die mit dem Gewehr getroffen wird
      * 
      * 
      */

@@ -20,6 +20,6 @@ public class Garten extends Room{
     @Override
     public String getDescription() {
         
-        return "Du bist in einem kleinen Garten von einer Mauer vom Rest der Insel getrennt ist. Im Mitten der Rosenbüsche liegt ein Struppiger Hund. Es ist der Familien Hund *Svaeltande*.";
+        return "Du bist in einem kleinen Garten von einer Mauer vom Rest der Insel getrennt ist. Im Mitten der Rosenbuesche liegt ein Struppiger Hund. Es ist der Familien Hund *Svaeltande*.";
     }
 }

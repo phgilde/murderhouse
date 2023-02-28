@@ -6,7 +6,7 @@ import murderhouse.room.view.View;
 public class Bett extends View {
     public Bett() {
         items.put("baseballschlaeger", new SimpleItem("Baseballschlaeger",
-                "Ein hölzelner Baseballschlaeger. Er ist voller roter Flecken."));
+                "Ein hoelzelner Baseballschlaeger. Er ist voller roter Flecken."));
     }
 
 
@@ -18,7 +18,7 @@ public class Bett extends View {
     @Override
     public String getDescription() {
         return "Ein riesiges Himmelbett. "
-                + "Die Bettwäsche ist mit vielen kleinen Spinnen bedruckt. Unter dem Bett liegt ein *Baseballschlaeger*.";
+                + "Die Bettwaesche ist mit vielen kleinen Spinnen bedruckt. Unter dem Bett liegt ein *Baseballschlaeger*.";
     }
 
 }

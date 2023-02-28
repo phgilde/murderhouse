@@ -22,7 +22,7 @@ public class Svaeltande extends Human {
     public Reaction interactReaction(Optional<Item> heldItem) {
         if (heldItem.isPresent()){
         if (heldItem.get().getName().equals("steak")) {
-            return new Reaction("Du fütterst den Hund mit " + heldItem.get().getName() , true);
+            return new Reaction("Du fuetterst den Hund mit " + heldItem.get().getName() , true);
             
         }
         return new Reaction("");
