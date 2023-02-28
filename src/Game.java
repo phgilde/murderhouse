@@ -23,6 +23,7 @@ import util.SlowPrint;
 import room.wohnzimmer.Wohnzimmer;
 import room.saal.Saal;
 import room.eingang.Eingang;
+import room.zimmer.garten.Garten;
 
 class Game {
     Optional<View> currentView = Optional.empty();
@@ -41,6 +42,7 @@ class Game {
     public Game() {
         currentRoom = new Wohnzimmer();
         rooms.put("wohnzimmer", currentRoom);
+        rooms.put("garten", new Garten());
         rooms.put("saal", new Saal());
         rooms.put("flur", new Flur());
         rooms.put("eingang", new Eingang());
@@ -123,11 +125,9 @@ class Game {
         parser.setParamCommand("frage", (String frage) -> {
             if (currentView.isPresent()) {
                 if (currentView.get() instanceof Human) {
-                    ((Human) currentView.get()).ask(frage);
-
+                    SlowPrint.slowPrint(((Human) currentView.get()).talk(null));
                 }
             }
-
         });
         parser.setSimpleCommand("treffe", () -> {
             if (heldItem.get().getName() == "gewehr") {
