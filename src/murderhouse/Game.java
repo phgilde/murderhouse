@@ -128,31 +128,32 @@ class Game {
         });
 
         parser.setParamCommand("frage", (String frage) -> {
-            selectHumanInRoom();
+           
 
-            if (currentView.get() instanceof Human) {
+            if (getHumanInRoom().isPresent()) {
+                currentView = Optional.of(getHumanInRoom().get());
                 SlowPrint.slowPrint(((Human) currentView.get()).ask(frage));
 
+            } else{
+                SlowPrint.slowPrint("Hier gibt es niemanden zum Befragen.");
             }
         });
 
         parser.setSimpleCommand("rede", () -> {
-            selectHumanInRoom();
-
-            if (currentView.isPresent() && currentView.get() instanceof Human) {
+            if (getHumanInRoom().isPresent()) {
+                currentView = Optional.of(getHumanInRoom().get());
                 SlowPrint.slowPrint(((Human) currentView.get()).talk(heldItem));
-
+            }   else {
+                SlowPrint.slowPrint("Hier gibt es niemanden zum Reden.");
             }
 
         });
 
         parser.setSimpleCommand("treffe", () -> {
-            if (heldItem.get().getName() == "gewehr") {
+            if (heldItem.isPresent() && heldItem.get().getName() == "gewehr") {
                 if (currentView.isPresent()) {
                     if (currentView.get() instanceof Human) {
-
                         if (((Human) currentView.get()).getName().equals("svaeltande")) {
-
                             System.out.println("Was ist falsch mit dir????????");
                             policeEnd();
                         } else {
@@ -163,9 +164,11 @@ class Game {
                             }
                         }
                     }
+                } else {
+                    SlowPrint.slowPrint("Mit einem lauten Knall wirst du ein paar Meter zurückgeschleudert. In der Wand ist ein Loch.");
                 }
             } else {
-
+                SlowPrint.slowPrint("Du bildest mit deiner Hand eine Fingerpistole und schreist laut \"PENG\"");
             }
 
         });
@@ -288,13 +291,13 @@ class Game {
                 + "mir noch was passiert.'");
     }
 
-    private void selectHumanInRoom() {
+    private Optional<Human> getHumanInRoom() {
         for (View view : currentRoom.getViews().values()) {
             if (view instanceof Human) {
-                currentView = Optional.of(view);
-                break;
-            }
+                return Optional.of((Human) view);
+            } 
         }
+        return Optional.empty();
     }
 
     public void mainLoop() {
