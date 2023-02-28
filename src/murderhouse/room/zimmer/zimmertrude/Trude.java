@@ -33,7 +33,7 @@ public class Trude extends Human {
         } else if (q == "streit") {
             return "'Ja wir streiten uns manchmal wegen der Firma. Aber ich würde ihm nie etwas tun! Er ist mein Vater!'";
         } else {
-            return null;
+            return "Was meinst du denn?";
         }
     }
 
@@ -41,10 +41,4 @@ public class Trude extends Human {
     public String getName() {
         return "Trude Fredericke Dödade";
     }
-
-    @Override
-    public String interact(Optional<Item> heldItem) {
-        return null;
-    }
-
 }

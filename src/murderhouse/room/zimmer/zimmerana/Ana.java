@@ -40,10 +40,7 @@ public class Ana extends Human {
         return "Ana Blurr ist eine etwa 30-jaehrige Frau";
     }
 
-    @Override
-    public String interact(Optional<Item> heldItem) {
-        return null;
-    }
+
 
     @Override
     public String ask(String q) {
