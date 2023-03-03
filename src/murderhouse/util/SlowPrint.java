@@ -2,7 +2,7 @@ package murderhouse.util;
 
 public class SlowPrint {
     static private int lineSize = 50;
-    static private int delay = 0;
+    static private int delay = 30;
 
     public static void slowPrint(String s) {
         int i = 0;
